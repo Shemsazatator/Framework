@@ -129,7 +129,7 @@ player setVariable ["transporting",false,true];
 player setVariable ["playerSurrender",false,true];
 
 diag_log "Past Settings Init";
-[] execFSM "core\fsm\client.fsm";
+[] call life_fnc_client;
 
 diag_log "Executing client.fsm";
 waitUntil {!(isNull (findDisplay 46))};

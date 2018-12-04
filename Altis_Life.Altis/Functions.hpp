@@ -371,4 +371,9 @@ class Life_Client_Core {
         class vehTakeItem {};
         class vInteractionMenu {};
     };
+
+    class Fsm {
+      file = "core\fsm";
+      class client { ext = ".fsm"; };
+    };
 };
