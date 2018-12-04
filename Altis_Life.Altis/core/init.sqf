@@ -22,6 +22,39 @@ waitUntil {!isNull player && player == player}; //Wait till the player is ready
 [] call compile preprocessFileLineNumbers "core\clientValidator.sqf";
 enableSentences false;
 
+//--- Custom GUI menu colours
+switch playerSide do {
+  case west: {
+    profileNamespace setVariable ['GUI_BCG_RGB_R', 0.078];
+    profileNamespace setVariable ['GUI_BCG_RGB_G', 0.231];
+    profileNamespace setVariable ['GUI_BCG_RGB_B', 0.392];
+    profileNamespace setVariable ['GUI_BCG_RGB_A', 0.8];
+  };
+
+  case east: {
+    profileNamespace setVariable ['GUI_BCG_RGB_R', 0.85];
+    profileNamespace setVariable ['GUI_BCG_RGB_G', 0.05];
+    profileNamespace setVariable ['GUI_BCG_RGB_B', 0.05];
+    profileNamespace setVariable ['GUI_BCG_RGB_A', 0.8];
+  };
+
+  case independent: {
+    profileNamespace setVariable ['GUI_BCG_RGB_R', 0.02];
+    profileNamespace setVariable ['GUI_BCG_RGB_G', 0.459];
+    profileNamespace setVariable ['GUI_BCG_RGB_B', 0.027];
+    profileNamespace setVariable ['GUI_BCG_RGB_A', 0.8];
+  };
+
+  case civilian: {
+    profileNamespace setVariable ['GUI_BCG_RGB_R', 0.278];
+    profileNamespace setVariable ['GUI_BCG_RGB_G', 0.071];
+    profileNamespace setVariable ['GUI_BCG_RGB_B', 0.384];
+    profileNamespace setVariable ['GUI_BCG_RGB_A', 0.8];
+  };
+  //--- Save color for the profile of the user
+  saveProfileNamespace;
+};
+
 //Setup initial client core functions
 diag_log "::Life Client:: Initialization Variables";
 [] call compile preprocessFileLineNumbers "core\configuration.sqf";
@@ -61,7 +94,7 @@ waitUntil {life_session_completed};
 [] spawn life_fnc_escInterupt;
 
 //Set bank amount for new players
-switch (playerSide) do {
+switch playerSide do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
     };
@@ -73,7 +106,7 @@ switch (playerSide) do {
     };
 };
 
-switch (playerSide) do {
+switch playerSide do {
     case west: {
         _handle = [] spawn life_fnc_initCop;
         waitUntil {scriptDone _handle};
