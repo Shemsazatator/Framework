@@ -14,7 +14,7 @@ _packet = [getPlayerUID player,playerSide,nil,_mode];
 _array = [];
 _flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
 
-switch (_mode) do {
+switch _mode do {
     case 0: {
         _packet set[2,CASH];
     };
@@ -53,6 +53,11 @@ switch (_mode) do {
 
     case 7: {
         // Tonic is using for keychain..?
+    };
+
+    case 8: {
+      _packet set[2,life_level];
+      _packet set[4,life_experience];
     };
 };
 

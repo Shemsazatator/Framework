@@ -382,6 +382,11 @@ class Life_Client_Core {
         class vInteractionMenu;
     };
 
+    class Experience {
+        file = "core\experience";
+        class addExperience;
+    };
+
     class Fsm {
       file = "core\fsm";
       class client { ext = ".fsm"; };

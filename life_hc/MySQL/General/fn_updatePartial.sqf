@@ -16,7 +16,7 @@ _mode = [_this,3,-1,[0]] call BIS_fnc_param;
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
 _query = "";
 
-switch (_mode) do {
+switch _mode do {
     case 0: {
         _value = [_this,2,0,[0]] call BIS_fnc_param;
         _value = [_value] call HC_fnc_numberSafe;
@@ -80,6 +80,14 @@ switch (_mode) do {
     case 7: {
         _array = [_this,2,[],[[]]] call BIS_fnc_param;
         [_uid,_side,_array,0] remoteExecCall ["TON_fnc_keyManagement",RSERV];
+    };
+
+    case 8: {
+        _value1 = [_this,2,0,[0]] call BIS_fnc_param;
+        _value2 = [_this,4,0,[0]] call BIS_fnc_param;
+        _value1 = [_value1] call HC_fnc_numberSafe;
+        _value2 = [_value2] call HC_fnc_numberSafe;
+        _query = format ["UPDATE players SET level='%1', experience='%2' WHERE pid='%3'",_value1,_value2,_uid];
     };
 };
 

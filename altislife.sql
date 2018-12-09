@@ -79,6 +79,8 @@ CREATE TABLE IF NOT EXISTS `players` (
   `pid` varchar(17) NOT NULL,
   `cash` int(100) NOT NULL DEFAULT '0',
   `bankacc` int(100) NOT NULL DEFAULT '0',
+  `level` int(100) NOT NULL DEFAULT '1',
+  `experience` int(100) NOT NULL DEFAULT '0',
   `coplevel` enum('0','1','2','3','4','5','6','7') NOT NULL DEFAULT '0',
   `mediclevel` enum('0','1','2','3','4','5') NOT NULL DEFAULT '0',
   `civ_licenses` text NOT NULL,

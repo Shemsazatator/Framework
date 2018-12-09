@@ -15,6 +15,8 @@ params [
     "_name",
     ["_money",-1,[0]],
     ["_bank",-1,[0]],
+    ["_level",-1,[0]],
+    ["_experience",-1,[0]],
     ["_returnToSender",objNull,[objNull]]
 ];
 
@@ -36,13 +38,17 @@ _name = [_name] call HC_fnc_mresString; //Clense the name of bad chars.
 _alias = [[_name]] call HC_fnc_mresArray;
 _money = [_money] call HC_fnc_numberSafe;
 _bank = [_bank] call HC_fnc_numberSafe;
+_level = [_level] call HC_fnc_numberSafe;
+_experience = [_experience] call HC_fnc_numberSafe;
 
 //Prepare the query statement..
-_query = format ["INSERT INTO players (pid, name, cash, bankacc, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear) VALUES('%1', '%2', '%3', '%4', '%5','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
+_query = format ["INSERT INTO players (pid, name, cash, bankacc, level, experience, aliases, cop_licenses, med_licenses, civ_licenses, civ_gear, cop_gear, med_gear) VALUES('%1', '%2', '%3', '%4', '%5', '%6', '%7','""[]""','""[]""','""[]""','""[]""','""[]""','""[]""')",
     _uid,
     _name,
     _money,
     _bank,
+    _level,
+    _experience,
     _alias
 ];
 
