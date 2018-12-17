@@ -9,8 +9,7 @@
     Server-side cleanup script on vehicles.
     Sort of a lame way but whatever.
 */
-private "_deleted";
-_deleted = false;
+private _deleted = false;
 for "_i" from 0 to 1 step 0 do {
     private ["_veh","_units","_fuel"];
     sleep (60 * 60);
@@ -27,7 +26,7 @@ for "_i" from 0 to 1 step 0 do {
             _dbInfo = _veh getVariable ["dbInfo",[]];
             _units = {(_x distance _veh < 300)} count playableUnits;
             if (crew _x isEqualTo []) then {
-                switch (true) do {
+                switch true do {
                     case ((_x getHitPointDamage "HitEngine") > 0.7 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
                     case ((_x getHitPointDamage "HitLFWheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
                     case ((_x getHitPointDamage "HitLF2Wheel") > 0.98 && _units isEqualTo 0) : {deleteVehicle _x; _deleted = true;};
