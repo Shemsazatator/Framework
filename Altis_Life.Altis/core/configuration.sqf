@@ -80,6 +80,8 @@ life_hunger = 100;
 CASH = 0;
 life_level = 1;
 life_experience = 0;
+life_notoriety = 0;
+life_prestige = 0;
 
 life_istazed = false;
 life_isknocked = false;

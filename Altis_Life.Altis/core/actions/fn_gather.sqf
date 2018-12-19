@@ -6,7 +6,7 @@
     Description:
     Main functionality for gathering.
 */
-private ["_maxGather","_resource","_amount","_experience","_requiredItem"];
+private ["_maxGather","_resource","_amount","_experience","_requiredItem","_legal"];
 if (life_action_inUse) exitWith {};
 if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};
@@ -27,6 +27,7 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _resourceZones = getArray(_curConfig >> "zones");
     _requiredItem = getText(_curConfig >> "item");
     _experience = getNumber(_curConfig >> "experience");
+    _legal = getNumber(_curConfig >> "legal");
     {
         if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
     } forEach _resourceZones;
@@ -74,6 +75,9 @@ if ([true,_resource,_diff] call life_fnc_handleInv) then {
 };
 
 [_experience] call life_fnc_addExperience;
+if (_legal) then {
+    life_notoriety = life_notoriety + 0.01;
+};
 
 sleep 1;
 life_action_inUse = false;

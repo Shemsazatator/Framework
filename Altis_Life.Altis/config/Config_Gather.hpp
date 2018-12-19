@@ -1,3 +1,6 @@
+#define true 1
+#define false 0
+
 class CfgGather {
     class Resources {
         class apple {
@@ -6,6 +9,7 @@ class CfgGather {
             item = "";
             zoneSize = 30;
             experience = 1;
+            legal = false;
         };
 
         class peach {
@@ -14,6 +18,7 @@ class CfgGather {
             item = "";
             zoneSize = 30;
             experience = 1;
+            legal = false;
         };
 
         class heroin_unprocessed {
@@ -22,6 +27,7 @@ class CfgGather {
             item = "";
             zoneSize = 30;
             experience = 5;
+            legal = true;
         };
 
         class cocaine_unprocessed {
@@ -30,6 +36,7 @@ class CfgGather {
             item = "";
             zoneSize = 30;
             experience = 5;
+            legal = true;
         };
 
         class cannabis {
@@ -38,6 +45,7 @@ class CfgGather {
             item = "";
             zoneSize = 30;
             experience = 5;
+            legal = true;
         };
     };
 
@@ -51,6 +59,7 @@ Example:
         item = "pickaxe";
         mined[] = { "copper_unrefined" };
         experience = 3;
+        legal = false;
 This will make players mine only copper_unrefined
 Now let's go deeper
 Example 2:
@@ -61,6 +70,7 @@ Example 2:
         item = "pickaxe";
         mined[] = { {"copper_unrefined",0,25},{"iron_unrefined",25,95},{"diamond_uncut",95,100} };
         experience = 3;
+        legal = false;
     };
     This will give :
     25(±1)% to copper_unrefined;
@@ -84,6 +94,7 @@ Example 2:
             mined[] = {"copper_unrefined"};
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
 
         class iron_unrefined {
@@ -93,6 +104,7 @@ Example 2:
             mined[] = { "iron_unrefined" };
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
 
         class salt_unrefined {
@@ -102,6 +114,7 @@ Example 2:
             mined[] = { "salt_unrefined" };
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
 
         class sand {
@@ -111,6 +124,7 @@ Example 2:
             mined[] = { "sand" };
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
 
         class diamond_uncut {
@@ -120,6 +134,7 @@ Example 2:
             mined[] = { "diamond_uncut" };
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
 
         class rock {
@@ -129,6 +144,7 @@ Example 2:
             mined[] = { "rock" };
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
 
         class oil_unprocessed {
@@ -138,6 +154,7 @@ Example 2:
             mined[] = { "oil_unprocessed" };
             zoneSize = 30;
             experience = 3;
+            legal = false;
         };
     };
 };
