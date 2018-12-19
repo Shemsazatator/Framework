@@ -26,6 +26,7 @@ if (life_experience >= life_level * LIFE_SETTINGS(getNumber,"experience_upgrade_
   //--- Set new values
 	life_experience = life_experience - (life_level * LIFE_SETTINGS(getNumber,"experience_upgrade_level"));
   life_level = life_level + 1;
+  life_skillPoints = life_skillPoints + 1;
 };
 
 //--- Sync only level and experience data on the database

@@ -121,6 +121,7 @@ class Life_Settings {
 
     /* Level and Experience */
     experience_upgrade_level = 50; //Add x points more necessary to upgrade each level. Level 1 = 100 Level 2 = 150 Level 3 = 200
+    skills_upgrade_level = 1; //Give to the player x skills points to spend in skills tree
     max_level = 50; //Put a limit of the level
 
     /* Player Job System Configurations */

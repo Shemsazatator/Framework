@@ -8,7 +8,7 @@
     Updates ALL player information in the database.
     Information gets passed here from the client side file: core\session\fn_updateRequest.sqf
 */
-private ["_uid","_side","_cash","_bank","_level","_experience","_licenses","_gear","_stats","_name","_alive","_position","_query"];
+private ["_uid","_side","_cash","_bank","_level","_experience","_skillPoints","_licenses","_gear","_stats","_name","_alive","_position","_query"];
 _uid = [_this,0,"",[""]] call BIS_fnc_param;
 _name = [_this,1,"",[""]] call BIS_fnc_param;
 _side = [_this,2,sideUnknown,[civilian]] call BIS_fnc_param;
@@ -16,11 +16,12 @@ _cash = [_this,3,0,[0]] call BIS_fnc_param;
 _bank = [_this,4,5000,[0]] call BIS_fnc_param;
 _level = [_this,5,1,[0]] call BIS_fnc_param;
 _experience = [_this,6,0,[0]] call BIS_fnc_param;
-_licenses = [_this,7,[],[[]]] call BIS_fnc_param;
-_gear = [_this,8,[],[[]]] call BIS_fnc_param;
-_stats = [_this,9,[100,100],[[]]] call BIS_fnc_param;
-_alive = [_this,11,false,[true]] call BIS_fnc_param;
-_position = [_this,12,[],[[]]] call BIS_fnc_param;
+_skillPoints = [_this,7,1,[0]] call BIS_fnc_param;
+_licenses = [_this,8,[],[[]]] call BIS_fnc_param;
+_gear = [_this,9,[],[[]]] call BIS_fnc_param;
+_stats = [_this,10,[100,100],[[]]] call BIS_fnc_param;
+_alive = [_this,12,false,[true]] call BIS_fnc_param;
+_position = [_this,13,[],[[]]] call BIS_fnc_param;
 
 //Get to those error checks.
 if ((_uid isEqualTo "") || (_name isEqualTo "")) exitWith {};
@@ -33,6 +34,7 @@ _cash = [_cash] call HC_fnc_numberSafe;
 _bank = [_bank] call HC_fnc_numberSafe;
 _level = [_level] call HC_fnc_numberSafe;
 _experience = [_experience] call HC_fnc_numberSafe;
+_skillPoints = [_skillPoints] call HC_fnc_numberSafe;
 _position = if (_side isEqualTo civilian) then {[_position] call HC_fnc_mresArray} else {[]};
 
 //Does something license related but I can't remember I only know it's important?
@@ -62,10 +64,10 @@ switch _side do {
 _playtime_update = [_playtime_update] call HC_fnc_mresArray;
 
 switch _side do {
-    case west: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', cop_gear='%6', cop_licenses='%7', cop_stats='%8', playtime='%9' WHERE pid='%10'",_name,_cash,_bank,_level,_experience,_gear,_licenses,_stats,_playtime_update,_uid];};
-    case east: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', civ_licenses='%6', civ_gear='%7', arrested='%8', civ_stats='%9', civ_alive='%10', civ_position='%11', playtime='%12' WHERE pid='%13'",_name,_cash,_bank,_level,_experience,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_alive] call HC_fnc_bool,_position,_playtime_update,_uid];};
-    case independent: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', med_licenses='%6', med_gear='%7', med_stats='%8', playtime='%9' WHERE pid='%10'",_name,_cash,_bank,_level,_experience,_licenses,_gear,_stats,_playtime_update,_uid];};
-    case civilian: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', civ_licenses='%6', civ_gear='%7', arrested='%8', civ_stats='%9', civ_alive='%10', civ_position='%11', playtime='%12' WHERE pid='%13'",_name,_cash,_bank,_level,_experience,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_alive] call HC_fnc_bool,_position,_playtime_update,_uid];};
+    case west: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', skillPoints='%6', cop_gear='%7', cop_licenses='%8', cop_stats='%9', playtime='%10' WHERE pid='%11'",_name,_cash,_bank,_level,_experience,_skillPoints,_gear,_licenses,_stats,_playtime_update,_uid];};
+    case east: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', skillPoints='%6', civ_licenses='%7', civ_gear='%8', arrested='%9', civ_stats='%10', civ_alive='%11', civ_position='%12', playtime='%13' WHERE pid='%14'",_name,_cash,_bank,_level,_experience,_skillPoints,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_alive] call HC_fnc_bool,_position,_playtime_update,_uid];};
+    case independent: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', skillPoints='%6', med_licenses='%7', med_gear='%8', med_stats='%9', playtime='%10' WHERE pid='%11'",_name,_cash,_bank,_level,_experience,_skillPoints,_licenses,_gear,_stats,_playtime_update,_uid];};
+    case civilian: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', skillPoints='%6', civ_licenses='%7', civ_gear='%8', arrested='%9', civ_stats='%10', civ_alive='%11', civ_position='%12', playtime='%13' WHERE pid='%14'",_name,_cash,_bank,_level,_experience,_skillPoints,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_alive] call HC_fnc_bool,_position,_playtime_update,_uid];};
 };
 
 _queryResult = [_query,1] call HC_fnc_asyncCall;

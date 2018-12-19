@@ -36,48 +36,49 @@ CASH = parseNumber (_this select 2);
 BANK = parseNumber (_this select 3);
 life_level = parseNumber (_this select 4);
 life_experience = parseNumber (_this select 5);
-CONST(life_adminlevel,(_this select 6));
+life_skillPoints = parseNumber (_this select 6);
+CONST(life_adminlevel,(_this select 7));
 if (LIFE_SETTINGS(getNumber,"donor_level") isEqualTo 1) then {
-    CONST(life_donorlevel,(_this select 7));
+    CONST(life_donorlevel,(_this select 8));
 } else {
     CONST(life_donorlevel,0);
 };
 
 //Loop through licenses
-if (count (_this select 8) > 0) then {
-    {missionNamespace setVariable [(_x select 0),(_x select 1)];} forEach (_this select 8);
+if (count (_this select 9) > 0) then {
+    {missionNamespace setVariable [(_x select 0),(_x select 1)];} forEach (_this select 9);
 };
 
 //Parse side specific information.
 switch playerSide do {
     case west: {
-        CONST(life_coplevel,(_this select 9));
+        CONST(life_coplevel,(_this select 10));
         CONST(life_medicLevel,0);
-        life_blacklisted = _this select 11;
+        life_blacklisted = _this select 12;
+        if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
+            life_hunger = ((_this select 13) select 0);
+            life_thirst = ((_this select 13) select 1);
+            player setDamage ((_this select 13) select 2);
+        };
+    };
+
+    case east: {
+        life_is_arrested = _this select 10;
+        CONST(life_coplevel, 0);
+        CONST(life_medicLevel, 0);
+        life_houses = _this select (_count - 3);
         if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
             life_hunger = ((_this select 12) select 0);
             life_thirst = ((_this select 12) select 1);
             player setDamage ((_this select 12) select 2);
         };
-    };
-
-    case east: {
-        life_is_arrested = _this select 9;
-        CONST(life_coplevel, 0);
-        CONST(life_medicLevel, 0);
-        life_houses = _this select (_count - 3);
-        if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
-            life_hunger = ((_this select 11) select 0);
-            life_thirst = ((_this select 11) select 1);
-            player setDamage ((_this select 11) select 2);
-        };
 
         //Position
         if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 1) then {
-            life_is_alive = _this select 12;
-            life_civ_position = _this select 13;
+            life_is_alive = _this select 13;
+            life_civ_position = _this select 14;
             if (life_is_alive) then {
-                if !(count life_civ_position isEqualTo 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive = false;};
+                if !(count life_civ_position isEqualTo 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position]; life_is_alive = false;};
                 if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_is_alive = false;};
             };
         };
@@ -95,32 +96,32 @@ switch playerSide do {
     };
 
     case independent: {
-        CONST(life_medicLevel,(_this select 9));
+        CONST(life_medicLevel,(_this select 10));
         CONST(life_coplevel,0);
         if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
-            life_hunger = ((_this select 11) select 0);
-            life_thirst = ((_this select 11) select 1);
-            player setDamage ((_this select 11) select 2);
+            life_hunger = ((_this select 12) select 0);
+            life_thirst = ((_this select 12) select 1);
+            player setDamage ((_this select 12) select 2);
         };
     };
 
     case civilian: {
-        life_is_arrested = _this select 9;
+        life_is_arrested = _this select 10;
         CONST(life_coplevel, 0);
         CONST(life_medicLevel, 0);
         life_houses = _this select (_count - 3);
         if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
-            life_hunger = ((_this select 11) select 0);
-            life_thirst = ((_this select 11) select 1);
-            player setDamage ((_this select 11) select 2);
+            life_hunger = ((_this select 12) select 0);
+            life_thirst = ((_this select 12) select 1);
+            player setDamage ((_this select 12) select 2);
         };
 
         //Position
         if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 1) then {
-            life_is_alive = _this select 12;
-            life_civ_position = _this select 13;
+            life_is_alive = _this select 13;
+            life_civ_position = _this select 14;
             if (life_is_alive) then {
-                if !(count life_civ_position isEqualTo 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive = false;};
+                if !(count life_civ_position isEqualTo 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position]; life_is_alive = false;};
                 if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_is_alive = false;};
             };
         };
@@ -138,7 +139,7 @@ switch playerSide do {
     };
 };
 
-life_gear = _this select 10;
+life_gear = _this select 11;
 [true] call life_fnc_loadGear;
 
 if (count (_this select (_count - 1)) > 0) then {

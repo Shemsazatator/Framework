@@ -28,7 +28,7 @@ switch playerSide do {
 };
 
 if (life_HC_isActive) then {
-    [getPlayerUID player,profileName,CASH,_bank,life_level,life_experience,player] remoteExecCall ["HC_fnc_insertRequest",HC_Life];
+    [getPlayerUID player,profileName,CASH,_bank,life_level,life_experience,life_skillPoints,player] remoteExecCall ["HC_fnc_insertRequest",HC_Life];
 } else {
-    [getPlayerUID player,profileName,CASH,_bank,life_level,life_experience,player] remoteExecCall ["DB_fnc_insertRequest",RSERV];
+    [getPlayerUID player,profileName,CASH,_bank,life_level,life_experience,life_skillPoints,player] remoteExecCall ["DB_fnc_insertRequest",RSERV];
 };

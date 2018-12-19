@@ -58,6 +58,8 @@ switch _mode do {
     case 8: {
       _packet set[2,life_level];
       _packet set[4,life_experience];
+      _packet set[6,life_skillPoints];
+
     };
 };
 

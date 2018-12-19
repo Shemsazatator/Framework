@@ -7,7 +7,7 @@
     Passes ALL player information to the server to save player data to the database.
 */
 private ["_packet","_array","_flag","_alive","_position"];
-_packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK,life_level,life_experience];
+_packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK,life_level,life_experience,life_skillPoints];
 _array = [];
 _alive = alive player;
 _position = getPosATL player;
@@ -31,13 +31,11 @@ _packet pushBack _array;
 
 switch playerSide do {
     case west: {};
-
     case east: {
         _packet pushBack life_is_arrested;
         _packet pushBack _alive;
         _packet pushBack _position;
     };
-
     case independent: {};
     case civilian: {
         _packet pushBack life_is_arrested;

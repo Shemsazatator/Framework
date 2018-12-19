@@ -22,13 +22,13 @@ if (isNull _ownerID) exitWith {};
 
 _query = switch _side do {
     // West - 11 entries returned
-    case west: {format ["SELECT pid, name, cash, bankacc, level, experience, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    case west: {format ["SELECT pid, name, cash, bankacc, level, experience, skillPoints, adminlevel, donorlevel, cop_licenses, coplevel, cop_gear, blacklist, cop_stats, playtime FROM players WHERE pid='%1'",_uid];};
     // Civilian - 12 entries returned
-    case east: {format ["SELECT pid, name, cash, bankacc, level, experience, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
+    case east: {format ["SELECT pid, name, cash, bankacc, level, experience, skillPoints, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
     // Independent - 10 entries returned
-    case independent: {format ["SELECT pid, name, cash, bankacc, level, experience, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
+    case independent: {format ["SELECT pid, name, cash, bankacc, level, experience, skillPoints, adminlevel, donorlevel, med_licenses, mediclevel, med_gear, med_stats, playtime FROM players WHERE pid='%1'",_uid];};
     // Civilian - 12 entries returned
-    case civilian: {format ["SELECT pid, name, cash, bankacc, level, experience, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
+    case civilian: {format ["SELECT pid, name, cash, bankacc, level, experience, skillPoints, adminlevel, donorlevel, civ_licenses, arrested, civ_gear, civ_stats, civ_alive, civ_position, playtime FROM players WHERE pid='%1'",_uid];};
 };
 
 
@@ -52,36 +52,38 @@ _tmp = _queryResult select 4;
 _queryResult set[4,[_tmp] call HC_fnc_numberSafe];
 _tmp = _queryResult select 5;
 _queryResult set[5,[_tmp] call HC_fnc_numberSafe];
+_tmp = _queryResult select 6;
+_queryResult set[6,[_tmp] call HC_fnc_numberSafe];
 
-//Parse licenses (Always index 8)
-_new = [(_queryResult select 8)] call HC_fnc_mresToArray;
+//Parse licenses (Always index 9)
+_new = [(_queryResult select 9)] call HC_fnc_mresToArray;
 if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-_queryResult set[8,_new];
+_queryResult set[9,_new];
 
 //Convert tinyint to boolean
-_old = _queryResult select 8;
+_old = _queryResult select 9;
 for "_i" from 0 to (count _old)-1 do {
     _data = _old select _i;
     _old set[_i,[_data select 0, ([_data select 1,1] call HC_fnc_bool)]];
 };
 
-_queryResult set[8,_old];
+_queryResult set[9,_old];
 
-_new = [(_queryResult select 10)] call HC_fnc_mresToArray;
+_new = [(_queryResult select 11)] call HC_fnc_mresToArray;
 if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-_queryResult set[10,_new];
+_queryResult set[11,_new];
 //Parse data for specific side.
 switch _side do {
     case west: {
-        _queryResult set[11,([_queryResult select 11,1] call HC_fnc_bool)];
+        _queryResult set[12,([_queryResult select 12,1] call HC_fnc_bool)];
 
         //Parse Stats
-        _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 13)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _queryResult set[12,_new];
+        _queryResult set[13,_new];
 
         //Playtime
-        _new = [(_queryResult select 13)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 14)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
         if !(_index isEqualTo -1) then {
@@ -96,21 +98,21 @@ switch _side do {
     };
 
     case east: {
-        _queryResult set[9,([_queryResult select 9,1] call HC_fnc_bool)];
+        _queryResult set[10,([_queryResult select 10,1] call HC_fnc_bool)];
 
         //Parse Stats
-        _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _queryResult set[11,_new];
+        _queryResult set[12,_new];
 
         //Position
-        _queryResult set[12,([_queryResult select 12,1] call HC_fnc_bool)];
-        _new = [(_queryResult select 13)] call HC_fnc_mresToArray;
+        _queryResult set[13,([_queryResult select 13,1] call HC_fnc_bool)];
+        _new = [(_queryResult select 14)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _queryResult set[13,_new];
+        _queryResult set[14,_new];
 
         //Playtime
-        _new = [(_queryResult select 14)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 15)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
         if !(_index isEqualTo -1) then {
@@ -133,12 +135,12 @@ switch _side do {
 
     case independent: {
         //Parse Stats
-        _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _queryResult set[11,_new];
+        _queryResult set[12,_new];
 
         //Playtime
-        _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 13)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
         if !(_index isEqualTo -1) then {
@@ -153,21 +155,21 @@ switch _side do {
     };
 
     case civilian: {
-        _queryResult set[9,([_queryResult select 9,1] call HC_fnc_bool)];
+        _queryResult set[10,([_queryResult select 10,1] call HC_fnc_bool)];
 
         //Parse Stats
-        _new = [(_queryResult select 11)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 12)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _queryResult set[11,_new];
+        _queryResult set[12,_new];
 
         //Position
-        _queryResult set[12,([_queryResult select 12,1] call HC_fnc_bool)];
-        _new = [(_queryResult select 13)] call HC_fnc_mresToArray;
+        _queryResult set[13,([_queryResult select 13,1] call HC_fnc_bool)];
+        _new = [(_queryResult select 14)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
-        _queryResult set[13,_new];
+        _queryResult set[14,_new];
 
         //Playtime
-        _new = [(_queryResult select 13)] call HC_fnc_mresToArray;
+        _new = [(_queryResult select 15)] call HC_fnc_mresToArray;
         if (_new isEqualType "") then {_new = call compile format ["%1", _new];};
         _index = TON_fnc_playtime_values_request find [_uid, _new];
         if !(_index isEqualTo -1) then {
