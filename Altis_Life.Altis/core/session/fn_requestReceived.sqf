@@ -61,7 +61,7 @@ switch playerSide do {
         };
     };
 
-    case civilian: {
+    case east: {
         life_is_arrested = _this select 9;
         CONST(life_coplevel, 0);
         CONST(life_medicLevel, 0);
@@ -102,7 +102,39 @@ switch playerSide do {
             life_thirst = ((_this select 11) select 1);
             player setDamage ((_this select 11) select 2);
         };
+    };
+
+    case civilian: {
+        life_is_arrested = _this select 9;
+        CONST(life_coplevel, 0);
+        CONST(life_medicLevel, 0);
+        life_houses = _this select (_count - 3);
+        if (LIFE_SETTINGS(getNumber,"save_playerStats") isEqualTo 1) then {
+            life_hunger = ((_this select 11) select 0);
+            life_thirst = ((_this select 11) select 1);
+            player setDamage ((_this select 11) select 2);
         };
+
+        //Position
+        if (LIFE_SETTINGS(getNumber,"save_civilian_position") isEqualTo 1) then {
+            life_is_alive = _this select 12;
+            life_civ_position = _this select 13;
+            if (life_is_alive) then {
+                if !(count life_civ_position isEqualTo 3) then {diag_log format ["[requestReceived] Bad position received. Data: %1",life_civ_position];life_is_alive = false;};
+                if (life_civ_position distance (getMarkerPos "respawn_civilian") < 300) then {life_is_alive = false;};
+            };
+        };
+
+        {
+            _house = nearestObject [(call compile format ["%1",(_x select 0)]), "House"];
+            life_vehicles pushBack _house;
+        } forEach life_houses;
+
+        life_gangData = _this select (_count - 2);
+        if !(count life_gangData isEqualTo 0) then {
+            [] spawn life_fnc_initGang;
+        };
+        [] spawn life_fnc_initHouses;
     };
 };
 

@@ -144,7 +144,6 @@ class Life_Settings {
     vehicle_purchase_multiplier_CIVILIAN = 1; //Civilian Vehicle Buy Price = Config_Vehicle price * multiplier
     vehicle_purchase_multiplier_COP = .5; //Cop Vehicle Buy Price = Config_Vehicle price * multiplier
     vehicle_purchase_multiplier_MEDIC = .75; //Medic Vehicle Buy Price = Config_Vehicle price * multiplier
-    vehicle_purchase_multiplier_OPFOR = -1; // -- NOT IN USE -- Simply left in for east support.
 
     /* Vehicle Rental Prices */
     vehicle_rental_multiplier_CIVILIAN = .80; //Civilian Vehicle Rental Price = Config_Vehicle price * multiplier
@@ -214,11 +213,11 @@ class Life_Settings {
         {"STR_Crime_24","10000","24"},
         {"STR_Crime_25","20000","25"}
     };
-    
+
     /* ! --- Do not change --- ! */
     framework_version = "5.0.0";
     /* ------------------------- */
-    
+
 };
 
 #include "Config_Clothing.hpp"

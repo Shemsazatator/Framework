@@ -53,15 +53,17 @@ _playtime_update = [];
     };
 } forEach TON_fnc_playtime_values_request;
 _playtime_update = (_playtime_update select 0) select 0;
-switch (_side) do {
+switch _side do {
     case west: {_playtime_update set[0,_playtime];};
-    case civilian: {_playtime_update set[2,_playtime];};
+    case east: {_playtime_update set[2,_playtime];};
     case independent: {_playtime_update set[1,_playtime];};
+    case civilian: {_playtime_update set[2,_playtime];};
 };
 _playtime_update = [_playtime_update] call HC_fnc_mresArray;
 
 switch _side do {
     case west: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', cop_gear='%6', cop_licenses='%7', cop_stats='%8', playtime='%9' WHERE pid='%10'",_name,_cash,_bank,_level,_experience,_gear,_licenses,_stats,_playtime_update,_uid];};
+    case east: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', civ_licenses='%6', civ_gear='%7', arrested='%8', civ_stats='%9', civ_alive='%10', civ_position='%11', playtime='%12' WHERE pid='%13'",_name,_cash,_bank,_level,_experience,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_alive] call HC_fnc_bool,_position,_playtime_update,_uid];};
     case independent: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', med_licenses='%6', med_gear='%7', med_stats='%8', playtime='%9' WHERE pid='%10'",_name,_cash,_bank,_level,_experience,_licenses,_gear,_stats,_playtime_update,_uid];};
     case civilian: {_query = format ["UPDATE players SET name='%1', cash='%2', bankacc='%3', level='%4', experience='%5', civ_licenses='%6', civ_gear='%7', arrested='%8', civ_stats='%9', civ_alive='%10', civ_position='%11', playtime='%12' WHERE pid='%13'",_name,_cash,_bank,_level,_experience,_licenses,_gear,[_this select 8] call HC_fnc_bool,_stats,[_alive] call HC_fnc_bool,_position,_playtime_update,_uid];};
 };

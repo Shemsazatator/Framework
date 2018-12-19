@@ -11,7 +11,7 @@ _packet = [getPlayerUID player,(profileName),playerSide,CASH,BANK,life_level,lif
 _array = [];
 _alive = alive player;
 _position = getPosATL player;
-_flag = switch (playerSide) do {case west: {"cop"}; case civilian: {"civ"}; case independent: {"med"};};
+_flag = switch playerSide do {case west: {"cop"}; case east: {"civ"}; case independent: {"med"}; case civilian: {"civ"};};
 
 {
     _varName = LICENSE_VARNAME(configName _x,_flag);
@@ -29,7 +29,16 @@ _array pushBack life_thirst;
 _array pushBack (damage player);
 _packet pushBack _array;
 
-switch (playerSide) do {
+switch playerSide do {
+    case west: {};
+
+    case east: {
+        _packet pushBack life_is_arrested;
+        _packet pushBack _alive;
+        _packet pushBack _position;
+    };
+
+    case independent: {};
     case civilian: {
         _packet pushBack life_is_arrested;
         _packet pushBack _alive;

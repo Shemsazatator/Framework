@@ -10,18 +10,22 @@ if (!alive player || dialog) exitWith {}; //Prevent them from opening this for e
 createDialog "playerSettings";
 disableSerialization;
 
-switch (playerSide) do {
+switch playerSide do {
     case west: {
         ctrlShow[2011,false];
     };
 
-    case civilian: {
+    case east: {
         ctrlShow[2012,false];
     };
 
     case independent: {
         ctrlShow[2012,false];
         ctrlShow[2011,false];
+    };
+
+    case civilian: {
+        ctrlShow[2012,false];
     };
 };
 

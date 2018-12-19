@@ -144,6 +144,6 @@ life_is_alive = false;
 
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;
-if (playerSide isEqualTo civilian) then {
+if (playerSide in [east,civilian]) then {
     [4] call SOCK_fnc_updatePartial;
 };

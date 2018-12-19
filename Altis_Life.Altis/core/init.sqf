@@ -98,29 +98,35 @@ switch playerSide do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
     };
-    case civilian: {
+    case east: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
     };
     case independent: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
     };
+    case civilian: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
+    };
 };
 
 switch playerSide do {
     case west: {
+        //Initialize Cops Settings
         _handle = [] spawn life_fnc_initCop;
-        waitUntil {scriptDone _handle};
     };
-    case civilian: {
+    case east: {
         //Initialize Civilian Settings
         _handle = [] spawn life_fnc_initCiv;
-        waitUntil {scriptDone _handle};
     };
     case independent: {
         //Initialize Medics and blah
         _handle = [] spawn life_fnc_initMedic;
-        waitUntil {scriptDone _handle};
     };
+    case civilian: {
+        //Initialize Civilian Settings
+        _handle = [] spawn life_fnc_initCiv;
+    };
+    waitUntil {scriptDone _handle};
 };
 
 player setVariable ["restrained",false,true];

@@ -14,7 +14,7 @@ _mode = [_this,3,-1,[0]] call BIS_fnc_param;
 if (_uid isEqualTo "" || _side isEqualTo sideUnknown) exitWith {}; //Bad.
 _query = "";
 
-switch (_mode) do {
+switch _mode do {
     case 0: {
         _value = [_this,2,0,[0]] call BIS_fnc_param;
         _value = [_value] call DB_fnc_numberSafe;
@@ -35,20 +35,22 @@ switch (_mode) do {
             _value set[_i,[(_value select _i) select 0,_bool]];
         };
         _value = [_value] call DB_fnc_mresArray;
-        switch (_side) do {
+        switch _side do {
             case west: {_query = format ["UPDATE players SET cop_licenses='%1' WHERE pid='%2'",_value,_uid];};
-            case civilian: {_query = format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
+            case east: {_query = format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
             case independent: {_query = format ["UPDATE players SET med_licenses='%1' WHERE pid='%2'",_value,_uid];};
+            case civilian: {_query = format ["UPDATE players SET civ_licenses='%1' WHERE pid='%2'",_value,_uid];};
         };
     };
 
     case 3: {
         _value = [_this,2,[],[[]]] call BIS_fnc_param;
         _value = [_value] call DB_fnc_mresArray;
-        switch (_side) do {
+        switch _side do {
             case west: {_query = format ["UPDATE players SET cop_gear='%1' WHERE pid='%2'",_value,_uid];};
-            case civilian: {_query = format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
+            case east: {_query = format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
             case independent: {_query = format ["UPDATE players SET med_gear='%1' WHERE pid='%2'",_value,_uid];};
+            case civilian: {_query = format ["UPDATE players SET civ_gear='%1' WHERE pid='%2'",_value,_uid];};
         };
     };
 
