@@ -19,6 +19,7 @@
 #define CONTROL(disp,ctrl) ((findDisplay ##disp) displayCtrl ##ctrl)
 #define CONTROL_DATA(ctrl) (lbData[ctrl,lbCurSel ctrl])
 #define CONTROL_DATAI(ctrl,index) ctrl lbData index
+#define CONTROL_VALUE(ctrl) (lbValue[ctrl,lbCurSel ctrl])
 
 //System Macros
 #define LICENSE_VARNAME(varName,flag) format ["license_%1_%2",flag,M_CONFIG(getText,"Licenses",varName,"variable")]

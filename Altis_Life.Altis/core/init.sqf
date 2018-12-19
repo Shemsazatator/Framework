@@ -141,7 +141,7 @@ diag_log "Executing client.fsm";
 waitUntil {!(isNull (findDisplay 46))};
 
 diag_log "Display 46 Found";
-(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
+findDisplay 46 displayAddEventHandler ["KeyDown", life_fnc_keyHandler];
 
 [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
 0 cutText ["","BLACK IN"];
