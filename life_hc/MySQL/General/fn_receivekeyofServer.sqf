@@ -8,7 +8,6 @@
     Description:
     Recup the key of player when reconnect
 */
-private ["_keyArr","_uid","_side"];
-_keyArr = _this select 0;
+params ["_keyArr"];
 life_keyreceivedvar = _keyArr;
 life_keyreceived = true;
