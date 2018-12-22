@@ -75,7 +75,7 @@ if ([true,_resource,_diff] call life_fnc_handleInv) then {
 };
 
 [_experience] call life_fnc_addExperience;
-if (_legal) then {
+if (_legal isEqualTo 0) then {
     life_notoriety = life_notoriety + 0.01;
 };
 
