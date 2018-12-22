@@ -4,6 +4,7 @@
 *       MaterialsGive (Returned items) = Array - Format -> {{"ITEM CLASS",HOWMANY}}
 *       Text (Progess Bar Text) = Localised String
 *       NoLicenseCost (Cost to process w/o license) = Scalar
+*       experience (one processing give x experience) = Scalar
 *
 *   Example for multiprocess:
 *
@@ -13,6 +14,7 @@
 *       Text = "STR_Process_Example";
 *       //ScrollText = "Process Example";
 *       NoLicenseCost = 4000;
+*       experience = 5;
 *   };
 */
 
@@ -23,6 +25,7 @@ class ProcessAction {
         Text = "STR_Process_Oil";
         //ScrollText = "Process Oil";
         NoLicenseCost = 1200;
+        experience = 2;
     };
 
     class diamond {
@@ -31,6 +34,7 @@ class ProcessAction {
         Text = "STR_Process_Diamond";
         //ScrollText = "Cut Diamonds";
         NoLicenseCost = 1350;
+        experience = 2;
     };
 
     class heroin {
@@ -39,6 +43,7 @@ class ProcessAction {
         Text = "STR_Process_Heroin";
         //ScrollText = "Process Heroin";
         NoLicenseCost = 1750;
+        experience = 5;
     };
 
     class copper {
@@ -47,6 +52,7 @@ class ProcessAction {
         Text = "STR_Process_Copper";
         //ScrollText = "Refine Copper";
         NoLicenseCost = 750;
+        experience = 2;
     };
 
     class iron {
@@ -55,6 +61,7 @@ class ProcessAction {
         Text = "STR_Process_Iron";
         //ScrollText = "Refine Iron";
         NoLicenseCost = 1120;
+        experience = 2;
     };
 
     class sand {
@@ -63,6 +70,7 @@ class ProcessAction {
         Text = "STR_Process_Sand";
         //ScrollText = "Melt Sand into Glass";
         NoLicenseCost = 650;
+        experience = 2;
     };
 
     class salt {
@@ -71,6 +79,7 @@ class ProcessAction {
         Text = "STR_Process_Salt";
         //ScrollText = "Refine Salt";
         NoLicenseCost = 450;
+        experience = 2;
     };
 
     class cocaine {
@@ -79,6 +88,7 @@ class ProcessAction {
         Text = "STR_Process_Cocaine";
         //ScrollText = "Process Cocaine";
         NoLicenseCost = 1500;
+        experience = 5;
     };
 
     class marijuana {
@@ -87,6 +97,7 @@ class ProcessAction {
         Text = "STR_Process_Marijuana";
         //ScrollText = "Harvest Marijuana";
         NoLicenseCost = 500;
+        experience = 5;
     };
 
     class cement {
@@ -95,5 +106,6 @@ class ProcessAction {
         Text = "STR_Process_Cement";
         //ScrollText = "Mix Cement";
         NoLicenseCost = 350;
+        experience = 2;
     };
 };

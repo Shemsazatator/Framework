@@ -26,16 +26,19 @@ player setVariable ["name",nil,true];
 player setVariable ["Reviving",nil,true];
 
 //Load gear for a 'new life'
-switch (playerSide) do
+switch playerSide do
 {
     case west: {
         _handle = [] spawn life_fnc_copLoadout;
     };
-    case civilian: {
+    case east: {
         _handle = [] spawn life_fnc_civLoadout;
     };
     case independent: {
         _handle = [] spawn life_fnc_medicLoadout;
+    };
+    case civilian: {
+        _handle = [] spawn life_fnc_civLoadout;
     };
     waitUntil {scriptDone _handle};
 };

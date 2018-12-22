@@ -6,7 +6,7 @@
     Description:
     Main functionality for gathering.
 */
-private ["_maxGather","_resource","_amount","_maxGather","_requiredItem"];
+private ["_maxGather","_resource","_amount","_experience","_requiredItem","_legal"];
 if (life_action_inUse) exitWith {};
 if !(isNull objectParent player) exitWith {};
 if (player getVariable "restrained") exitWith {hint localize "STR_NOTF_isrestrained";};
@@ -26,6 +26,8 @@ for "_i" from 0 to count(_resourceCfg)-1 do {
     _zoneSize = getNumber(_curConfig >> "zoneSize");
     _resourceZones = getArray(_curConfig >> "zones");
     _requiredItem = getText(_curConfig >> "item");
+    _experience = getNumber(_curConfig >> "experience");
+    _legal = getNumber(_curConfig >> "legal");
     {
         if ((player distance (getMarkerPos _x)) < _zoneSize) exitWith {_zone = _x;};
     } forEach _resourceZones;
@@ -39,7 +41,7 @@ if (_requiredItem != "") then {
     _valItem = missionNamespace getVariable "life_inv_" + _requiredItem;
 
     if (_valItem < 1) exitWith {
-        switch (_requiredItem) do {
+        switch _requiredItem do {
          //Messages here
         };
         life_action_inUse = false;
@@ -56,7 +58,7 @@ if (_diff isEqualTo 0) exitWith {
     life_action_inUse = false;
 };
 
-switch (_requiredItem) do {
+switch _requiredItem do {
     case "pickaxe": {[player,"mining",35,1] remoteExecCall ["life_fnc_say3D",RCLIENT]};
     default {[player,"harvest",35,1] remoteExecCall ["life_fnc_say3D",RCLIENT]};
 };
@@ -70,6 +72,11 @@ for "_i" from 0 to 4 do {
 if ([true,_resource,_diff] call life_fnc_handleInv) then {
     _itemName = M_CONFIG(getText,"VirtualItems",_resource,"displayName");
     titleText[format [localize "STR_NOTF_Gather_Success",(localize _itemName),_diff],"PLAIN"];
+};
+
+[_experience] call life_fnc_addExperience;
+if (_legal isEqualTo 0) then {
+    life_notoriety = life_notoriety + 0.01;
 };
 
 sleep 1;

@@ -17,7 +17,7 @@ _dbInfo = _vehicle getVariable ["dbInfo",[]];
 if (_dbInfo isEqualTo []) exitWith {};
 _uid = _dbInfo select 0;
 _plate = _dbInfo select 1;
-switch (_mode) do {
+switch _mode do {
     case 1: {
         _vehItems = getItemCargo _vehicle;
         _vehMags = getMagazineCargo _vehicle;

@@ -77,8 +77,7 @@ _unit spawn {
 
 //Create a thread to follow with some what precision view of the corpse.
 [_unit] spawn {
-    private ["_unit"];
-    _unit = _this select 0;
+    private _unit = _this select 0;
     waitUntil {if (speed _unit isEqualTo 0) exitWith {true}; life_deathCamera camSetTarget _unit; life_deathCamera camSetRelPos [0,3.5,4.5]; life_deathCamera camCommit 0;};
 };
 
@@ -138,12 +137,14 @@ life_thirst = 100;
 life_carryWeight = 0;
 CASH = 0;
 life_is_alive = false;
+life_notoriety = 0;
+life_prestige = 0;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.
 [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
 
 [0] call SOCK_fnc_updatePartial;
 [3] call SOCK_fnc_updatePartial;
-if (playerSide isEqualTo civilian) then {
+if (playerSide in [east,civilian]) then {
     [4] call SOCK_fnc_updatePartial;
 };

@@ -1,6 +1,19 @@
 disableChannels[] = {{0,true,true},{1,true,true},{2,true,true}};    // Disabled text and voice for global, side, and command channels. Syntax: disableChannels[] = {{channelID<number>, disableChat<bool>, disableVoice<bool>}};
 overviewText = "$STR_MISC_overviewText";    // Text to be displayed below the overviewPicture on the mission selection screen when the mission is available to play.
 
+class Params
+{
+	#include "\a3\functions_f\Params\paramCountdown.hpp"
+	#include "\a3\functions_f\Params\paramDaytimeHour.hpp"
+	#include "\a3\functions_f\Params\paramDaytimePeriod.hpp"
+	#include "\a3\functions_f\Params\paramDebugConsole.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+	#include "\a3\functions_f\Params\paramRespawnTickets.hpp"
+	#include "\a3\functions_f\Params\paramWeather.hpp"
+	#include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\Functions_F_Heli\Params\paramViewDistance.hpp"
+};
+
 #include "config\Config_SpyGlass.hpp"
 #include "CfgRemoteExec.hpp"
 #include "dialog\MasterHandler.hpp"
