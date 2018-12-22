@@ -25,11 +25,11 @@ if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _vehicleLife)) then {
 _price = M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"price");
 _storageFee = LIFE_SETTINGS(getNumber,"vehicle_storage_fee_multiplier");
 
-switch (playerSide) do {
-    case civilian: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");};
+switch playerSide do {
     case west: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_COP");};
+    case east: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");};
     case independent: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_MEDIC");};
-    case east: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_OPFOR");};
+    case civilian: {_purchasePrice = _price * LIFE_SETTINGS(getNumber,"vehicle_purchase_multiplier_CIVILIAN");};
 };
 _price = _purchasePrice * _storageFee;
 

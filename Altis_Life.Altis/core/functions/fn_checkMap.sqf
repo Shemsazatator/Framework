@@ -12,6 +12,7 @@
  if (_mapOpen) then {
      switch playerSide do {
          case west: {[] spawn life_fnc_copMarkers};
+         case east: {[] spawn life_fnc_civMarkers};
          case independent: {[] spawn life_fnc_medicMarkers};
          case civilian: {[] spawn life_fnc_civMarkers};
      };

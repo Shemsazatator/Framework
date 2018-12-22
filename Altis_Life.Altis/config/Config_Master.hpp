@@ -119,6 +119,11 @@ class Life_Settings {
     paycheck_period = 5; //Scaled in minutes
     bank_transferTax = .05; //Tax that player pays when transferring money from ATM. Tax = Amount * multiplier
 
+    /* Level and Experience */
+    experience_upgrade_level = 50; //Add x points more necessary to upgrade each level. Level 1 = 100 Level 2 = 150 Level 3 = 200
+    skills_upgrade_level = 1; //Give to the player x skills points to spend in skills tree
+    max_level = 50; //Put a limit of the level
+
     /* Player Job System Configurations */
     delivery_points[] = { "dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10", "dp_11", "dp_12", "dp_13", "dp_14", "dp_15", "dp_15", "dp_16", "dp_17", "dp_18", "dp_19", "dp_20", "dp_21", "dp_22", "dp_23", "dp_24", "dp_25" };
     fuelTank_winMultiplier = 1; //Win Multiplier in FuelTank Missions. Increase for greater payout. Default = 1
@@ -140,7 +145,6 @@ class Life_Settings {
     vehicle_purchase_multiplier_CIVILIAN = 1; //Civilian Vehicle Buy Price = Config_Vehicle price * multiplier
     vehicle_purchase_multiplier_COP = .5; //Cop Vehicle Buy Price = Config_Vehicle price * multiplier
     vehicle_purchase_multiplier_MEDIC = .75; //Medic Vehicle Buy Price = Config_Vehicle price * multiplier
-    vehicle_purchase_multiplier_OPFOR = -1; // -- NOT IN USE -- Simply left in for east support.
 
     /* Vehicle Rental Prices */
     vehicle_rental_multiplier_CIVILIAN = .80; //Civilian Vehicle Rental Price = Config_Vehicle price * multiplier
@@ -210,11 +214,11 @@ class Life_Settings {
         {"STR_Crime_24","10000","24"},
         {"STR_Crime_25","20000","25"}
     };
-    
+
     /* ! --- Do not change --- ! */
     framework_version = "5.0.0";
     /* ------------------------- */
-    
+
 };
 
 #include "Config_Clothing.hpp"

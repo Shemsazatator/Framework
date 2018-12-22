@@ -1,4 +1,4 @@
-#define LIFE_SETTINGS(TYPE,SETTING) TYPE(missionConfigFile >> "Life_Settings" >> SETTING)
+#include "script_macros.hpp"
 /*
     File: initPlayerServer.sqf
     Author:

@@ -10,22 +10,25 @@
 if (life_session_completed) exitWith {}; //Why did this get executed when the client already initialized? Fucking arma...
 cutText[localize "STR_Session_QueryFail","BLACK FADED"];
 0 cutFadeOut 9999999;
-private ["_bank"];
+private "_bank";
 
-switch (playerSide) do {
+switch playerSide do {
     case west: {
         _bank = LIFE_SETTINGS(getNumber,"bank_cop");
     };
-    case civilian: {
+    case east: {
         _bank = LIFE_SETTINGS(getNumber,"bank_civ");
     };
     case independent: {
         _bank = LIFE_SETTINGS(getNumber,"bank_med");
     };
+    case civilian: {
+        _bank = LIFE_SETTINGS(getNumber,"bank_civ");
+    };
 };
 
 if (life_HC_isActive) then {
-    [getPlayerUID player,profileName,CASH,_bank,player] remoteExecCall ["HC_fnc_insertRequest",HC_Life];
+    [getPlayerUID player,profileName,CASH,_bank,life_level,life_experience,life_skillPoints,player] remoteExecCall ["HC_fnc_insertRequest",HC_Life];
 } else {
-    [getPlayerUID player,profileName,CASH,_bank,player] remoteExecCall ["DB_fnc_insertRequest",RSERV];
+    [getPlayerUID player,profileName,CASH,_bank,life_level,life_experience,life_skillPoints,player] remoteExecCall ["DB_fnc_insertRequest",RSERV];
 };

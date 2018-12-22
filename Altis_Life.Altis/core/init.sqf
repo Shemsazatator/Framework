@@ -98,29 +98,35 @@ switch playerSide do {
     case west: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_cop");
     };
-    case civilian: {
+    case east: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
     };
     case independent: {
         life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_med");
     };
+    case civilian: {
+        life_paycheck = LIFE_SETTINGS(getNumber,"paycheck_civ");
+    };
 };
 
 switch playerSide do {
     case west: {
+        //Initialize Cops Settings
         _handle = [] spawn life_fnc_initCop;
-        waitUntil {scriptDone _handle};
     };
-    case civilian: {
+    case east: {
         //Initialize Civilian Settings
         _handle = [] spawn life_fnc_initCiv;
-        waitUntil {scriptDone _handle};
     };
     case independent: {
         //Initialize Medics and blah
         _handle = [] spawn life_fnc_initMedic;
-        waitUntil {scriptDone _handle};
     };
+    case civilian: {
+        //Initialize Civilian Settings
+        _handle = [] spawn life_fnc_initCiv;
+    };
+    waitUntil {scriptDone _handle};
 };
 
 player setVariable ["restrained",false,true];
@@ -135,7 +141,7 @@ diag_log "Executing client.fsm";
 waitUntil {!(isNull (findDisplay 46))};
 
 diag_log "Display 46 Found";
-(findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
+findDisplay 46 displayAddEventHandler ["KeyDown", life_fnc_keyHandler];
 
 [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
 0 cutText ["","BLACK IN"];
@@ -147,6 +153,7 @@ LIFE_ID_RevealObjects = ["LIFE_RevealObjects","onEachFrame","life_fnc_revealObje
 
 player setVariable ["steam64ID",getPlayerUID player];
 player setVariable ["realname",profileName,true];
+player setVariable ["level",life_level,true];
 
 life_fnc_moveIn = compileFinal
 "

@@ -12,7 +12,7 @@ _side = [_this,2,civilian,[west]] call BIS_fnc_param;
 
 if (isNull _unit) exitWith {};
 
-switch (_side) do {
+switch _side do {
     case west: {
         if (_bool) then {
             life_radio_west radioChannelAdd [_unit];
@@ -21,11 +21,11 @@ switch (_side) do {
         };
     };
 
-    case civilian: {
+    case east: {
         if (_bool) then {
-            life_radio_civ radioChannelAdd [_unit];
+            life_radio_east radioChannelAdd [_unit];
         } else {
-            life_radio_civ radioChannelRemove [_unit];
+            life_radio_east radioChannelRemove [_unit];
         };
     };
 
@@ -34,6 +34,14 @@ switch (_side) do {
             life_radio_indep radioChannelAdd [_unit];
         } else {
             life_radio_indep radioChannelRemove [_unit];
+        };
+    };
+
+    case civilian: {
+        if (_bool) then {
+            life_radio_civilian radioChannelAdd [_unit];
+        } else {
+            life_radio_civilian radioChannelRemove [_unit];
         };
     };
 };

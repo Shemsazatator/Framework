@@ -6205,6 +6205,50 @@
             <German>Durst</German>
             <Portuguese>Água</Portuguese>
         </Key>
+        <Key ID="STR_NAMETAG_West">
+          <Original>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, level %3</Original>
+          <Czech>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, hladina %3</Czech>
+          <Spanish>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, nivel %3</Spanish>
+          <Russian></Russian>
+          <German>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, ebene %3</German>
+          <French>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, niveau %3</French>
+          <Italian>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, livello %3</Italian>
+          <Portuguese>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, nível %3</Portuguese>
+          <Polish>&lt;t color='#023E77'&gt;&lt;img image='%1' size='1'&gt;&lt;/img&gt;%2&lt;/t&gt;, poziom %3</Polish>
+        </Key>
+        <Key ID="STR_NAMETAG_East">
+            <Original>&lt;t color='#640606'&gt;%1&lt;/t&gt;, level %2</Original>
+            <Czech>&lt;t color = #640606'&gt;%1 &lt;/t&gt;, hladina %2</Czech>
+            <Spanish>&lt;t color='#640606'&gt;%1&lt;/t&gt;, nivel %2</Spanish>
+            <Russian></Russian>
+            <German>&lt;t color='#640606'&gt;%1&lt;/t&gt;, ebene %2</German>
+            <French>&lt;t color='#640606'&gt;%1&lt;/t&gt;, niveau %2</French>
+            <Italian>&lt;t color='#640606'&gt;%1&lt;/t&gt;, livello %2</Italian>
+            <Portuguese>&lt;t color='#640606'&gt;%1&lt;/t&gt;, nível %2</Portuguese>
+            <Polish>&lt;t color='#640606'&gt;%1&lt;/t&gt;, poziom %2</Polish>
+        </Key>
+        <Key ID="STR_NAMETAG_Independent">
+            <Original>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, level %2</Original>
+            <Czech>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, hladina %2</Czech>
+            <Spanish>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, nivel %2</Spanish>
+            <Russian></Russian>
+            <German>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, ebene %2</German>
+            <French>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, niveau %2</French>
+            <Italian>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, livello %2</Italian>
+            <Portuguese>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, nível %2</Portuguese>
+            <Polish>&lt;t color='#056506'&gt;&lt;img image='a3\ui_f\data\map\MapControl\hospital_ca.paa' size='1.5'&gt;&lt;/img&gt;%1&lt;/t&gt;, poziom %2</Polish>
+        </Key>
+        <Key ID="STR_NAMETAG_Civilian">
+            <Original>&lt;t color='#610279'&gt;%1&lt;/t&gt;, level %2</Original>
+            <Czech>&lt;t color = #610279'&gt;%1 &lt;/t&gt;, hladina %2</Czech>
+            <Spanish>&lt;t color='#610279'&gt;%1&lt;/t&gt;, nivel %2</Spanish>
+            <Russian></Russian>
+            <German>&lt;t color='#610279'&gt;%1&lt;/t&gt;, ebene %2</German>
+            <French>&lt;t color='#610279'&gt;%1&lt;/t&gt;, niveau %2</French>
+            <Italian>&lt;t color='#610279'&gt;%1&lt;/t&gt;, livello %2</Italian>
+            <Portuguese>&lt;t color='#610279'&gt;%1&lt;/t&gt;, nível %2</Portuguese>
+            <Polish>&lt;t color='#610279'&gt;%1&lt;/t&gt;, poziom %2</Polish>
+        </Key>
     </Package>
     <Package name="Vehicle_Service">
         <Key ID="STR_Service_Chopper_NoAir">

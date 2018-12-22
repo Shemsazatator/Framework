@@ -8,9 +8,18 @@
 
 life_actions = [];
 
-switch (playerSide) do {
+switch playerSide do {
+    case west: {};
+    case east: {
+        //Drop fishing net
+        life_actions pushBack (player addAction[localize "STR_pAct_DropFishingNet",life_fnc_dropFishingNet,"",0,false,false,"",'
+        (surfaceisWater (getPos vehicle player)) && (vehicle player isKindOf "Ship") && life_carryWeight < life_maxWeight && speed (vehicle player) < 2 && speed (vehicle player) > -1 && !life_net_dropped ']);
 
-    //Civilian
+        //Rob person
+        life_actions pushBack (player addAction[localize "STR_pAct_RobPerson",life_fnc_robAction,"",0,false,false,"",'
+        !isNull cursorObject && player distance cursorObject < 3.5 && isPlayer cursorObject && animationState cursorObject == "Incapacitated" && !(cursorObject getVariable ["robbed",false]) ']);
+    };
+    case independent: {};
     case civilian: {
         //Drop fishing net
         life_actions pushBack (player addAction[localize "STR_pAct_DropFishingNet",life_fnc_dropFishingNet,"",0,false,false,"",'
@@ -20,11 +29,4 @@ switch (playerSide) do {
         life_actions pushBack (player addAction[localize "STR_pAct_RobPerson",life_fnc_robAction,"",0,false,false,"",'
         !isNull cursorObject && player distance cursorObject < 3.5 && isPlayer cursorObject && animationState cursorObject == "Incapacitated" && !(cursorObject getVariable ["robbed",false]) ']);
     };
-    
-    //Cops
-    case west: { };
-    
-    //EMS
-    case independent: { };
-
 };
