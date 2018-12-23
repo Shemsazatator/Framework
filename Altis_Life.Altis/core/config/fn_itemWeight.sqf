@@ -6,8 +6,7 @@
     Description:
     Gets the items weight and returns it.
 */
-private ["_item"];
-_item = [_this,0,"",[""]] call BIS_fnc_param;
+private _item = param[0,"",[""]];
 if (_item isEqualTo "") exitWith {};
 
 M_CONFIG(getNumber,"VirtualItems",_item,"weight");
