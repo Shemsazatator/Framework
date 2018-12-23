@@ -26,7 +26,7 @@ for[{_i = 0},{_i < count(_craftConfig)},{_i = _i + 1}] do {
     _return pushBack _tempConfig;
   };
 };
-
+/*
 switch _craft do
 {
 	case "weapon":
@@ -63,5 +63,5 @@ switch _craft do
 		];
 	};
 };
-
+*/
 _return
