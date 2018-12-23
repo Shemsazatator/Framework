@@ -6,12 +6,21 @@ This Github is not currently associated with any forums.
 
 # Features:
 
-  - Police, Civ and Medic roles 
+  - Police, Civ (west and east) and Medic roles 
   - Banking System
   - Virtual Item system 
   - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
   - Housing System 
   - Persistent wanted system
+  - Experience and Level system
+  - Prestigious and Notoriety
+  - Many more. 
+
+# Coming soon:
+
+  - Skill tree
+  - Craft system
+  - New interface
   - Many more. 
 
 # License: 
