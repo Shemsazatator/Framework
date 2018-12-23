@@ -89,7 +89,7 @@ if (life_container_active) exitwith {
     true;
 };
 
-switch (_code) do {
+switch _code do {
     // -- Disable commander/tactical view
     if (LIFE_SETTINGS(getNumber,"disableCommanderView") isEqualTo 1) then {
         private _CommandMode = actionKeys "tacticalView";
