@@ -11,7 +11,7 @@ _oldpos = getPosATL _unit;
 
 if (isNull _unit) exitWith {}; //Bad data
 
-if (animationState _unit == "AovrPercMrunSrasWrflDf") exitWith {};
+if (animationState _unit isEqualTo "AovrPercMrunSrasWrflDf") exitWith {};
 
 if (local _unit) then {
     _v1 = 3.82;

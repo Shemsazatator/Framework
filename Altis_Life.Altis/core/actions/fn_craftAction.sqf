@@ -51,7 +51,7 @@ if (_itemFilter isEqualTo "weapon" and !(player canAdd _newItem) || currentWeapo
    life_action_inUse = false;
 };
 /*
-if (_itemFilter == "item") then {
+if (_itemFilter isEqualTo "item") then {
 	_weight = [_item] call life_fnc_itemWeight;
 	_weightUsedItems = 0;
 	for [{_i=0},{_i<(count _matsNeed)-1},{_i=_i+2}] do {
