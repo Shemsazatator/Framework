@@ -232,3 +232,4 @@ class Life_Settings {
 #include "Config_Process.hpp"
 #include "Config_Housing.hpp"
 #include "Config_Garages.hpp"
+#include "Config_Craft.hpp"
