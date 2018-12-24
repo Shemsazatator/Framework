@@ -29,7 +29,7 @@ _side = switch _side do {
     default {"Error"};
 };
 
-if (_side isEqualTo "Error") exitWith {
+if (_side == "Error") exitWith {
     [[]] remoteExec ["life_fnc_impoundMenu",_unit];
 };
 
