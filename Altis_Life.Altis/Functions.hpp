@@ -389,8 +389,8 @@ class Life_Client_Core {
       class client { ext = ".fsm"; };
     };
 
-    class Event {
-      file = "core\event";
+    class Events {
+      file = "core\events";
       class initEventHandlers;
       class onKilled;
       class onHandleDamage;
