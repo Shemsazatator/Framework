@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
     File: fn_keyDrop.sqf
     Author: Bryan "Tonic" Boardwine
@@ -7,8 +8,7 @@
 */
 disableSerialization;
 
-private _dialog = findDisplay 2700;
-private _list = _dialog displayCtrl 2701;
+private _list = CONTROL(2700,2701);
 private _sel = lbCurSel _list;
 
 if (_sel isEqualTo -1) exitWith {

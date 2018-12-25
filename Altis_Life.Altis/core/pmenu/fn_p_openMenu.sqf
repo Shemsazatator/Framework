@@ -6,7 +6,7 @@
     Description:
     Opens the players virtual inventory menu
 */
-if (!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
+if (!alive player or dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
 createDialog "playerSettings";
 disableSerialization;
 

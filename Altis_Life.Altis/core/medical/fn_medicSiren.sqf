@@ -6,8 +6,7 @@
     Description:
     Starts the medic siren sound for other players.
 */
-private ["_vehicle"];
-_vehicle = param [0,objNull,[objNull]];
+private _vehicle = param [0,objNull,[objNull]];
 
 if (isNull _vehicle) exitWith {};
 if (isNil {_vehicle getVariable "siren"}) exitWith {};

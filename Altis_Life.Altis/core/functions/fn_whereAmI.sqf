@@ -32,8 +32,6 @@ if (_zonem != "") exitWith {
     _mine;
 };
 
-
-
 _resourceCfg = missionConfigFile >> "CfgGather" >> "Resources";
 for "_i" from 0 to count(_resourceCfg)-1 do {
     private ["_curConfig", "_resourceZones", "_requiredItem"];

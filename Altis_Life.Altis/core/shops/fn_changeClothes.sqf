@@ -10,15 +10,15 @@ disableSerialization;
 private ["_control","_selection","_data","_price","_total","_totalPrice"];
 _control = (_this select 0) select 0;
 _selection = (_this select 0) select 1;
-_price = (findDisplay 3100) displayCtrl 3102;
-_total = (findDisplay 3100) displayCtrl 3106;
+_price = CONTROL(3100,3102);
+_total = CONTROL(3100,3106);
 if (_selection isEqualTo -1) exitWith {hint localize "STR_Shop_NoSelection";};
 if (isNull _control) exitWith {hint localize "STR_Shop_NoDisplay"};
 if (life_cMenu_lock) exitWith {};
 life_cMenu_lock = true;
 
-life_clothing_purchase set[life_clothing_filter,(_control lbValue _selection)];
-_data = _control lbData _selection;
+life_clothing_purchase set[life_clothing_filter,(CONTROL_VALUEI(_control,_selection))];
+_data = CONTROL_DATAI(_control,_selection);
 
 if (_data isEqualTo "NONE") then {
     _item = switch (life_clothing_filter) do {
@@ -35,7 +35,7 @@ if (_data isEqualTo "NONE") then {
 };
 
 life_cMenu_lock = false;
-_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%1</t>",[(_control lbValue _selection)] call life_fnc_numberText];
+_price ctrlSetStructuredText parseText format [(localize "STR_GNOTF_Price")+ " <t color='#8cff9b'>$%1</t>",[(CONTROL_VALUEI(_control,_selection))] call life_fnc_numberText];
 
 _totalPrice = 0;
 {

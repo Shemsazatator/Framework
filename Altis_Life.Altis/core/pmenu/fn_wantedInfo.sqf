@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
     File: fn_wantedInfo.sqf
     Author: Bryan "Tonic" Boardwine
@@ -8,8 +9,7 @@
 disableSerialization;
 
 private _data = param [0,[],[[]]];
-private _display = findDisplay 2400;
-private _list = _display displayCtrl 2402;
+private _list = CONTROL(2400,2402);
 private _mylist = [];
 
 if (isNil "_data") exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};

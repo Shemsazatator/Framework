@@ -1,3 +1,4 @@
+#include "..\..\script_macros.hpp"
 /*
     Copyright Â© 2013 Bryan "Tonic" Boardwine, All rights reserved
     See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
@@ -10,8 +11,7 @@
 disableSerialization;
 
 private _info = param [0,[],[[]]];
-private _display = findDisplay 2400;
-private _list = _display displayCtrl 2401;
+private _list = CONTROL(2400,2401);
 
 {
     private _entry = _x;

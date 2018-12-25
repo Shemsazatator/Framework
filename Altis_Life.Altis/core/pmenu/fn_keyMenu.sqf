@@ -7,14 +7,13 @@
     Initializes the key menu
     Will be revised.
 */
-private ["_display","_vehicles","_plist","_near_units","_pic","_name","_text","_color","_index"];
+private ["_vehicles","_plist","_near_units","_pic","_name","_text","_color","_index"];
 disableSerialization;
 
 waitUntil {!isNull (findDisplay 2700)};
-_display = findDisplay 2700;
-_vehicles = _display displayCtrl 2701;
+_vehicles = CONTROL(2700,2701);
 lbClear _vehicles;
-_plist = _display displayCtrl 2702;
+_plist = CONTROL(2700,2702);
 lbClear _plist;
 _near_units = [];
 
@@ -22,7 +21,7 @@ _near_units = [];
 
 for "_i" from 0 to (count life_vehicles)-1 do {
     _veh = life_vehicles select _i;
-    if (!isNull _veh && alive _veh) then {
+    if (!isNull _veh and alive _veh) then {
         _color = ((M_CONFIG(getArray,"LifeCfgVehicles",(typeOf _veh),"textures") select (_veh getVariable "Life_VEH_color")) select 0);
         if (isNil "_color") then {_color = ""};
         _text = format ["(%1)",_color];
