@@ -167,6 +167,9 @@ class Life_Settings {
     /* Force mode combat */
     enable_fight_mode = true; //true if you want that when a fire is near or player receive damage from other player camera will be blocked on first person
 
+    /* Craft system */
+    enable_craft = true; //true to allow players to acces to the craft's menu
+
     disableCommanderView = true; //false - Group leaders can access the commander view. true [default] - Group leaders cannot access the commander view.
                                  //Commander/tactical view is accessed via pressing . [NUM] by default. It raises the camera significantly higher and steeper above the player in order to give a boarder tactical view of the surrounding area.
 

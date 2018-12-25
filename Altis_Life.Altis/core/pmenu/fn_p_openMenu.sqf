@@ -29,6 +29,10 @@ switch playerSide do {
     };
 };
 
+if (LIFE_SETTINGS(getNumber,"enable_craft") isEqualTo 0) then {
+	ctrlShow[2025,false]; //--- craft button
+};
+
 if (FETCH_CONST(life_adminlevel) < 1) then {
     ctrlShow[2021,false];
 };
