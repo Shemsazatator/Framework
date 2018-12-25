@@ -139,6 +139,7 @@ CASH = 0;
 life_is_alive = false;
 life_notoriety = 0;
 life_prestige = 0;
+license_civ_rebel = 0;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.
 [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];
