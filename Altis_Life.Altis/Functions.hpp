@@ -194,6 +194,7 @@ class Life_Client_Core {
         class fetchCfgDetails;
         class fetchDeadGear;
         class fetchVehInfo;
+        class firstViewCombat;
         class isDamaged;
         class giveDiff;
         class handleInv;
@@ -399,5 +400,6 @@ class Life_Client_Core {
       class onInventoryClosed;
       class oninventoryOpened;
       class onMap;
+      class onFireNear;
     };
 };

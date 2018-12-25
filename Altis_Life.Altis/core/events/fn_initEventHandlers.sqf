@@ -13,5 +13,6 @@ player addEventHandler ["Fired", life_fnc_onFired];
 player addEventHandler ["InventoryClosed", life_fnc_onInventoryClosed];
 player addEventHandler ["InventoryOpened", life_fnc_onInventoryOpened];
 player addEventHandler ["HandleRating", {0}];
+player addEventHandler ["FireNear", life_fnc_onFireNear];
 
 addMissionEventHandler ["Map", life_fnc_onMap];

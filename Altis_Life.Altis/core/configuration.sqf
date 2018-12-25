@@ -83,6 +83,7 @@ life_experience = 0;
 life_skillPoints = 1;
 life_notoriety = 0;
 life_prestige = 0;
+life_firstCombatActive = false;
 
 life_istazed = false;
 life_isknocked = false;
