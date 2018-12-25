@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_onFireNear.sqf
+    File: fn_onFiredNear.sqf
     Author: Is there really an author for that ?
 
     Description:

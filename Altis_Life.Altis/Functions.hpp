@@ -400,6 +400,6 @@ class Life_Client_Core {
       class onInventoryClosed;
       class oninventoryOpened;
       class onMap;
-      class onFireNear;
+      class onFiredNear;
     };
 };
