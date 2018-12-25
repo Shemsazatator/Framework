@@ -5,6 +5,9 @@
     Description:
     When the player dies collect various information about that player
     and pull up the death dialog / camera functionality.
+
+    TO DO:
+    add prestigious for cops who kill a civilian searched or with notoriety
 */
 params [
     ["_unit",objNull,[objNull]],
@@ -49,8 +52,8 @@ life_deathCamera camCommit 0;
 _unit spawn {
     private ["_maxTime","_RespawnBtn","_Timer"];
     disableSerialization;
-    _RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
-    _Timer = ((findDisplay 7300) displayCtrl 7301);
+    _RespawnBtn = CONTROL(7300,7302);
+    _Timer = CONTROL(7300,7301);
     if (LIFE_SETTINGS(getNumber,"respawn_timer") < 5) then {
         _maxTime = time + 5;
     } else {
@@ -66,7 +69,7 @@ _unit spawn {
 _unit spawn {
     private ["_requestBtn","_requestTime"];
     disableSerialization;
-    _requestBtn = ((findDisplay 7300) displayCtrl 7303);
+    _requestBtn = CONTROL(7300,7303);
     _requestBtn ctrlEnable false;
     _requestTime = time + 5;
     waitUntil {round(_requestTime - time) <= 0 || isNull _this};
@@ -123,6 +126,11 @@ if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
         [format [localize "STR_Cop_RobberDead",[CASH] call life_fnc_numberText]] remoteExecCall ["life_fnc_broadcast",RCLIENT];
         CASH = 0;
     };
+};
+
+//Add notoriety to civilians
+if({side _killer isEqualTo east and playerSide isEqualTo civilian} or {side _killer isEqualTo civilian and playerSide isEqualTo east}) then {
+  life_notoriety = life_notoriety + 0.5;
 };
 
 if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
