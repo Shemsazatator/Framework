@@ -6,7 +6,7 @@
     Description:
     Unlocks / locks the house.
 */
-priate _house = param [0,objNull,[objNull]];
+private _house = param [0,objNull,[objNull]];
 if (isNull _house or !(_house isKindOf "House_F")) exitWith {};
 
 _state = _house getVariable ["locked",true];
