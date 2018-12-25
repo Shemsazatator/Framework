@@ -61,7 +61,7 @@ diag_log "::Life Client:: Initialization Variables";
 
 diag_log "::Life Client:: Variables initialized";
 diag_log "::Life Client:: Setting up Eventhandlers";
-[] call life_fnc_setupEVH;
+[] call life_fnc_initEventHandlers;
 
 diag_log "::Life Client:: Eventhandlers completed";
 diag_log "::Life Client:: Setting up user actions";

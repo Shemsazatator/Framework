@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_onTakeItem.sqf
+    File: fn_onTake.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

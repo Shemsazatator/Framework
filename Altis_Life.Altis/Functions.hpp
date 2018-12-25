@@ -40,7 +40,6 @@ class Life_Client_Core {
         class initCop;
         class initMedic;
         class setupActions;
-        class setupEVH;
         class survival;
         class welcomeNotification;
     };
@@ -189,7 +188,6 @@ class Life_Client_Core {
         class actionKeyHandler;
         class animSync;
         class calWeightDiff;
-        class checkMap;
         class clearVehicleAmmo;
         class dropItems;
         class escInterupt;
@@ -198,14 +196,11 @@ class Life_Client_Core {
         class fetchVehInfo;
         class isDamaged;
         class giveDiff;
-        class handleDamage;
         class handleInv;
         class handleItem;
         class hideObj;
         class hudSetup;
         class hudUpdate;
-        class inventoryClosed;
-        class inventoryOpened;
         class isUIDActive;
         class keyHandler;
         class loadDeadGear;
@@ -214,8 +209,6 @@ class Life_Client_Core {
         class nearestDoor;
         class nearUnits;
         class numberText;
-        class onFired;
-        class onTakeItem;
         class playerSkins;
         class playerTags;
         class postNewsBroadcast;
@@ -292,8 +285,6 @@ class Life_Client_Core {
         class medicRequest;
         class medicSiren;
         class medicSirenLights;
-        class onPlayerKilled;
-        class onPlayerRespawn;
         class requestMedic;
         class respawned;
         class revived;
@@ -395,5 +386,18 @@ class Life_Client_Core {
     class Fsm {
       file = "core\fsm";
       class client { ext = ".fsm"; };
+    };
+
+    class Event {
+      file = "core\event";
+      class initEventHandlers;
+      class onKilled;
+      class onHandleDamage;
+      class onRespawn;
+      class onTake;
+      class onFired;
+      class onInventoryClosed;
+      class oninventoryOpened;
+      class onMap;
     };
 };

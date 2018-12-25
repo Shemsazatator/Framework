@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_inventoryClosed.sqf
+    File: fn_onInventoryClosed.sqf
     Author: Bryan "Tonic" Boardwine
     Modified : NiiRoZz
 

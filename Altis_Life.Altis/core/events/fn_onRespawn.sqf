@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_onPlayerRespawn.sqf
+    File: fn_onRespawn.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

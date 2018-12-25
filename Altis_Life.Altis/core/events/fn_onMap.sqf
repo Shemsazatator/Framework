@@ -1,5 +1,5 @@
 /*
-     File: fn_checkMap.sqf
+     File: fn_onMap.sqf
      Author: DomT602
      Description:
      Checks if the map is being opened or closed, then puts markers according to side.
