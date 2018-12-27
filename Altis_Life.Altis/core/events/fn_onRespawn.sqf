@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_onPlayerRespawn.sqf
+    File: fn_onRespawn.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:
@@ -19,6 +19,7 @@ _unit setVariable ["transporting",false,true];
 _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",getPlayerUID player,true]; //Reset the UID.
 _unit setVariable ["realname",profileName,true]; //Reset the players name.
+_unit setVariable ["level",life_level,true]; //Reset the players level.
 
 player playMoveNow "AmovPpneMstpSrasWrflDnon";
 

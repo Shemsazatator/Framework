@@ -25,8 +25,8 @@ for "_i" from 0 to 1 step 0 do {
     {
         private _colour = switch (side _x) do {
             case west: {"colorBLUFOR"};
-            case independent: {"colorIndependent"};
             case east: {"colorOPFOR"};
+            case independent: {"colorIndependent"};
             default {"colorCivilian"};
         };
 

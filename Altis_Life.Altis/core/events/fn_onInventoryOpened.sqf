@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_inventoryOpened.sqf
+    File: fn_onInventoryOpened.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

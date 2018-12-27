@@ -6,7 +6,7 @@
     Description:
     Opens the players virtual inventory menu
 */
-if (!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
+if (!alive player or dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
 createDialog "playerSettings";
 disableSerialization;
 
@@ -27,6 +27,10 @@ switch playerSide do {
     case civilian: {
         ctrlShow[2012,false];
     };
+};
+
+if (LIFE_SETTINGS(getNumber,"enable_craft") isEqualTo 0) then {
+	ctrlShow[2025,false]; //--- craft button
 };
 
 if (FETCH_CONST(life_adminlevel) < 1) then {

@@ -24,7 +24,7 @@ call {
     };
 
 
-    private _unit = lbData [2023, lbCurSel 2023];
+    private _unit = CONTROL_DATA(2023);
     _unit = call compile format ["%1",_unit];
 
     if (isNil "_unit") exitWith {
@@ -32,7 +32,7 @@ call {
     };
     if (isNull _unit || {_unit isEqualTo player}) exitWith {};
 
-    private _item = lbData [2005, lbCurSel 2005];
+    private _item = CONTROL_DATA(2005);
 
     if !([_value] call TON_fnc_isnumber) exitWith {
         hint localize "STR_NOTF_notNumberFormat";

@@ -6,12 +6,9 @@
     Description:
     Opens the cellphone menu?
 */
-private ["_display","_units","_type"];
-
 disableSerialization;
 waitUntil {!isNull findDisplay 3000};
-_display = findDisplay 3000;
-_units = _display displayCtrl 3004;
+private _units = CONTROL(3000,3004);
 
 ctrlSetText [3003, ""];
 lbClear _units;
@@ -22,7 +19,7 @@ if (FETCH_CONST(life_adminlevel) < 1) then {
 };
 {
     if (alive _x && !(_x isEqualTo player)) then {
-        _type = switch (side _x) do {
+        private _type = switch (side _x) do {
             case west: {"Cop"};
             case civilian: {"Civ"};
             case independent: {"Med"};

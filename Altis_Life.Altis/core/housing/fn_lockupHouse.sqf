@@ -6,13 +6,12 @@
     Description:
     Locks up the entire house and closes all doors.
 */
-private ["_house"];
-_house = param [0,objNull,[objNull]];
-if (isNull _house || !(_house isKindOf "House_F")) exitWith {};
+private _house = param [0,objNull,[objNull]];
+if (isNull _house or !(_house isKindOf "House_F")) exitWith {};
 
 _numberOfDoors = FETCH_CONFIG2(getNumber,"CfgVehicles",(typeOf _house), "numberOfDoors");
 
-if (_numberOfDoors isEqualTo -1 || _numberOfDoors isEqualTo 0) exitWith {}; //MEH
+if (_numberOfDoors isEqualTo -1 or _numberOfDoors isEqualTo 0) exitWith {}; //MEH
 
 titleText [localize "STR_House_LockingUp","PLAIN"];
 sleep 3;

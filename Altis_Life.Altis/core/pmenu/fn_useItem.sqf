@@ -6,12 +6,11 @@
     Description:
     Main function for item effects and functionality through the player menu.
 */
-private "_item";
 disableSerialization;
 if ((lbCurSel 2005) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
-_item = CONTROL_DATA(2005);
+private _item = CONTROL_DATA(2005);
 
-switch (true) do {
+switch true do {
     case (_item in ["waterBottle","coffee","redgull"]): {
         if ([false,_item,1] call life_fnc_handleInv) then {
             life_thirst = 100;

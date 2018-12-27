@@ -12,16 +12,15 @@ if !(playerSide isEqualTo west) exitWith {}; // Only for cops open this menu
 
 createDialog "life_wanted_menu";
 
-private _display = findDisplay 2400;
-private _list = _display displayCtrl 2401;
-private _players = _display displayCtrl 2406;
+private _list = CONTROL(2400,2401);
+private _players = CONTROL(2400,2406);
 private _units = [];
 
 lbClear _list;
 lbClear _players;
 
 {
-    private _side = switch (side _x) do {case west: {"Cop"}; case civilian : {"Civ"}; default {"Unknown"};};
+    private _side = switch (side _x) do {case west: {"Cop"}; case east : {"Civ"}; case civilian : {"Civ"}; default {"Unknown"};};
     _players lbAdd format ["%1 - %2", name _x,_side];
     _players lbSetdata [(lbSize _players)-1,str(_x)];
 } forEach playableUnits;

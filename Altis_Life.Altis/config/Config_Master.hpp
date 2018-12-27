@@ -164,6 +164,12 @@ class Life_Settings {
     vehicle_storage_fee_multiplier = .2; //Pull from garage cost --> Cost takes the playersides Buy Price * multiplier
     vehicle_cop_impound_multiplier = .1; //TO AVOID EXPLOITS NEVER SET HIGHER THAN A PURCHASE/RENTAL multipler!   Payout = Config_vehicle Price * multiplier
 
+    /* Force mode combat */
+    enable_fight_mode = true; //true if you want that when a fire is near or player receive damage from other player camera will be blocked on first person
+
+    /* Craft system */
+    enable_craft = true; //true to allow players to acces to the craft's menu
+
     disableCommanderView = true; //false - Group leaders can access the commander view. true [default] - Group leaders cannot access the commander view.
                                  //Commander/tactical view is accessed via pressing . [NUM] by default. It raises the camera significantly higher and steeper above the player in order to give a boarder tactical view of the surrounding area.
 
@@ -232,3 +238,4 @@ class Life_Settings {
 #include "Config_Process.hpp"
 #include "Config_Housing.hpp"
 #include "Config_Garages.hpp"
+#include "Config_Craft.hpp"

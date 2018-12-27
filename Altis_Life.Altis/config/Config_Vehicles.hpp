@@ -178,6 +178,7 @@ class LifeCfgVehicles {
     class Default {
         vItemSpace = -1;
         conditions = "";
+        illegal = 0;
         price = -1;
         textures[] = {};
     };
@@ -322,6 +323,7 @@ class LifeCfgVehicles {
     class O_T_LSV_02_unarmed_F {
         vItemSpace = 100;
         conditions = "";
+        illegal = 1;
         price = 100000;
         textures[] = {
             { "Arid", "civ", {
@@ -449,6 +451,7 @@ class LifeCfgVehicles {
     class B_G_Offroad_01_armed_F {
         vItemSpace = 65;
         conditions = "license_civ_rebel || {!(playerSide in [east,civilian])}";
+        illegal = 1;
         price = 750000;
         textures[] = { };
     };
@@ -485,6 +488,7 @@ class LifeCfgVehicles {
         vItemSpace = 60;
         conditions = "license_civ_driver || {!(playerSide in [east,civilian])}";
         price = 150000;
+        illegal = 1;
         textures[] = { };
     };
 
@@ -741,6 +745,7 @@ will modify the virtual space and the price of the vehicle, but other informatio
      class B_Heli_Light_01_stripped_F {
         vItemSpace = 90;
         conditions = "";
+        illegal = 1;
         price = 275000;
         textures[] = {
             { "Rebel Digital", "reb", {

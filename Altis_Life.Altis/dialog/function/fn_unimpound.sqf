@@ -5,14 +5,16 @@
 
     Description:
     Yeah... Gets the vehicle from the garage.
+
+    TO DO : Need to be tested + why not put all the condition of the vehicle to withdraw it ?
 */
 private ["_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_storageFee","_purchasePrice"];
 disableSerialization;
 if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2802,(lbCurSel 2802)];
+_vehicle = CONTROL_DATA(2802);
 _vehicle = (call compile format ["%1",_vehicle]) select 0;
 _vehicleLife = _vehicle;
-_vid = lbValue[2802,(lbCurSel 2802)];
+_vid = CONTROL_VALUE(2802);
 _pid = getPlayerUID player;
 _unit = player;
 _spawntext = localize "STR_Garage_spawn_Success";
@@ -33,6 +35,7 @@ switch playerSide do {
 };
 _price = _purchasePrice * _storageFee;
 
+if (M_CONFIG(getNumber,"LifeCfgVehicles",_vehicleLife,"illegal") isEqualTo 1 and {license_civ_rebel}) exitWith {hint localize ""};
 if (!(_price isEqualType 0) || _price < 1) then {_price = 500;};
 if (BANK < _price) exitWith {hint format [(localize "STR_Garage_CashError"),[_price] call life_fnc_numberText];};
 

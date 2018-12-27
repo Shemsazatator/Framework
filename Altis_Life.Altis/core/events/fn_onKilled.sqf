@@ -1,10 +1,13 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_onPlayerKilled.sqf
+    File: fn_onKilled.sqf
     Author: Bryan "Tonic" Boardwine
     Description:
     When the player dies collect various information about that player
     and pull up the death dialog / camera functionality.
+
+    TO DO:
+    add prestigious for cops who kill a civilian searched or with notoriety
 */
 params [
     ["_unit",objNull,[objNull]],
@@ -26,6 +29,7 @@ _unit setVariable ["Escorting",false,true];
 _unit setVariable ["transporting",false,true];
 _unit setVariable ["playerSurrender",false,true];
 _unit setVariable ["steam64id",(getPlayerUID player),true]; //Set the UID.
+_unit setVariable ["level",life_level,true]; //--- Set the players level
 
 //close the esc dialog
 if (dialog) then {
@@ -49,8 +53,8 @@ life_deathCamera camCommit 0;
 _unit spawn {
     private ["_maxTime","_RespawnBtn","_Timer"];
     disableSerialization;
-    _RespawnBtn = ((findDisplay 7300) displayCtrl 7302);
-    _Timer = ((findDisplay 7300) displayCtrl 7301);
+    _RespawnBtn = CONTROL(7300,7302);
+    _Timer = CONTROL(7300,7301);
     if (LIFE_SETTINGS(getNumber,"respawn_timer") < 5) then {
         _maxTime = time + 5;
     } else {
@@ -66,7 +70,7 @@ _unit spawn {
 _unit spawn {
     private ["_requestBtn","_requestTime"];
     disableSerialization;
-    _requestBtn = ((findDisplay 7300) displayCtrl 7303);
+    _requestBtn = CONTROL(7300,7303);
     _requestBtn ctrlEnable false;
     _requestTime = time + 5;
     waitUntil {round(_requestTime - time) <= 0 || isNull _this};
@@ -125,6 +129,11 @@ if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
     };
 };
 
+//Add notoriety to civilians
+if({side _killer isEqualTo east and playerSide isEqualTo civilian} or {side _killer isEqualTo civilian and playerSide isEqualTo east}) then {
+  life_notoriety = life_notoriety + 0.5;
+};
+
 if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
     life_removeWanted = true;
 };
@@ -139,6 +148,7 @@ CASH = 0;
 life_is_alive = false;
 life_notoriety = 0;
 life_prestige = 0;
+license_civ_rebel = 0;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.
 [player,life_settings_enableSidechannel,playerSide] remoteExecCall ["TON_fnc_manageSC",RSERV];

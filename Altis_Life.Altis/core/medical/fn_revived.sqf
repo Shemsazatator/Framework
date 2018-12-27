@@ -6,9 +6,8 @@
     Description:
     THANK YOU JESUS I WAS SAVED!
 */
-private ["_medic","_dir","_reviveCost"];
-_medic = param [0,"Unknown Medic",[""]];
-_reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
+private _medic = param [0,"Unknown Medic",[""]];
+private _reviveCost = LIFE_SETTINGS(getNumber,"revive_fee");
 
 [life_save_gear] spawn life_fnc_loadDeadGear;
 

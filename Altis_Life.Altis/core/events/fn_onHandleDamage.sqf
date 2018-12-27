@@ -1,6 +1,6 @@
 #include "..\..\script_macros.hpp"
 /*
-    File: fn_handleDamage.sqf
+    File: fn_onHandleDamage.sqf
     Author: Bryan "Tonic" Boardwine
 
     Description:

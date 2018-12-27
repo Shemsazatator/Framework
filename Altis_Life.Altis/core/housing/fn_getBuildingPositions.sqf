@@ -11,16 +11,16 @@ _building = _this select 0;
 _arr = [];
 
 _restricted = switch (typeOf _building) do {
-case "Land_i_House_Big_02_V1_F": {[0,1,2,3,4]};
-case "Land_i_House_Big_02_V2_F": {[0,1,2,3,4]};
-case "Land_i_House_Big_02_V3_F": {[0,1,2,3,4]};
-case "Land_i_House_Big_01_V1_F": {[2,3]};
-case "Land_i_House_Big_01_V2_F": {[2,3]};
-case "Land_i_House_Big_01_V3_F": {[2,3]};
-case "Land_i_Stone_HouseSmall_V1_F": {[0,1,3,4]};
-case "Land_i_Stone_HouseSmall_V2_F": {[0,1,3,4]};
-case "Land_i_Stone_HouseSmall_V3_F": {[0,1,3,4]};
-default {[]};
+  case "Land_i_House_Big_02_V1_F": {[0,1,2,3,4]};
+  case "Land_i_House_Big_02_V2_F": {[0,1,2,3,4]};
+  case "Land_i_House_Big_02_V3_F": {[0,1,2,3,4]};
+  case "Land_i_House_Big_01_V1_F": {[2,3]};
+  case "Land_i_House_Big_01_V2_F": {[2,3]};
+  case "Land_i_House_Big_01_V3_F": {[2,3]};
+  case "Land_i_Stone_HouseSmall_V1_F": {[0,1,3,4]};
+  case "Land_i_Stone_HouseSmall_V2_F": {[0,1,3,4]};
+  case "Land_i_Stone_HouseSmall_V3_F": {[0,1,3,4]};
+  default {[]};
 };
 
 _i = 0;
