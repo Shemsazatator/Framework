@@ -146,8 +146,8 @@ life_thirst = 100;
 life_carryWeight = 0;
 CASH = 0;
 life_is_alive = false;
-life_notoriety = 0;
-life_prestige = 0;
+life_notoriety = 1;
+life_prestige = 1;
 license_civ_rebel = 0;
 
 [] call life_fnc_hudUpdate; //Get our HUD updated.

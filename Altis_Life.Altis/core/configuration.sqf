@@ -81,8 +81,8 @@ CASH = 0;
 life_level = 1;
 life_experience = 0;
 life_skillPoints = 1;
-life_notoriety = 0;
-life_prestige = 0;
+life_notoriety = 1;
+life_prestige = 1;
 life_firstCombatActive = false;
 
 life_istazed = false;
