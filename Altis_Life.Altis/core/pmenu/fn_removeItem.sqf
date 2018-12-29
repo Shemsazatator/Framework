@@ -9,7 +9,7 @@
 */
 disableSerialization;
 private _data = CONTROL_DATA(2005);
-private _value = ctrlText 2010;
+private _value = ctrlText IDC_PLAYERMENU_ITEMEDIT;
 
 if (_data isEqualTo "") exitWith {hint localize "STR_NOTF_didNotSelectToRemove";};
 if (!([_value] call TON_fnc_isnumber)) exitWith {hint localize "STR_NOTF_notNumberFormat";};
