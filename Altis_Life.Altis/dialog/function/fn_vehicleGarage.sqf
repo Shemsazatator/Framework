@@ -35,4 +35,4 @@ if (life_HC_isActive) then {
 
 createDialog "Life_impound_menu";
 disableSerialization;
-ctrlSetText[2802,(localize "STR_ANOTF_QueryGarage")];
+ctrlSetText[IDC_IMPOUNDMENU_VEHICLELIST,(localize "STR_ANOTF_QueryGarage")];

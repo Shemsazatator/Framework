@@ -48,17 +48,17 @@ life_oldHat = headgear player;
 createDialog "Life_Clothing";
 disableSerialization;
 
-ctrlSetText [3103,localize _shopTitle];
+ctrlSetText [IDC_CLOTHINGMENU_TITLE,localize _shopTitle];
 
-(findDisplay 3100) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
+(findDisplay IDD_CLOTHINGMENU) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {closeDialog 0; [] call life_fnc_playerSkins;}"]; //Fix Custom Skin after ESC
 
-sliderSetRange [3107, 0, 360];
+sliderSetRange [IDC_CLOTHINGMENU_VIEWANGLE, 0, 360];
 
 //Cop / Civ Pre Check
-if (_shop in ["bruce","dive","reb","kart"] && {!(playerSide in [east,civilian])}) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
-if (_shop == "reb" && {!license_civ_rebel}) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
-if (_shop == "cop" && {!(playerSide isEqualTo west)}) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
-if (_shop == "dive" && {!license_civ_dive}) exitWith {hint localize "STR_Shop_NotaDive"; closeDialog 0;};
+if (_shop in ["bruce","dive","reb","kart"] and {!(playerSide in [east,civilian])}) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
+if (_shop == "reb" and {!license_civ_rebel}) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
+if (_shop == "cop" and {!(playerSide isEqualTo west)}) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
+if (_shop == "dive" and {!license_civ_dive}) exitWith {hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 
 
 private ["_pos","_oldPos","_oldDir","_oldBev","_testLogic","_nearVeh","_light"];
@@ -165,10 +165,10 @@ life_shop_cam camSetFocus [50, 0];
 life_shop_cam camCommit 0;
 life_cMenu_lock = false;
 
-if (isNull (findDisplay 3100)) exitWith {};
+if (isNull (findDisplay IDD_CLOTHINGMENU)) exitWith {};
 
-private _list = (findDisplay 3100) displayCtrl 3101;
-private _filter = (findDisplay 3100) displayCtrl 3105;
+private _list = CONTROL(IDD_CLOTHINGMENU,IDC_CLOTHINGMENU_CLOTHINGLIST);
+private _filter = CONTROL(IDD_CLOTHINGMENU,IDC_CLOTHINGMENU_FILTERLIST);
 lbClear _filter;
 lbClear _list;
 
@@ -182,7 +182,7 @@ _filter lbSetCurSel 0;
 
 [] call life_fnc_playerSkins;
 
-waitUntil {isNull (findDisplay 3100)};
+waitUntil {isNull (findDisplay IDD_CLOTHINGMENU)};
 if (LIFE_SETTINGS(getNumber,"clothing_noTP") isEqualTo 0) then {
     {
         if (_x != player) then {_x hideObject false;};

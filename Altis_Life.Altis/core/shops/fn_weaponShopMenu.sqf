@@ -33,15 +33,15 @@ if (!isClass(missionConfigFile >> "WeaponShops" >> (_this select 3))) exitWith {
 
 disableSerialization;
 
-ctrlSetText[38401,_shopTitle];
+ctrlSetText[IDC_WEAPONSHOP_TITLE,_shopTitle];
 
-private _filters = ((findDisplay 38400) displayCtrl 38402);
+private _filters = CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_FILTERLIST);
 lbClear _filters;
 
-ctrlShow [38406,true];
-ctrlEnable [38406,false];
-ctrlShow [38407,true];
-ctrlEnable [38407,false];
+ctrlShow [IDC_WEAPONSHOP_BUTTONMAGS,true];
+ctrlEnable [IDC_WEAPONSHOP_BUTTONMAGS,false];
+ctrlShow [IDC_WEAPONSHOP_BUTTONACCS,true];
+ctrlEnable [IDC_WEAPONSHOP_BUTTONACCS,false];
 
 _filters lbAdd localize "STR_Shop_Weapon_ShopInv";
 _filters lbAdd localize "STR_Shop_Weapon_YourInv";

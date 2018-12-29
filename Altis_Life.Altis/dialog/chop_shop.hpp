@@ -1,5 +1,5 @@
 class Chop_Shop {
-    idd = 39400;
+    idd = IDD_CHOPSHOPMENU;
     movingEnable = 0;
     enableSimulation = 1;
 
@@ -33,7 +33,7 @@ class Chop_Shop {
         };
 
         class priceInfo: Life_RscStructuredText {
-            idc = 39401;
+            idc = IDC_CHOPSHOPMENU_PRICEINFO;
             text = "";
             sizeEx = 0.035;
             x = 0.11;
@@ -45,7 +45,7 @@ class Chop_Shop {
 
     class controls {
         class vehicleList: Life_RscListBox {
-            idc = 39402;
+            idc = IDC_CHOPSHOPMENU_VEHICLELIST;
             onLBSelChanged = "_this call life_fnc_chopShopSelection";
             sizeEx = 0.04;
             x = 0.11;

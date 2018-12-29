@@ -10,12 +10,12 @@
     inventory.
 */
 
-ctrlShow [2002,false];
+ctrlShow [IDC_PLAYERMENU_DROPBUTTON,false];
 
 call {
-    private _value = ctrlText 2010;
+    private _value = ctrlText IDC_PLAYERMENU_ITEMEDIT;
 
-    if ((lbCurSel 2023) isEqualTo -1) exitWith {
+    if ((lbCurSel IDC_PLAYERMENU_INEARPLAYERS) isEqualTo -1) exitWith {
         hint localize "STR_NOTF_noOneSelected";
     };
 
@@ -24,7 +24,7 @@ call {
     };
 
 
-    private _unit = CONTROL_DATA(2023);
+    private _unit = CONTROL_DATA(IDC_PLAYERMENU_INEARPLAYERS);
     _unit = call compile format ["%1",_unit];
 
     if (isNil "_unit") exitWith {
@@ -51,4 +51,4 @@ call {
     [] call life_fnc_p_updateMenu;
 };
 
-ctrlShow[2002,true];
+ctrlShow[IDC_PLAYERMENU_DROPBUTTON,true];

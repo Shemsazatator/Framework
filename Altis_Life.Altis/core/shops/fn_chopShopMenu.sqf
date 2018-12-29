@@ -20,7 +20,7 @@ life_chopShop = _this select 3;
 if (count _nearVehicles isEqualTo 0) exitWith {titleText[localize "STR_Shop_NoVehNear","PLAIN"];};
 if (!(createDialog "Chop_Shop")) exitWith {hint localize "STR_Shop_ChopShopError"};
 
-_control = CONTROL(39400,39402);
+_control = CONTROL(IDD_CHOPSHOPMENU,IDC_CHOPSHOPMENU_VEHICLELIST);
 {
     if (alive _x) then {
         _className = typeOf _x;

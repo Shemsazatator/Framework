@@ -1,5 +1,5 @@
 class Life_key_management {
-    idd = 2700;
+    idd = IDD_KEYCHAINMENU;
     name= "life_key_chain";
     movingEnable = 0;
     enableSimulation = 1;
@@ -37,7 +37,7 @@ class Life_key_management {
         };
 
         class KeyChainList: Life_RscListBox {
-            idc = 2701;
+            idc = IDC_KEYCHAINMENU_KEYCHAINLIST;
             text = "";
             sizeEx = 0.035;
             x = 0.12;
@@ -57,7 +57,7 @@ class Life_key_management {
         };
 
         class NearPlayers: Life_RscCombo {
-            idc = 2702;
+            idc = IDC_KEYCHAINMENU_NEARPLAYERS;
             x = 0.26;
             y = 0.645;
             w = 0.275;
@@ -75,7 +75,7 @@ class Life_key_management {
         };
 
         class GiveKey: Life_RscButtonMenu {
-            idc = 2703;
+            idc = IDC_KEYCHAINMENU_GIVEKEY;
             text = "$STR_Keys_GiveKey";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             onButtonClick = "[] call life_fnc_keyGive";

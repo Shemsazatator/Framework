@@ -1,6 +1,8 @@
 /*
     Master UI Resource File
 */
+#include "defineIdDialog.inc"
+
 #include "common.hpp"
 #include "shop_items.hpp"
 #include "player_inv.hpp"

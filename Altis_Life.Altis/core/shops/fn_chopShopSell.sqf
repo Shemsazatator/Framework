@@ -8,7 +8,7 @@
 */
 disableSerialization;
 private ["_control","_price","_vehicle","_nearVehicles","_price2","_chopable"];
-_control = CONTROL(39400,39402);
+_control = CONTROL(IDD_CHOPSHOPMENU,IDC_CHOPSHOPMENU_VEHICLELIST);
 _price = _control lbValue (lbCurSel _control);
 _vehicle = _control lbData (lbCurSel _control);
 _vehicle = call compile format ["%1", _vehicle];

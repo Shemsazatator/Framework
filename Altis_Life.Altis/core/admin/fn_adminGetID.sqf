@@ -8,7 +8,7 @@
     Used by in-game admins to issue bans/kicks.
     https://community.bistudio.com/wiki/Multiplayer_Server_Commands
 */
-private _unit = CONTROL_DATA(2902);
+private _unit = CONTROL_DATA(IDC_ADMINMENU_PLAYERLIST);
 _unit = call compile format ["%1", _unit];
 if (isNil "_unit") exitWith {};
 if (isNull _unit) exitWith {};

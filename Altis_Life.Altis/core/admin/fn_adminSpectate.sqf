@@ -8,7 +8,7 @@
 */
 if (FETCH_CONST(life_adminlevel) < 3) exitWith {closeDialog 0;};
 
-private _unit = CONTROL_DATA(2902);
+private _unit = CONTROL_DATA(IDC_ADMINMENU_PLAYERLIST);
 _unit = call compile format ["%1", _unit];
 if (isNil "_unit") exitWith {};
 if (isNull _unit) exitWith {};

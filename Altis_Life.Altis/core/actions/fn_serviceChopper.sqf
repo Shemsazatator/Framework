@@ -20,8 +20,8 @@ if (CASH < _serviceCost) exitWith {hint localize "STR_Serive_Chopper_NotEnough"}
 life_action_inUse = true;
 "progressBar" cutRsc ["life_progress","PLAIN"];
 _ui = uiNamespace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+_progress = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+_pgText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
 _pgText ctrlSetText format [localize "STR_Service_Chopper_Servicing","waiting..."];
 _progress progressSetPosition 0.01;
 _cP = 0.01;

@@ -1,5 +1,5 @@
 class Life_vehicle_shop {
-    idd = 2300;
+    idd = IDD_VEHSHOP;
     name= "life_impound_menu";
     movingEnable = 0;
     enableSimulation = 1;
@@ -28,7 +28,7 @@ class Life_vehicle_shop {
     class controls {
         class Title: Life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 2301;
+            idc = IDC_VEHSHOP_TITLE;
             text = "";
             x = 0.1;
             y = 0.2;
@@ -37,7 +37,7 @@ class Life_vehicle_shop {
         };
 
         class VehicleList: Life_RscListBox {
-            idc = 2302;
+            idc = IDC_VEHSHOP_VEHICLELIST;
             text = "";
             sizeEx = 0.035;
             colorBackground[] = {0,0,0,0};
@@ -49,7 +49,7 @@ class Life_vehicle_shop {
         };
 
         class ColorList: Life_RscCombo {
-            idc = 2303;
+            idc = IDC_VEHSHOP_COLORLIST;
             x = 0.42;
             y = 0.68;
             w = 0.275;

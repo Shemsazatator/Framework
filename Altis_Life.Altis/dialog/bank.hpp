@@ -1,5 +1,5 @@
 class Life_atm_management {
-    idd = 2700;
+    idd = IDD_BANKMENU;
     name= "life_atm_menu";
     movingEnable = 0;
     enableSimulation = 1;
@@ -26,7 +26,7 @@ class Life_atm_management {
 
     class controls {
         class CashTitle: Life_RscStructuredText {
-            idc = 2701;
+            idc = IDC_BANKMENU_CASHTITLE;
             text = "";
             x = 0.39;
             y = 0.26;
@@ -67,7 +67,7 @@ class Life_atm_management {
         };
 
         class moneyEdit: Life_RscEdit {
-            idc = 2702;
+            idc = IDC_BANKMENU_MONEYEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.4;
@@ -77,7 +77,7 @@ class Life_atm_management {
         };
 
         class PlayerList: Life_RscCombo {
-            idc = 2703;
+            idc = IDC_BANKMENU_PLAYERLIST;
             x = 0.4;
             y = 0.58;
             w = 0.2;
@@ -96,7 +96,7 @@ class Life_atm_management {
         };
 
         class GangWithdraw : TransferButton {
-            idc = 2705;
+            idc = IDC_BANKMENU_GANGWITHDRAW;
             text = "$STR_ATM_WithdrawGang";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             onButtonClick = "[] call life_fnc_gangWithdraw";
@@ -106,7 +106,7 @@ class Life_atm_management {
         };
 
         class GangDeposit : TransferButton {
-            idc = 2706;
+            idc = IDC_BANKMENU_GANGDEPOSIT;
             text = "$STR_ATM_DepositGang";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             onButtonClick = "[] call life_fnc_gangDeposit";

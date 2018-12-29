@@ -11,7 +11,7 @@ _safe = [_this,0,objNull,[objNull]] call BIS_fnc_param;
 if (isNull _safe) exitWith {closeDialog 0;};
 disableSerialization;
 
-_tInv = (findDisplay 3500) displayCtrl 3502;
+_tInv = CONTROL(IDD_FEDERALRESERVE,IDC_FEDERALRESERVE_TRUNKGEAR);
 lbClear _tInv;
 
 _safeInfo = _safe getVariable ["safe",-1];

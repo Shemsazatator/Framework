@@ -13,7 +13,7 @@ _shop = uiNamespace getVariable ["Weapon_Shop",""];
 if (isNull _control) exitWith {closeDialog 0;}; //Bad data
 if (_index isEqualTo -1) exitWith {}; //Nothing selected
 
-_priceTag = CONTROL(38400,38404);
+_priceTag = CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_ITEMINFO);
 
 if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
     _item = CONTROL_DATAI(_control,_index);
@@ -44,12 +44,12 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
                         if (_count > 0) exitWith {_bool = true};
                     } forEach M_CONFIG(getArray,"WeaponShops",_shop,"mags");
                     if (_bool) then {
-                        ((findDisplay 38400) displayCtrl 38406) ctrlEnable true;
+                        CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONMAGS) ctrlEnable true;
                     } else {
-                        ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
+                        CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONMAGS) ctrlEnable false;
                     };
                 } else {
-                    ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
+                    CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONMAGS) ctrlEnable false;
                 };
 
                 //Accessories Menu
@@ -88,16 +88,16 @@ if ((uiNamespace getVariable ["Weapon_Shop_Filter",0]) isEqualTo 1) then {
                         if (_count > 0) exitWith {_bool = true};
                     } forEach M_CONFIG(getArray,"WeaponShops",_shop,"accs");
                     if (_bool) then {
-                        ((findDisplay 38400) displayCtrl 38407) ctrlEnable true;
+                        CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONACCS) ctrlEnable true;
                     } else {
-                        ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
+                        CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONACCS) ctrlEnable false;
                     };
                 } else {
-                    ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
+                    CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONACCS) ctrlEnable false;
                 };
             } else {
-            ((findDisplay 38400) displayCtrl 38406) ctrlEnable false;
-            ((findDisplay 38400) displayCtrl 38407) ctrlEnable false;
+            CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONMAGS) ctrlEnable false;
+            CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONACCS) ctrlEnable false;
         };
     };
 };

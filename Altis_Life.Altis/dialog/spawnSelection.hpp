@@ -1,5 +1,5 @@
 class life_spawn_selection {
-    idd = 38500;
+    idd = IDD_SPAWNMENU;
     movingEnable = 0;
     enableSimulation = 1;
 
@@ -33,13 +33,13 @@ class life_spawn_selection {
         };
 
         class SpawnPointTitle: Title {
-            idc = 38501;
+            idc = IDC_SPAWNMENU_TITLE;
             style = 1;
             text = "";
         };
 
         class MapView : Life_RscMapControl {
-            idc = 38502;
+            idc = IDC_SPAWNMENU_MAPVIEW;
             x = 0.328;
             y = 0.26;
             w = 0.56;
@@ -52,7 +52,7 @@ class life_spawn_selection {
 
     class controls {
         class SpawnPointList: Life_RscListNBox {
-            idc = 38510;
+            idc = IDC_SPAWNMENU_SPAWNPOINTLIST;
             text = "";
             sizeEx = 0.041;
             coloumns[] = {0,0,0.9};

@@ -34,20 +34,38 @@ if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
 
 life_veh_shop = [_shop,_spawnpoints,_shopFlag,_disableBuy]; //Store it so so other parts of the system can access it.
 
-ctrlSetText [2301,_shopTitle];
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+  ctrlSetText [IDC_VEHICLESHOP3D_TITLE,_shopTitle];
+} else {
+  ctrlSetText [IDC_VEHICLESHOP_TITLE,_shopTitle];
+};
 
 if (_disableBuy) then {
     //Disable the buy button.
-    ctrlEnable [2309,false];
+    if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+      ctrlEnable [IDC_VEHICLESHOP3D_BUYCAR,false];
+    } else {
+      ctrlEnable [IDC_VEHICLESHOP_BUYCAR,false];
+    };
 };
 
 //Fetch the shop config.
 _vehicleList = M_CONFIG(getArray,"CarShops",_shop,"vehicles");
 
-private _control = CONTROL(2300,2302);
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+  private _control = CONTROL(IDD_VEHICLESHOP3D,IDC_VEHICLESHOP3D_VEHICLELIST);
+} else {
+  private _control = CONTROL(IDD_VEHICLESHOP,IDC_VEHICLESHOP_VEHICLELIST);
+};
+
 lbClear _control; //Flush the list.
-ctrlShow [2330,false];
-ctrlShow [2304,false];
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+  ctrlShow [IDC_VEHICLESHOP3D_VEHICLEINFOHEADER,false];
+  ctrlShow [IDC_VEHICLESHOP3D_COLORLIST,false];
+} else {
+  ctrlShow [IDC_VEHICLESHOP_VEHICLEINFOHEADER,false];
+  ctrlShow [IDC_VEHICLESHOP_COLORLIST,false];
+};
 
 //Loop through
 {
@@ -64,4 +82,8 @@ ctrlShow [2304,false];
     };
 } forEach _vehicleList;
 
-((findDisplay 2300) displayCtrl 2302) lbSetCurSel 0;
+if (LIFE_SETTINGS(getNumber,"vehicleShop_3D") isEqualTo 1) then {
+  CONTROL(IDD_VEHICLESHOP3D,IDC_VEHICLESHOP3D_VEHICLELIST) lbSetCurSel 0;
+} else {
+  CONTROL(IDD_VEHICLESHOP,IDC_VEHICLESHOP_VEHICLELIST) lbSetCurSel 0;
+};

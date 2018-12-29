@@ -8,7 +8,7 @@
     Applies the filter selected and changes the list.
 */
 
-private _index = (lbCurSel 38402);
+private _index = (lbCurSel IDC_WEAPONSHOP_FILTERLIST);
 private _shop = uiNamespace getVariable ["Weapon_Shop",""];
 
 if (_index isEqualTo -1 || {_shop isEqualTo ""}) exitWith {systemChat "Bad Data Filter"; closeDialog 0;}; //Bad data passing.
@@ -16,10 +16,10 @@ if (_index isEqualTo -1 || {_shop isEqualTo ""}) exitWith {systemChat "Bad Data 
 uiNamespace setVariable ["Weapon_Shop_Filter",_index];
 //Setup List Control & Purge it.
 
-private _priceTag = ((findDisplay 38400) displayCtrl 38404);
+private _priceTag = CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_ITEMINFO);
 _priceTag ctrlSetStructuredText parseText "";
 
-private _itemList = ((findDisplay 38400) displayCtrl 38403);
+private _itemList = CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_ITEMLIST);
 lbClear _itemList;
 
 private "_config";
@@ -27,7 +27,7 @@ private "_config";
 if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace getVariable ["Weapon_Accessories",0]) isEqualTo 1}) then {
 
     if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1) then {
-    
+
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"mags");
         {
             _bool = [_x] call life_fnc_levelCheck;
@@ -44,14 +44,14 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace
             };
             true
         } count _config;
-        
-        ((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Weapons";
-        
-        ctrlShow [38406,true];
-        ctrlShow [38407,false];
-        
+
+        CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONMAGS) ctrlSetText localize "STR_Global_Weapons";
+
+        ctrlShow [IDC_WEAPONSHOP_BUTTONMAGS,true];
+        ctrlShow [IDC_WEAPONSHOP_BUTTONACCS,false];
+
     } else {
-    
+
         _config = M_CONFIG(getArray,"WeaponShops",_shop,"accs");
         {
             _bool = [_x] call life_fnc_levelCheck;
@@ -68,15 +68,15 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace
             };
             true
         } count _config;
-        
-        ((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Weapons";
-        
-        ctrlShow [38406,false];
-        ctrlShow [38407,true];
+
+        CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONACCS) ctrlSetText localize "STR_Global_Weapons";
+
+        ctrlShow [IDC_WEAPONSHOP_BUTTONMAGS,false];
+        ctrlShow [IDC_WEAPONSHOP_BUTTONACCS,true];
     };
 
-    ((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
-    ctrlShow [38402,false];
+    CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONBUYSELL) ctrlSetText localize "STR_Global_Buy";
+    ctrlShow [IDC_WEAPONSHOP_FILTERLIST,false];
 
 } else {
 
@@ -96,13 +96,13 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace
                 true
             } count _config;
 
-            ((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
-            ((findDisplay 38400) displayCtrl 38406) ctrlSetText localize "STR_Global_Mags";
-            ((findDisplay 38400) displayCtrl 38407) ctrlSetText localize "STR_Global_Accs";
-            
-            ctrlShow [38402,true];
-            ctrlShow [38406,true];
-            ctrlShow [38407,true];
+            CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONBUYSELL) ctrlSetText localize "STR_Global_Buy";
+            CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONMAGS) ctrlSetText localize "STR_Global_Mags";
+            CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONACCS) ctrlSetText localize "STR_Global_Accs";
+
+            ctrlShow [IDC_WEAPONSHOP_FILTERLIST,true];
+            ctrlShow [IDC_WEAPONSHOP_BUTTONMAGS,true];
+            ctrlShow [IDC_WEAPONSHOP_BUTTONACCS,true];
         };
 
         case 1: {
@@ -120,10 +120,10 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace
             _config = _config + (vestItems player);
             _config = _config + (backpackItems player);
 
-            ((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Sell";
-            ctrlShow [38402,true];
-            ctrlShow [38406,false];
-            ctrlShow [38407,false];
+            CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_BUTTONBUYSELL) ctrlSetText localize "STR_Global_Sell";
+            ctrlShow [IDC_WEAPONSHOP_FILTERLIST,true];
+            ctrlShow [IDC_WEAPONSHOP_BUTTONMAGS,false];
+            ctrlShow [IDC_WEAPONSHOP_BUTTONACCS,false];
 
             private _itemArray = [];
             _itemArray pushBack M_CONFIG(getArray,"WeaponShops",_shop,"items");
@@ -166,4 +166,4 @@ if ((uiNamespace getVariable ["Weapon_Magazine",0]) isEqualTo 1 || {(uiNamespace
     };
 };
 
-((findDisplay 38400) displayCtrl 38403) lbSetCurSel 0;
+CONTROL(IDD_WEAPONSHOP,IDC_WEAPONSHOP_ITEMLIST) lbSetCurSel 0;

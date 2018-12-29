@@ -9,8 +9,8 @@
 disableSerialization;
 if !(playerSide isEqualTo west) exitWith {};
 
-private _list = CONTROL(2400,2402);
-_data = CONTROL_DATA(2401);
+private _list = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_WANTEDDETAILS);
+_data = CONTROL_DATA(IDC_WANTEDMENU_WANTEDLIST);
 _data = call compile format ["%1", _data];
 if (isNil "_data") exitWith {};
 if (!(_data isEqualType [])) exitWith {};

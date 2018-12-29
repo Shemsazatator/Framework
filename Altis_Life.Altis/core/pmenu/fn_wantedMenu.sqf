@@ -12,8 +12,8 @@ if !(playerSide isEqualTo west) exitWith {}; // Only for cops open this menu
 
 createDialog "life_wanted_menu";
 
-private _list = CONTROL(2400,2401);
-private _players = CONTROL(2400,2406);
+private _list = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_WANTEDLIST);
+private _players = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_PLAYERLIST);
 private _units = [];
 
 lbClear _list;
@@ -25,7 +25,7 @@ lbClear _players;
     _players lbSetdata [(lbSize _players)-1,str(_x)];
 } forEach playableUnits;
 
-private _list2 = CONTROL(2400,2407);
+private _list2 = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_WANTEDADDL);
 lbClear _list2; //Purge the list
 
 private _crimes = LIFE_SETTINGS(getArray,"crimes");
@@ -38,10 +38,10 @@ private _crimes = LIFE_SETTINGS(getArray,"crimes");
     _list2 lbSetData [(lbSize _list2)-1,(_x select 2)];
 } forEach _crimes;
 
-ctrlSetText[2404,"Establishing connection..."];
+ctrlSetText[IDC_WANTEDMENU_WANTEDCONNECTION,"Establishing connection..."];
 
 if (FETCH_CONST(life_coplevel) < 3 && {FETCH_CONST(life_adminlevel) isEqualTo 0}) then {
-    ctrlShow[2405,false];
+    ctrlShow[IDC_WANTEDMENU_PARDONBUTTON,false];
 };
 
 if (life_HC_isActive) then {

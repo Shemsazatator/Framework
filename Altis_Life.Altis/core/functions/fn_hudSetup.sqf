@@ -14,7 +14,10 @@ cutRsc ["playerHUD", "PLAIN", 2, false];
 [] spawn {
     for "_i" from 0 to 1 step 0 do {
         private _dam = damage player;
-        waitUntil {!((damage player) isEqualTo _dam)};
+        private _experience = life_experience;
+        private _notoriety = life_notoriety;
+        private _prestige = life_prestige;
+        waitUntil {(damage player) != _dam or life_experience != _experience or life_notoriety != _notoriety or life_prestige != _prestige};
         [] call life_fnc_hudUpdate;
     };
 };

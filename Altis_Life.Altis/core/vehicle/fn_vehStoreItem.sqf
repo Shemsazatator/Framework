@@ -12,8 +12,8 @@ private ["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index"
 disableSerialization;
 if ((life_trunk_vehicle getVariable ["trunk_in_use_by",player]) != player) exitWith { closeDialog 0; hint localize "STR_MISC_VehInvUse"; };
 
-_ctrl = ctrlSelData(3503);
-_num = ctrlText 3506;
+_ctrl = ctrlSelData(IDC_TRUNKMENU_PLAYERGEAR);
+_num = ctrlText IDC_TRUNKMENU_PLAYEREDIT;
 if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};
 _num = parseNumber(_num);
 if (_num < 1) exitWith {hint localize "STR_MISC_Under1";};

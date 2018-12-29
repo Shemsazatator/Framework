@@ -5,7 +5,7 @@
     Coder: EdgeKiller
 */
 class Life_craft {
-	idd = 666;
+	idd = IDD_CRAFTMENU;
 	name= "life_craft";
 	movingEnable = false;
 	enableSimulation = true;
@@ -34,7 +34,7 @@ class Life_craft {
 
 		class Title : Life_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
-			idc = 667;
+			idc = IDC_CRAFTMENU_TITLE;
 			text = "$STR_CRAFT_Title";
 			x = 0.1;
 			y = 0.2;
@@ -44,7 +44,7 @@ class Life_craft {
 
 		class craftListHeader : Life_RscText
 		{
-			idc = 668;
+			idc = IDC_CRAFTMENU_CRAFTLISTHEADER;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_PM_CraftStats";
 			sizeEx = 0.04;
@@ -55,7 +55,7 @@ class Life_craft {
 		//Craft list
 		class craftList : life_RscListBox
 		{
-			idc = 669;
+			idc = IDC_CRAFTMENU_CRAFTLIST;
 			sizeEx = 0.030;
 			onLBSelChanged = "[] spawn life_fnc_craft_update";
 			x = 0.105;
@@ -66,7 +66,7 @@ class Life_craft {
 		//Materials list header
 		class materialListHeader : Life_RscText
 		{
-			idc = 670;
+			idc = IDC_CRAFTMENU_MATERIALLISTHEADER;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_PM_CraftMaterials";
 			sizeEx = 0.04;
@@ -77,7 +77,7 @@ class Life_craft {
 		//Materials list
 		class materialList : Life_RscControlsGroup
 		{
-			idc = 671;
+			idc = IDC_CRAFTMENU_MATERIEALLIST;
 			w = 0.275;
 			h = 0.44;
 			x = 0.395;
@@ -87,7 +87,7 @@ class Life_craft {
 			{
 				class mats : Life_RscStructuredText
 				{
-					idc = 672;
+					idc = IDC_CRAFTMENU_MATS;
 					sizeEx = 0.020;
 					text = "";
 					x = 0;
@@ -100,7 +100,7 @@ class Life_craft {
 		//FILTER
 		class FilterList : Life_RscCombo
 		{
-			idc = 673;
+			idc = IDC_CRAFTMENU_FILTERLIST;
 			colorBackground[] = {0,0,0,0.7};
 			onLBSelChanged  = "[] call life_fnc_craft_updateFilter";
 			x = 0.69;
@@ -111,7 +111,7 @@ class Life_craft {
 
 		//Craft button
 		class ButtonCraft : Life_RscButtonMenu {
-			idc = 674;
+			idc = IDC_CRAFTMENU_BUTTONCRAFT;
 			text = "$STR_CRAFT_Button";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "if(!(life_is_processing and life_action_inUse)) then {[] spawn life_fnc_craftAction};";

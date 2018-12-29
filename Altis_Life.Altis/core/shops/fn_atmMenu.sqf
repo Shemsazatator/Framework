@@ -17,14 +17,14 @@ if (!dialog) then {
 };
 
 disableSerialization;
-_units = CONTROL(2700,2703);
+_units = CONTROL(IDD_BANKMENU,IDC_BANKMENU_PLAYERLIST);
 
 lbClear _units;
-CONTROL(2700,2701) ctrlSetStructuredText parseText format ["<img size='1.7' image='icons\ico_bank.paa'/> $%1<br/><img size='1.6' image='icons\ico_money.paa'/> $%2",[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
+CONTROL(IDD_BANKMENU,IDC_BANKMENU_CASHTITLE) ctrlSetStructuredText parseText format ["<img size='1.7' image='icons\ico_bank.paa'/> $%1<br/><img size='1.6' image='icons\ico_money.paa'/> $%2",[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
 
 {
     _name = _x getVariable ["realname",name _x];
-    if (alive _x && (!(_name isEqualTo profileName))) then {
+    if (alive _x and (!(_name isEqualTo profileName))) then {
         switch (side _x) do {
             case west: {_type = "Cop"};
             case east: {_type = "Civ"};
@@ -36,9 +36,9 @@ CONTROL(2700,2701) ctrlSetStructuredText parseText format ["<img size='1.7' imag
     };
 } forEach playableUnits;
 
-lbSetCurSel [2703,0];
+lbSetCurSel [IDC_BANKMENU_PLAYERLIST,0];
 
 if (isNil {(group player getVariable "gang_bank")}) then {
-    (CONTROL(2700,2705)) ctrlEnable false;
-    (CONTROL(2700,2706)) ctrlEnable false;
+    (CONTROL(IDD_BANKMENU,IDC_BANKMENU_GANGWITHDRAW)) ctrlEnable false;
+    (CONTROL(IDD_BANKMENU,IDC_BANKMENU_GANGDEPOSIT)) ctrlEnable false;
 };

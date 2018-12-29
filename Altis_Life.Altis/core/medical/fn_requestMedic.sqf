@@ -6,7 +6,7 @@
     Description:
     N/A
 */
-private _medicsOnline = {!(_x isEqualTo player) && {side _x isEqualTo independent} && {alive _x}} count playableUnits > 0; //Check if medics (indep) are in the room.
+private _medicsOnline = {!(_x isEqualTo player) and {side _x isEqualTo independent} and {alive _x}} count playableUnits > 0; //Check if medics (indep) are in the room.
 
 life_corpse setVariable ["Revive",false,true]; //Set the corpse to a revivable state.
 if (_medicsOnline) then {
@@ -19,7 +19,7 @@ if (_medicsOnline) then {
 
 //Create a thread to monitor duration since last request (prevent spammage).
 [] spawn  {
-    CONTROL(7300,7303) ctrlEnable false;
+    CONTROL(IDD_DEATHSCREEN,IDC_DEATHSCREEN_MEDICBTN) ctrlEnable false;
     sleep (2 * 60);
-    CONTROL(7300,7303) ctrlEnable true;
+    CONTROL(IDD_DEATHSCREEN,IDC_DEATHSCREEN_MEDICBTN) ctrlEnable true;
 };

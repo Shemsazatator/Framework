@@ -8,12 +8,12 @@
 private["_inv","_mats","_item","_struct","_str","_invSize","_matsNeed","_matsNum","_config","_itemFilter"]; //Declare all private variables
 disableSerialization; //Disable Serialization
 
-_inv = CONTROL(666,669); //find the listbox of items can be created
-_mats = CONTROL(666,672);
+_inv = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_CRAFTLIST); //find the listbox of items can be created
+_mats = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_MATS);
 _struct = "";
-if((lbCurSel 669) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
-_item = CONTROL_DATA(669);
-_itemFilter = CONTROL_DATA(673);
+if((lbCurSel IDC_CRAFTMENU_CRAFTLIST) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+_item = CONTROL_DATA(IDC_CRAFTMENU_CRAFTLIST);
+_itemFilter = CONTROL_DATA(IDC_CRAFTMENU_FILTERLIST);
 
 _config = [_itemFilter] call life_fnc_craftConfig;
 

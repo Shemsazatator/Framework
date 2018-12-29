@@ -1,5 +1,5 @@
 class Life_impound_menu {
-    idd = 2800;
+    idd = IDD_IMPOUNDMENU;
     name="life_vehicle_shop";
     movingEnable = 0;
     enableSimulation = 1;
@@ -25,7 +25,7 @@ class Life_impound_menu {
         };
 
         class Title: Life_RscTitle {
-            idc = 2801;
+            idc = IDC_IMPOUNDMENU_TITLE;
             text = "$STR_GUI_Garage";
             x = 0.1;
             y = 0.2;
@@ -44,7 +44,7 @@ class Life_impound_menu {
         };
 
         class VehicleInfoHeader: Life_RscText {
-            idc = 2830;
+            idc = IDC_IMPOUNDMENU_VEHICLEINFOHEADER;
             text = "$STR_GUI_VehInfo";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
             x = 0.42;
@@ -86,7 +86,7 @@ class Life_impound_menu {
 
     class controls {
         class VehicleList: Life_RscListBox {
-            idc = 2802;
+            idc = IDC_IMPOUNDMENU_VEHICLELIST;
             text = "";
             sizeEx = 0.04;
             colorBackground[] = {0.1,0.1,0.1,0.9};
@@ -98,7 +98,7 @@ class Life_impound_menu {
         };
 
         class vehicleInfomationList: Life_RscStructuredText {
-            idc = 2803;
+            idc = IDC_IMPOUNDMENU_VEHICLEINFOLIST;
             text = "";
             sizeEx = 0.035;
             x = 0.41;
@@ -109,7 +109,7 @@ class Life_impound_menu {
 
         class MainBackgroundHider: Life_RscText {
             colorBackground[] = {0,0,0,1};
-            idc = 2810;
+            idc = IDC_IMPOUNDMENU_MAINBACKGROUNDHIDER;
             x = 0.1;
             y = 0.2 + (11 / 250);
             w = 0.8;
@@ -117,7 +117,7 @@ class Life_impound_menu {
         };
 
         class MainHideText: Life_RscText {
-            idc = 2811;
+            idc = IDC_IMPOUNDMENU_MAINHIDETEXT;
             text = "$STR_ANOTF_QueryGarage";
             sizeEx = 0.06;
             x = 0.24;

@@ -46,8 +46,8 @@ _fuel = (_vehicleInfo select 12);
 _armor = (_vehicleInfo select 9);
 [_className] call life_fnc_3dPreviewDisplay;
 
-ctrlShow [2330,true];
-(CONTROL(2300,2303)) ctrlSetStructuredText parseText format [
+ctrlShow [IDC_VEHICLESHOP_VEHICLEINFOHEADER,true];
+(CONTROL(IDD_VEHICLESHOP,IDC_VEHICLESHOP_VEHICLEINFOLIST)) ctrlSetStructuredText parseText format [
     (localize "STR_Shop_Veh_UI_Rental")+ " <t color='#8cff9b'>$%1</t><br/>" +
     (localize "STR_Shop_Veh_UI_Ownership")+ " <t color='#8cff9b'>$%2</t><br/>" +
     (localize "STR_Shop_Veh_UI_MaxSpeed")+ " %3 km/h<br/>" +
@@ -66,7 +66,7 @@ ctrlShow [2330,true];
     _armor
 ];
 
-_ctrl = CONTROL(2300,2304);
+_ctrl = CONTROL(IDD_VEHICLESHOP,IDC_VEHICLESHOP_COLORLIST);
 lbClear _ctrl;
 
 if (!isClass (missionConfigFile >> "LifeCfgVehicles" >> _classNameLife)) then {
@@ -96,17 +96,17 @@ _indexrandom = _numberindexcolorarray call BIS_fnc_selectRandom;
 _ctrl lbSetCurSel _indexrandom;
 
 if (_className in (LIFE_SETTINGS(getArray,"vehicleShop_rentalOnly"))) then {
-    ctrlEnable [2309,false];
+    ctrlEnable [IDC_VEHICLESHOP_BUYCAR,false];
 } else {
     if (!(life_veh_shop select 3)) then {
-        ctrlEnable [2309,true];
+        ctrlEnable [IDC_VEHICLESHOP_BUYCAR,true];
     };
 };
 
 if !((lbSize _ctrl)-1 isEqualTo -1) then {
-    ctrlShow[2304,true];
+    ctrlShow[IDC_VEHICLESHOP_COLORLIST,true];
 } else {
-    ctrlShow[2304,false];
+    ctrlShow[IDC_VEHICLESHOP_COLORLIST,false];
 };
 
 true;

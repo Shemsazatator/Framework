@@ -10,15 +10,15 @@
 private ["_list","_plist","_sel","_vehicle","_owners","_index","_unit","_uid"];
 disableSerialization;
 
-_list = CONTROL(2700,2701);
-_plist = CONTROL(2700,2702);
+_list = CONTROL(IDD_KEYCHAINMENU,IDC_KEYCHAINMENU_KEYCHAINLIST);
+_plist = CONTROL(IDD_KEYCHAINMENU,IDC_KEYCHAINMENU_NEARPLAYERS);
 
 _sel = lbCurSel _list;
 if ((_list lbData _sel) isEqualTo "") exitWith {hint localize "STR_NOTF_didNotSelectVehicle";};
 _vehicle = CONTROL_DATAI(_list,_sel);
 _vehicle = life_vehicles select parseNumber(_vehicle);
 
-if ((lbCurSel 2702) isEqualTo -1) exitWith {hint localize "STR_NOTF_didNotSelectPlayer";};
+if ((lbCurSel IDC_KEYCHAINMENU_NEARPLAYERS) isEqualTo -1) exitWith {hint localize "STR_NOTF_didNotSelectPlayer";};
 _sel = lbCurSel _plist;
 _unit = CONTROL_DATAI(_plist,_sel);
 _unit = call compile format ["%1", _unit];

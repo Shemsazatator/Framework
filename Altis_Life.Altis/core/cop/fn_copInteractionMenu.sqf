@@ -6,15 +6,6 @@
     Description:
     Replaces the mass addactions for various cop actions towards another player.
 */
-#define Btn1 37450
-#define Btn2 37451
-#define Btn3 37452
-#define Btn4 37453
-#define Btn5 37454
-#define Btn6 37455
-#define Btn7 37456
-#define Btn8 37457
-#define Title 37401
 
 disableSerialization;
 private _curTarget = param [0,objNull,[objNull]];
@@ -30,14 +21,14 @@ if (!dialog) then {
     createDialog "pInteraction_Menu";
 };
 
-private _Btn1 = CONTROL(37400,Btn1);
-private _Btn2 = CONTROL(37400,Btn2);
-private _Btn3 = CONTROL(37400,Btn3);
-private _Btn4 = CONTROL(37400,Btn4);
-private _Btn5 = CONTROL(37400,Btn5);
-private _Btn6 = CONTROL(37400,Btn6);
-private _Btn7 = CONTROL(37400,Btn7);
-private _Btn8 = CONTROL(37400,Btn8);
+private _Btn1 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON1);
+private _Btn2 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON2);
+private _Btn3 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON3);
+private _Btn4 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON4);
+private _Btn5 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON5);
+private _Btn6 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON6);
+private _Btn7 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON7);
+private _Btn8 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON8);
 life_pInact_curTarget = _curTarget;
 
 if (player getVariable ["isEscorting",false]) then {

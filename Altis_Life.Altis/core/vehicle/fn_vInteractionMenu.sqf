@@ -6,33 +6,24 @@
     Description:
     Replaces the mass add actions for various vehicle actions.
 */
-#define Btn1 37450
-#define Btn2 37451
-#define Btn3 37452
-#define Btn4 37453
-#define Btn5 37454
-#define Btn6 37455
-#define Title 37401
-private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_id"];
 if (!dialog) then {
     createDialog "vInteraction_Menu";
 };
 disableSerialization;
 
-_curTarget = param [0,objNull,[objNull]];
+private _curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-_isVehicle = if ((_curTarget isKindOf "landVehicle") || (_curTarget isKindOf "Ship") || (_curTarget isKindOf "Air")) then {true} else {false};
+_isVehicle = if ((_curTarget isKindOf "landVehicle") or (_curTarget isKindOf "Ship") or (_curTarget isKindOf "Air")) then {true} else {false};
 if (!_isVehicle) exitWith {closeDialog 0;};
 
-_display = findDisplay 37400;
-_Btn1 = _display displayCtrl Btn1;
-_Btn2 = _display displayCtrl Btn2;
-_Btn3 = _display displayCtrl Btn3;
-_Btn4 = _display displayCtrl Btn4;
-_Btn5 = _display displayCtrl Btn5;
-_Btn6 = _display displayCtrl Btn6;
+private _Btn1 = CONTROL(IDD_VINTERACTION,IDC_VINTERACTION_BUTTON1);
+private _Btn2 = CONTROL(IDD_VINTERACTION,IDC_VINTERACTION_BUTTON2);
+private _Btn3 = CONTROL(IDD_VINTERACTION,IDC_VINTERACTION_BUTTON3);
+private _Btn4 = CONTROL(IDD_VINTERACTION,IDC_VINTERACTION_BUTTON4);
+private _Btn5 = CONTROL(IDD_VINTERACTION,IDC_VINTERACTION_BUTTON5);
+private _Btn6 = CONTROL(IDD_VINTERACTION,IDC_VINTERACTION_BUTTON6);
 life_vInact_curTarget = _curTarget;
-_id = getObjectDLC _curTarget;
+private _id = getObjectDLC _curTarget;
 
 //Set Repair Action
 _Btn1 ctrlSetText localize "STR_vInAct_Repair";

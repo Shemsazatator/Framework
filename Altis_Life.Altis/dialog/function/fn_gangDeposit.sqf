@@ -6,8 +6,7 @@
     Description:
     Deposits money into the players gang bank.
 */
-private ["_value"];
-_value = parseNumber(ctrlText 2702);
+private _value = parseNumber(ctrlText IDC_BANKMENU_MONEYEDIT);
 group player setVariable ["gbank_in_use_by",player,true];
 
 //Series of stupid checks

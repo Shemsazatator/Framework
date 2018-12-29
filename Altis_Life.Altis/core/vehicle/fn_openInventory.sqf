@@ -17,21 +17,21 @@ if (!createDialog "TrunkMenu") exitWith {hint localize "STR_MISC_DialogError";};
 disableSerialization;
 
 if (_vehicle isKindOf "Box_IND_Grenades_F" || _vehicle isKindOf "B_supplyCrate_F") then {
-    ctrlSetText[3501,format [(localize "STR_MISC_HouseStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+    ctrlSetText[IDC_TRUNKMENU_TITLE,format [(localize "STR_MISC_HouseStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 } else {
-    ctrlSetText[3501,format [(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
+    ctrlSetText[IDC_TRUNKMENU_TITLE,format [(localize "STR_MISC_VehStorage")+ " - %1",getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName")]];
 };
 
 _veh_data = [_vehicle] call life_fnc_vehicleWeight;
 
 if (_veh_data select 0 isEqualTo -1) exitWith {closeDialog 0; _vehicle setVariable ["trunk_in_use",false,true]; hint localize "STR_MISC_NoStorageVeh";};
 
-ctrlSetText[3504,format [(localize "STR_MISC_Weight")+ " %1/%2",_veh_data select 1,_veh_data select 0]];
+ctrlSetText[IDC_TRUNKMENU_VEHICLEWEIGHT,format [(localize "STR_MISC_Weight")+ " %1/%2",_veh_data select 1,_veh_data select 0]];
 [_vehicle] call life_fnc_vehInventory;
 life_trunk_vehicle = _vehicle;
 
 _vehicle spawn {
-    waitUntil {isNull (findDisplay 3500)};
+    waitUntil {isNull (findDisplay IDD_TRUNKMENU)};
     _this setVariable ["trunk_in_use",false,true];
     if (_this isKindOf "Box_IND_Grenades_F" || _this isKindOf "B_supplyCrate_F") then {
 
@@ -45,7 +45,7 @@ _vehicle spawn {
 
 if (LIFE_SETTINGS(getNumber,"save_vehicle_virtualItems") isEqualTo 1) then {
     _vehicle spawn {
-        waitUntil {isNull (findDisplay 3500)};
+        waitUntil {isNull (findDisplay IDD_TRUNKMENU)};
         _this setVariable ["trunk_in_use",false,true];
         if ((_this isKindOf "Car") || (_this isKindOf "Air") || (_this isKindOf "Ship")) then {
             [] call SOCK_fnc_updateRequest;

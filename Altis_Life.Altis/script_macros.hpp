@@ -55,3 +55,7 @@
     preprocessFile "SpyGlass\endoftheline.sqf"; \
     sleep 2.5; \
     failMission "SpyGlass";
+
+
+//Dialog Macros
+#include "dialog\defineIdDialog.inc"

@@ -11,15 +11,15 @@ private ["_vehicles","_control"];
 disableSerialization;
 _vehicles = param [0,[],[[]]];
 
-ctrlShow[2803,false];
-ctrlShow[2830,false];
-waitUntil {!isNull (findDisplay 2800)};
+ctrlShow[IDC_IMPOUNDMENU_VEHICLEINFOLIST,false];
+ctrlShow[IDC_IMPOUNDMENU_VEHICLEINFOHEADER,false];
+waitUntil {!isNull (findDisplay IDD_IMPOUNDMENU)};
 
 if (count _vehicles isEqualTo 0) exitWith {
-    ctrlSetText[2811,localize "STR_Garage_NoVehicles"];
+    ctrlSetText[IDC_IMPOUNDMENU_MAINHIDETEXT,localize "STR_Garage_NoVehicles"];
 };
 
-_control = CONTROL(2800,2802);
+_control = CONTROL(IDD_IMPOUNDMENU,IDC_IMPOUNDMENU_VEHICLELIST);
 lbClear _control;
 
 {
@@ -32,5 +32,5 @@ lbClear _control;
     _control lbSetValue [(lbSize _control)-1,(_x select 0)];
 } forEach _vehicles;
 
-ctrlShow[2810,false];
-ctrlShow[2811,false];
+ctrlShow[IDC_IMPOUNDMENU_MAINBACKGROUNDHIDER,false];
+ctrlShow[IDC_IMPOUNDMENU_MAINHIDETEXT,false];

@@ -11,14 +11,14 @@ createDialog "Life_craft";
 disableSerialization;
 
 if (life_is_processing) exitWith {
-	closeDialog 2001;
+	closeDialog IDD_PLAYERMENU;
 	closeDialog 0;
 };
 
-_inv = CONTROL(666,669); //find the listbox of items can be created
+_inv = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_CRAFTLIST); //find the listbox of items can be created
 lbClear _inv; //clear the listbox
 
-_filter = CONTROL(666,673);
+_filter = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_FILTERLIST);
 _filter lbAdd localize "STR_CRAFT_FILTER_Weapon";
 _filter lbSetData[(lbSize _filter)-1,"weapon"];
 _filter lbAdd localize "STR_CRAFT_FILTER_Uniform";

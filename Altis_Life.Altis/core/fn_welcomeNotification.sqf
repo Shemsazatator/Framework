@@ -1,3 +1,4 @@
+#include "..\script_macros.hpp"
 /*
     File: fn_welcomeNotification.sqf
     Author: Bryan "Tonic" Boardwine
@@ -18,11 +19,10 @@ disableSerialization;
 
 createDialog "RscDisplayWelcome";
 
-_display = findDisplay 999999;
-_text1 = _display displayCtrl 1100;
-_buttonSpoiler = _display displayCtrl 2400;
-_textSpoiler = _display displayCtrl 1101;
-_text2 = _display displayCtrl 1102;
+_text1 = CONTROL(999999,1100);
+_buttonSpoiler = CONTROL(999999,2400);
+_textSpoiler = CONTROL(999999,1101);
+_text2 = CONTROL(999999,1102);
 
 _message = "";
 _message = _message + "<t align='center' size='8' shadow='0'>AsYetUntitled</t><br /><br />";

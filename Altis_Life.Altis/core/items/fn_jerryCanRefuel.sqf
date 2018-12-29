@@ -33,8 +33,8 @@ if (_action) then {
     "progressBar" cutRsc ["life_progress","PLAIN"];
     _title = localize "STR_ISTR_Jerry_Refuel";
     _ui = uiNamespace getVariable "life_progress";
-    _progress = _ui displayCtrl 38201;
-    _pgText = _ui displayCtrl 38202;
+    _progress = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+    _pgText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
     _pgText ctrlSetText format ["%2 (1%1)...","%",_title];
     _progress progressSetPosition 0.01;
     _cP = 0.01;
@@ -49,8 +49,8 @@ if (_action) then {
         if (isNull _ui) then {
             "progressBar" cutRsc ["life_progress","PLAIN"];
             _ui = uiNamespace getVariable "life_progress";
-            _progressBar = _ui displayCtrl 38201;
-            _titleText = _ui displayCtrl 38202;
+            _progressBar = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+            _titleText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
         };
         _cP = _cP + 0.01;
         _progress progressSetPosition _cP;

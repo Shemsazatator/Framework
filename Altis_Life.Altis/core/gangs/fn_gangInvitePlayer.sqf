@@ -9,8 +9,8 @@
 private "_unit";
 disableSerialization;
 
-if ((lbCurSel 2632) isEqualTo -1) exitWith {hint localize "STR_GNOTF_SelectPerson"};
-_unit = call compile format ["%1",CONTROL_DATA(2632)];
+if ((lbCurSel IDC_GANGMENU_COLORLIST) isEqualTo -1) exitWith {hint localize "STR_GNOTF_SelectPerson"};
+_unit = call compile format ["%1",CONTROL_DATA(IDC_GANGMENU_COLORLIST)];
 
 if (isNull _unit) exitWith {}; //Bad unit?
 if (_unit == player) exitWith {hint localize "STR_GNOTF_InviteSelf"};

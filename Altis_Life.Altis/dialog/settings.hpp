@@ -1,5 +1,5 @@
 class SettingsMenu {
-    idd = 2900;
+    idd = IDD_SETTINGMENU;
     name = "SettingsMenu";
     movingEnable = 1;
     enableSimulation = 1;
@@ -91,7 +91,7 @@ class SettingsMenu {
         };
 
         class VD_onfoot_slider: life_RscXSliderH {
-            idc = 2901;
+            idc = IDC_SETTINGMENU_VDONFOOTSLIDER;
             text = "";
             onSliderPosChanged = "[0,_this select 1] call life_fnc_s_onSliderChange;";
             tooltip = "$STR_SM_ToolTip1";
@@ -102,7 +102,7 @@ class SettingsMenu {
         };
 
         class VD_onfoot_value: Life_RscEdit {
-            idc = 2902;
+            idc = IDC_SETTINGMENU_VDONFOOTVALUE;
             text = "";
             onChar = "[_this select 0, _this select 1,'ground',false] call life_fnc_s_onChar;";
             onKeyUp = "[_this select 0, _this select 1,'ground',true] call life_fnc_s_onChar;";
@@ -113,7 +113,7 @@ class SettingsMenu {
         };
 
         class VD_car_slider: life_RscXSliderH {
-            idc = 2911;
+            idc = IDC_SETTINGMENU_VDCARSLIDER;
             text = "";
             onSliderPosChanged = "[1,_this select 1] call life_fnc_s_onSliderChange;";
             tooltip = "$STR_SM_ToolTip2";
@@ -124,7 +124,7 @@ class SettingsMenu {
         };
 
         class VD_car_value: Life_RscEdit {
-            idc = 2912;
+            idc = IDC_SETTINGMENU_VDCARSVALUE;
             text = "";
             onChar = "[_this select 0, _this select 1,'vehicle',false] call life_fnc_s_onChar;";
             onKeyUp = "[_this select 0, _this select 1,'vehicle',true] call life_fnc_s_onChar;";
@@ -135,7 +135,7 @@ class SettingsMenu {
         };
 
         class VD_air_slider: life_RscXSliderH {
-            idc = 2921;
+            idc = IDC_SETTINGMENU_VDAIRSLIDER;
             text = "";
             onSliderPosChanged = "[2,_this select 1] call life_fnc_s_onSliderChange;";
             tooltip = "$STR_SM_ToolTip3";
@@ -146,7 +146,7 @@ class SettingsMenu {
         };
 
         class VD_air_value: Life_RscEdit {
-            idc = 2922;
+            idc = IDC_SETTINGMENU_VDAIRVALUE;
             text = "";
             onChar = "[_this select 0, _this select 1,'air',false] call life_fnc_s_onChar;";
             onKeyUp = "[_this select 0, _this select 1,'air',true] call life_fnc_s_onChar;";
@@ -158,30 +158,29 @@ class SettingsMenu {
 
         class PlayerTagsONOFF: Life_Checkbox {
             tooltip = "$STR_GUI_PlayTags";
-            idc = 2970;
+            idc = IDC_SETTINGMENU_PLAYERTAGSONOFF;
             sizeEx = 0.04;
             onCheckedChanged = "['tags',_this select 1] call life_fnc_s_onCheckedChange;";
             x = 0.65;
             y = 0.43;
-
         };
 
         class SideChatONOFF: PlayerTagsONOFF {
-            idc = 2971;
+            idc = IDC_SETTINGMENU_SIDECHATONOFF;
             tooltip = "$STR_GUI_SideSwitch";
             onCheckedChanged = "['sidechat',_this select 1] call life_fnc_s_onCheckedChange;";
             y = 0.48;
         };
 
         class RevealONOFF : PlayerTagsONOFF {
-            idc = 2972;
+            idc = IDC_SETTINGMENU_REVEALONOFF;
             tooltip = "$STR_GUI_PlayerReveal";
             onCheckedChanged = "['objects',_this select 1] call life_fnc_s_onCheckedChange;";
             y = 0.53;
         };
 
         class BroadcastONOFF : PlayerTagsONOFF {
-            idc = 2973;
+            idc = IDC_SETTINGMENU_BROADCASTONOFF;
             tooltip = "$STR_GUI_BroadcastSwitch";
             onCheckedChanged = "['broadcast',_this select 1] call life_fnc_s_onCheckedChange;";
             y = 0.58;

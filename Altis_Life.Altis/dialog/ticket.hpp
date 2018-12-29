@@ -1,5 +1,5 @@
 class Life_ticket_give {
-    idd = 2650;
+    idd = IDD_TICKETGIVEMENU;
     name = "life_ticket_give";
     movingEnable = 0;
     enableSimulation = 1;
@@ -27,7 +27,7 @@ class Life_ticket_give {
     class controls {
         class Title: Life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 2651;
+            idc = IDC_TICKETGIVEMENU_TITLE;
             text = "";
             x = 0.3;
             y = 0.2;
@@ -36,7 +36,7 @@ class Life_ticket_give {
         };
 
         class moneyEdit: Life_RscEdit {
-            idc = 2652;
+            idc = IDC_TICKETGIVEMENU_MONEYEDIT;
             text = "100";
             sizeEx = 0.030;
             x = 0.40;
@@ -59,7 +59,7 @@ class Life_ticket_give {
 };
 
 class Life_ticket_pay {
-    idd = 2600;
+    idd = IDD_TICKETPAYMENU;
     name = "life_ticket_pay";
     movingEnable = 0;
     enableSimulation = 1;
@@ -86,7 +86,7 @@ class Life_ticket_pay {
 
     class controls {
         class InfoMsg: Life_RscStructuredText {
-            idc = 2601;
+            idc = IDC_TICKETPAYMENU_INFOMSG;
             sizeEx = 0.020;
             text = "";
             x = 0.287;

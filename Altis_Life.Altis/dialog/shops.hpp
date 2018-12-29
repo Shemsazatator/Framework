@@ -1,5 +1,5 @@
 class life_weapon_shop {
-    idd = 38400;
+    idd = IDD_WEAPONSHOP;
     movingEnable = 0;
     enableSimulation = 1;
 
@@ -24,7 +24,7 @@ class life_weapon_shop {
 
         class Title: Life_RscTitle {
             colorBackground[] = {0,0,0,0};
-            idc = 38401;
+            idc = IDC_WEAPONSHOP_TITLE;
             text = "";
             x = 0.1;
             y = 0.2;
@@ -33,7 +33,7 @@ class life_weapon_shop {
         };
 
         class itemInfo: Life_RscStructuredText {
-            idc = 38404;
+            idc = IDC_WEAPONSHOP_ITEMINFO;
             text = "";
             sizeEx = 0.035;
             x = 0.11;
@@ -43,7 +43,7 @@ class life_weapon_shop {
         };
 
         class FilterList: Life_RscCombo {
-            idc = 38402;
+            idc = IDC_WEAPONSHOP_FILTERLIST;
             onLBSelChanged = "_this call life_fnc_weaponShopFilter";
             x = 0.11;
             y = 0.64;
@@ -54,7 +54,7 @@ class life_weapon_shop {
 
     class controls {
         class itemList: Life_RscListBox {
-            idc = 38403;
+            idc = IDC_WEAPONSHOP_ITEMLIST;
             onLBSelChanged = "_this call life_fnc_weaponShopSelection";
             sizeEx = 0.035;
             x = 0.11;
@@ -64,7 +64,7 @@ class life_weapon_shop {
         };
 
         class ButtonBuySell: Life_RscButtonMenu {
-            idc = 38405;
+            idc = IDC_WEAPONSHOP_BUTTONBUYSELL;
             text = "$STR_Global_Buy";
             onButtonClick = "[] spawn life_fnc_weaponShopBuySell; true";
             x = 0.1;
@@ -84,7 +84,7 @@ class life_weapon_shop {
         };
 
         class ButtonMags: Life_RscButtonMenu {
-            idc = 38406;
+            idc = IDC_WEAPONSHOP_BUTTONMAGS;
             text = "$STR_Global_Mags";
             onButtonClick = "_this call life_fnc_weaponShopMags; _this call life_fnc_weaponShopFilter";
             x = 0.1;
@@ -94,7 +94,7 @@ class life_weapon_shop {
         };
 
         class ButtonAccs: Life_RscButtonMenu {
-            idc = 38407;
+            idc = IDC_WEAPONSHOP_BUTTONACCS;
             text = "$STR_Global_Accs";
             onButtonClick = "_this call life_fnc_weaponShopAccs; _this call life_fnc_weaponShopFilter";
             x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));

@@ -1,5 +1,5 @@
 class Life_Clothing {
-    idd = 3100;
+    idd = IDD_CLOTHINGMENU;
     name= "Life_Clothing";
     movingEnable = 1;
     enableSimulation = 1;
@@ -28,7 +28,7 @@ class Life_Clothing {
     class controls {
         class Title: Life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 3103;
+            idc = IDC_CLOTHINGMENU_TITLE;
             text = "";
             x = 0.0821059 * safezoneW + safezoneX;
             y = 0.212176 * safezoneH + safezoneY;
@@ -37,7 +37,7 @@ class Life_Clothing {
         };
 
         class ClothingList: Life_RscListBox {
-            idc = 3101;
+            idc = IDC_CLOTHINGMENU_CLOTHINGLIST;
             text = "";
             sizeEx = 0.035;
             onLBSelChanged = "[_this] call life_fnc_changeClothes;";
@@ -48,7 +48,7 @@ class Life_Clothing {
         };
 
         class PriceTag: Life_RscStructuredText {
-            idc = 3102;
+            idc = IDC_CLOTHINGMENU_PRICETAG;
             text = "";
             sizeEx = 0.035;
             x = 0.0853304 * safezoneW + safezoneX;
@@ -58,7 +58,7 @@ class Life_Clothing {
         };
 
         class TotalPrice: Life_RscStructuredText {
-            idc = 3106;
+            idc = IDC_CLOTHINGMENU_TOTALPRICE;
             text = "";
             sizeEx = 0.035;
             x = 0.148258 * safezoneW + safezoneX;
@@ -68,7 +68,7 @@ class Life_Clothing {
         };
 
         class FilterList: Life_RscCombo {
-            idc = 3105;
+            idc = IDC_CLOTHINGMENU_FILTERLIST;
             colorBackground[] = {0,0,0,0.7};
             onLBSelChanged  = "_this call life_fnc_clothingFilter";
             x = 0.0822359 * safezoneW + safezoneX;
@@ -100,7 +100,7 @@ class Life_Clothing {
         class viewAngle: life_RscXSliderH {
             color[] = {1, 1, 1, 0.45};
             colorActive[] = {1, 1, 1, 0.65};
-            idc = 3107;
+            idc = IDC_CLOTHINGMENU_VIEWANGLE;
             text = "";
             onSliderPosChanged = "[4,_this select 1] call life_fnc_s_onSliderChange;";
             tooltip = "";

@@ -10,11 +10,11 @@ private["_item","_itemInfo","_oldItem","_newItem","_upp","_itemName","_ui","_pro
 
 disableSerialization;
 
-if ((lbCurSel 669) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
+if ((lbCurSel IDC_CRAFTMENU_CRAFTLIST) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};
 
-_item = CONTROL_DATA(669);
+_item = CONTROL_DATA(IDC_CRAFTMENU_CRAFTLIST);
 _allMaterial = true;
-_itemFilter = CONTROL_DATA(673);
+_itemFilter = CONTROL_DATA(IDC_CRAFTMENU_FILTERLIST);
 _matsNeed = 0;
 _config = [_itemFilter] call life_fnc_craftConfig;
 life_action_inUse = true; //Lock out other actions during processing.
@@ -90,8 +90,8 @@ closeDialog 0;
 //Setup our progress bar.
 5 cutRsc ["life_progress","PLAIN"];
 _ui = uiNameSpace getVariable "life_progress";
-_progress = _ui displayCtrl 38201;
-_pgText = _ui displayCtrl 38202;
+_progress = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+_pgText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
 _pgText ctrlSetText format["%2 (1%1)...","%",_upp];
 _progress progressSetPosition 0.01;
 _cP = 0.01;

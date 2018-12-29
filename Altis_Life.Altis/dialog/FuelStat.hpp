@@ -1,5 +1,5 @@
 class Life_FuelStat {
-    idd = 20300;
+    idd = IDD_FUELSTAT;
     name="life_fuelStat";
     movingEnabled = 0;
     enableSimulation = 1;
@@ -25,7 +25,7 @@ class Life_FuelStat {
         };
 
         class Title: Life_RscTitle {
-            idc = 20301;
+            idc = IDC_FUELSTAT_TITLE;
             text = "";
             x = 0.1;
             y = 0.2;
@@ -44,7 +44,7 @@ class Life_FuelStat {
         };
 
         class VehicleInfoHeader: Life_RscText {
-            idc = 20330;
+            idc = IDC_FUELSTAT_VEHICLEINFOHEADER;
             text = "$STR_GUI_VehInfo";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
             x = 0.46;
@@ -54,7 +54,7 @@ class Life_FuelStat {
         };
 
         class FuelPrice: Life_RscTitle {
-            idc = 20322;
+            idc = IDC_FUELSTAT_FUELPRICE;
             text = "Price:";
             x = 0.15;
             y = 0.8;
@@ -63,7 +63,7 @@ class Life_FuelStat {
         };
 
         class literfuel: Life_RscTitle {
-            idc = 20324;
+            idc = IDC_FUELSTAT_LITERFUEL;
             text = "Fuel:";
             x = 0.55;
             y = 0.75;
@@ -71,7 +71,7 @@ class Life_FuelStat {
             h = (1 / 25);
         };
         class Totalfuel: Life_RscTitle {
-            idc = 20323;
+            idc = IDC_FUELSTAT_TOTALFUEL;
             text = "Total:";
             x = 0.75;
             y = 0.8;
@@ -89,7 +89,7 @@ class Life_FuelStat {
         };
 
         class refuelCar: Life_RscButtonMenu {
-            idc = 20309;
+            idc = IDC_FUELSTAT_REFUELCAR;
             text = "Refuel";
             onButtonClick = "[] spawn life_fnc_fuelRefuelCar;";
             x = 0.26 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
@@ -101,7 +101,7 @@ class Life_FuelStat {
 
     class controls {
         class VehicleList: Life_RscListBox {
-            idc = 20302;
+            idc = IDC_FUELSTAT_VEHICLELIST;
             text = "";
             sizeEx = 0.04;
             colorBackground[] = {0.1,0.1,0.1,0.9};
@@ -113,7 +113,7 @@ class Life_FuelStat {
         };
 
         class fuelTank: life_RscXSliderH {
-            idc = 20901;
+            idc = IDC_FUELSTAT_FUELTRANK;
             text = "";
             onSliderPosChanged = "[3,_this select 1] call life_fnc_s_onSliderChange;";
             tooltip = "";
@@ -125,7 +125,7 @@ class Life_FuelStat {
 
         class vehicleInfomationList: Life_RscStructuredText
         {
-            idc = 20303;
+            idc = IDC_FUELSTAT_VEHICLEINFORMATIONLIST;
             text = "";
             sizeEx = 0.035;
             x = 0.46;

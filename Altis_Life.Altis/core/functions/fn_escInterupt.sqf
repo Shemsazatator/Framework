@@ -10,7 +10,7 @@
 */
 disableSerialization;
 
-private _escSync = { 
+private _escSync = {
     disableSerialization;
     private _abortButton = CONTROL(49,104);
     private _abortTime = LIFE_SETTINGS(getNumber,"escapeMenu_timer");
@@ -19,9 +19,9 @@ private _escSync = {
     waitUntil {
         _abortButton ctrlSetText format [localize "STR_NOTF_AbortESC",[(_timeStamp - time),"SS.MS"] call BIS_fnc_secondsToString];
         _abortButton ctrlCommit 0;
-        if (dialog && {isNull (findDisplay 7300)}) then {closeDialog 0};
+        if (dialog and {isNull (findDisplay IDD_DEATHSCREEN)}) then {closeDialog 0};
 
-        round(_timeStamp - time) <= 0 || {isNull (findDisplay 49)}
+        round(_timeStamp - time) <= 0 or {isNull (findDisplay 49)}
     };
 
     _abortButton ctrlSetText localize "STR_DISP_INT_ABORT";
