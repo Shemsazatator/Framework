@@ -10,10 +10,10 @@
 private ["_vehicles","_plist","_near_units","_pic","_name","_text","_color","_index"];
 disableSerialization;
 
-waitUntil {!isNull (findDisplay 2700)};
-_vehicles = CONTROL(2700,2701);
+waitUntil {!isNull (findDisplay IDD_KEYCHAINMENU)};
+_vehicles = CONTROL(IDD_KEYCHAINMENU,IDC_KEYCHAINMENU_KEYCHAINLIST);
 lbClear _vehicles;
-_plist = CONTROL(2700,2702);
+_plist = CONTROL(IDD_KEYCHAINMENU,IDC_KEYCHAINMENU_NEARPLAYERS);
 lbClear _plist;
 _near_units = [];
 

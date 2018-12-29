@@ -11,7 +11,7 @@
 disableSerialization;
 
 private _info = param [0,[],[[]]];
-private _list = CONTROL(2400,2401);
+private _list = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_WANTEDLIST);
 
 {
     private _entry = _x;
@@ -19,7 +19,7 @@ private _list = CONTROL(2400,2401);
     _list lbSetData [(lbSize _list)-1,str(_entry)];
 } forEach _info;
 
-ctrlSetText[2404,"Connection Established"];
+ctrlSetText[IDC_WANTEDMENU_WANTEDCONNECTION,"Connection Established"];
 
 if (((lbSize _list)-1) isEqualTo -1) then {
     _list lbAdd "No criminals";

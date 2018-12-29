@@ -1,5 +1,5 @@
 class Federal_Safe {
-    idd = 3500;
+    idd = IDD_FEDERALRESERVE;
     name = "Federal_Safe";
     movingEnable = 0;
     enableSimulation = 1;
@@ -25,7 +25,7 @@ class Federal_Safe {
 
         class RscTitleText: Life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 3501;
+            idc = IDC_FEDERALRESERVE_TITLETEXT;
             text = "";
             x = 0.1;
             y = 0.2;
@@ -34,7 +34,7 @@ class Federal_Safe {
         };
 
         class VehicleWeight : RscTitleText {
-            idc = 3504;
+            idc = IDC_FEDERALRESERVE_VEHICLEWEIGHT;
             style = 1;
             text = "";
         };
@@ -53,7 +53,7 @@ class Federal_Safe {
 
     class Controls {
         class TrunkGear: Life_RscListBox {
-            idc = 3502;
+            idc = IDC_FEDERALRESERVE_TRUNKGEAR;
             text = "";
             sizeEx = 0.030;
             x = 0.11;
@@ -63,7 +63,7 @@ class Federal_Safe {
         };
 
         class TrunkEdit: Life_RscEdit {
-            idc = 3505;
+            idc = IDC_FEDERALRESERVE_TRUNKEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.11;

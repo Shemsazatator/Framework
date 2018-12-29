@@ -1,7 +1,5 @@
-#include "player_sys.sqf"
-
 class playerSettings {
-    idd = playersys_DIALOG;
+    idd = IDD_PLAYERMENU;
     movingEnable = 1;
     enableSimulation = 1;
 
@@ -35,7 +33,7 @@ class playerSettings {
         };
 
         class moneyStatusInfo: Life_RscStructuredText {
-            idc = 2015;
+            idc = IDC_PLAYERMENU_MONEYSTATUSINFO;
             sizeEx = 0.020;
             text = "";
             x = 0.105;
@@ -45,7 +43,7 @@ class playerSettings {
         };
 
         class PlayersName: Title {
-            idc = carry_weight;
+            idc = IDC_PLAYERMENU_PLAYERSNAME;
             style = 1;
             text = "";
         };
@@ -86,7 +84,7 @@ class playerSettings {
         };
 
         class itemList: Life_RscListBox {
-            idc = item_list;
+            idc = IDC_PLAYERMENU_ITEMLIST;
             sizeEx = 0.030;
             x = 0.62;
             y = 0.30;
@@ -95,7 +93,7 @@ class playerSettings {
         };
 
         class moneyEdit: Life_RscEdit {
-            idc = 2018;
+            idc = IDC_PLAYERMENU_MONEYEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.12;
@@ -105,7 +103,7 @@ class playerSettings {
         };
 
         class NearPlayers: Life_RscCombo {
-            idc = 2022;
+            idc = IDC_PLAYERMENU_NEARPLAYERS;
             x = 0.12;
             y = 0.46;
             w = 0.18;
@@ -113,7 +111,7 @@ class playerSettings {
         };
 
         class moneyDrop: Life_RscButtonMenu {
-            idc = 2001;
+            idc = IDC_PLAYERMENU_MONEYDROP;
             text = "$STR_Global_Give";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             onButtonClick = "[] call life_fnc_giveMoney";
@@ -125,7 +123,7 @@ class playerSettings {
         };
 
         class itemEdit: Life_RscEdit {
-            idc = item_edit;
+            idc = IDC_PLAYERMENU_ITEMEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.62;
@@ -136,7 +134,7 @@ class playerSettings {
         };
 
         class iNearPlayers: Life_RscCombo {
-            idc = 2023;
+            idc = IDC_PLAYERMENU_INEARPLAYERS;
             x = 0.62;
             y = 0.65;
             w = 0.275;
@@ -144,7 +142,7 @@ class playerSettings {
         };
 
         class DropButton: Life_RscButtonMenu {
-            idc = 2002;
+            idc = IDC_PLAYERMENU_DROPBUTTON;
             text = "$STR_Global_Give";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             onButtonClick = "[] call life_fnc_giveItem;";
@@ -196,7 +194,7 @@ class playerSettings {
         };
 
         class ButtonMyGang: Life_RscButtonMenu {
-            idc = 2011;
+            idc = IDC_PLAYERMENU_BUTTONMYGANG;
             text = "$STR_PM_MyGang";
             onButtonClick = "if (isNil ""life_action_gangInUse"") then {if (isNil {(group player) getVariable ""gang_owner""}) then {createDialog ""Life_Create_Gang_Diag"";} else {[] spawn life_fnc_gangMenu;};};";
             x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -214,7 +212,7 @@ class playerSettings {
 
             class Controls {
                 class Life_Licenses: Life_RscStructuredText {
-                    idc = 2014;
+                    idc = IDC_PLAYERMENU_LICENCE;
                     sizeEx = 0.020;
                     text = "";
                     x = 0;
@@ -226,7 +224,7 @@ class playerSettings {
         };
 
         class ButtonGangList: Life_RscButtonMenu {
-            idc = 2012;
+            idc = IDC_PLAYERMENU_GANGLIST;
             text = "$STR_PM_WantedList";
             onButtonClick = "[] call life_fnc_wantedMenu";
             x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -236,7 +234,7 @@ class playerSettings {
         };
 
         class ButtonKeys: Life_RscButtonMenu {
-            idc = 2013;
+            idc = IDC_PLAYERMENU_BUTTONKEY;
             text = "$STR_PM_KeyChain";
             onButtonClick = "createDialog ""Life_key_management"";";
             x = 0.26 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -246,7 +244,7 @@ class playerSettings {
         };
 
         class ButtonCell: Life_RscButtonMenu {
-            idc = 2014;
+            idc = IDC_PLAYERMENU_BUTTONCELL;
             text = "$STR_PM_CellPhone";
             onButtonClick = "createDialog ""Life_cell_phone"";";
             x = 0.42 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -256,7 +254,7 @@ class playerSettings {
         };
 
         class ButtonAdminMenu: Life_RscButtonMenu {
-            idc = 2021;
+            idc = IDC_PLAYERMENU_BUTTONADMINMENU;
             text = "$STR_PM_AdminMenu";
             onButtonClick = "closeDialog 0; createDialog ""life_admin_menu"";";
             x = 0.1 + (6.25 / 19.8) + (1 / 250 / (safezoneW / safezoneH));
@@ -266,7 +264,7 @@ class playerSettings {
         };
 
         class ButtonCraft : Life_RscButtonMenu {
-	         idc = 2025;
+	         idc = IDC_PLAYERMENU_BUTTONCRAFT;
 	         text = "$STR_PM_Craft";
 	         onButtonClick = "createDialog ""Life_craft"";";
 	         x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));

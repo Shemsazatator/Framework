@@ -18,11 +18,11 @@ if (west countSide playableUnits < (LIFE_SETTINGS(getNumber,"minimum_cops"))) ex
 if (!createDialog "Federal_Safe") exitWith {localize "STR_MISC_DialogError"};
 
 disableSerialization;
-ctrlSetText[3501,(localize "STR_Civ_SafeInv")];
+ctrlSetText[IDC_FEDERALRESERVE_TITLETEXT,(localize "STR_Civ_SafeInv")];
 [life_safeObj] call life_fnc_safeInventory;
 life_safeObj setVariable ["inUse",true,true];
 
 [life_safeObj] spawn {
-    waitUntil {isNull (findDisplay 3500)};
+    waitUntil {isNull (findDisplay IDD_FEDERALRESERVE)};
     (_this select 0) setVariable ["inUse",false,true];
 };

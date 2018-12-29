@@ -6,17 +6,14 @@
     Description:
     Creates the dialog and handles the data in the Channel 7 News Dialog.
 */
-#define Confirm 100104
-
-private ["_msgCost","_display","_confirmBtn","_msgCooldown","_broadcastDelay"];
+private ["_msgCost","_confirmBtn","_msgCooldown","_broadcastDelay"];
 
 if (!dialog) then {
     createDialog "life_news_broadcast";
 };
 
 disableSerialization;
-_display = findDisplay 100100;
-_confirmBtn = _display displayCtrl Confirm;
+_confirmBtn = CONTROL(IDD_NEWSSTATION,IDC_NEWSSTATION_CONFIRMBUTTONKEY);
 _confirmBtn ctrlEnable false;
 
 _msgCooldown = (60 * LIFE_SETTINGS(getNumber,"news_broadcast_cooldown"));
@@ -36,4 +33,4 @@ if (isNil "life_broadcastTimer" || {(time - life_broadcastTimer) > _msgCooldown}
     _confirmBtn ctrlEnable false;
 };
 
-CONTROL(100100,100103) ctrlSetStructuredText parseText format [ localize "STR_News_StructuredText",[_msgCost] call life_fnc_numberText,_broadcastDelay];
+CONTROL(IDD_NEWSSTATION,IDC_NEWSSTATION_MESSAGEINFO) ctrlSetStructuredText parseText format [localize "STR_News_StructuredText",[_msgCost] call life_fnc_numberText,_broadcastDelay];

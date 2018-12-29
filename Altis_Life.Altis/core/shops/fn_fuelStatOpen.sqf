@@ -23,7 +23,7 @@ if (count _vehicleList < 1) exitWith {hint localize "STR_NOTF_VehicleNear"; life
 if (!createDialog "Life_FuelStat") exitWith {};
 _fuelCost = LIFE_SETTINGS(getNumber,"fuel_cost");
 [] spawn {waitUntil {!dialog}; life_action_inUse = false;};
-ctrlSetText [20301,"Fuel Station"];
+ctrlSetText [IDC_FUELSTAT_TITLE,"Fuel Station"];
 if (isNil "life_fuelPrices") then {
     life_fuelPrices = _fuelCost;
 };
@@ -35,11 +35,11 @@ vehicleFuelList =[];
     vehicleFuelList pushBack [_x,_fuel];
 } forEach _vehicleList;
 
-_control = ((findDisplay 20300) displayCtrl 20302);
+_control = CONTROL(IDD_FUELSTAT,IDC_FUELSTAT_VEHICLELIST);
 lbClear _control; //Flush the list.
 
-ctrlSetText [20322,format [localize "STR_Price_Fuel_Pump",life_fuelPrices]];
-ctrlSetText [20323,format ["Total : %1$",life_fuelPrices * 0.1]];
+ctrlSetText [IDC_FUELSTAT_FUELPRICE,format [localize "STR_Price_Fuel_Pump",life_fuelPrices]];
+ctrlSetText [IDC_FUELSTAT_TOTALFUEL,format ["Total : %1$",life_fuelPrices * 0.1]];
 
 //Loop through
 {

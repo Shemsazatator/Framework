@@ -7,11 +7,11 @@
 
 */
 if !(playerSide isEqualTo west) exitWith {hint localize "STR_Cop_wantedList_notCop";};
-if ((lbCurSel 2406) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noPlayerSelected";};
-if ((lbCurSel 2407) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noCrimeSelected";};
-private _unit = CONTROL_DATA(2406);
+if ((lbCurSel IDC_WANTEDMENU_PLAYERLIST) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noPlayerSelected";};
+if ((lbCurSel IDC_WANTEDMENU_WANTEDADDL) isEqualTo -1) exitWith {hint localize "STR_Cop_wantedList_noCrimeSelected";};
+private _unit = CONTROL_DATA(IDC_WANTEDMENU_PLAYERLIST);
 _unit = call compile format ["%1",_unit];
-private _amount = CONTROL_DATA(2407);
+private _amount = CONTROL_DATA(IDC_WANTEDMENU_WANTEDADDL);
 if (isNil "_unit") exitWith {};
 if (isNull _unit) exitWith {};
 

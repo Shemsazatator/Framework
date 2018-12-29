@@ -1,5 +1,5 @@
 class life_news_broadcast {
-    idd = 100100;
+    idd = IDD_NEWSSTATION;
     name= "life_news_broadcast";
     movingEnable = 0;
     enableSimulation = 1;
@@ -46,7 +46,7 @@ class life_news_broadcast {
         };
 
         class MsgHeaderEdit: Life_RscEdit {
-            idc = 100101;
+            idc = IDC_NEWSSTATION_MSGHEADEREDIT;
             text = "";
             sizeEx = 0.035;
             x = 0.11;
@@ -66,7 +66,7 @@ class life_news_broadcast {
         };
 
         class MsgContentEdit: Life_RscEdit {
-            idc = 100102;
+            idc = IDC_NEWSSTATION_MSGCONTENTEDIT;
             text = "";
             sizeEx = 0.035;
             x = 0.11;
@@ -77,7 +77,7 @@ class life_news_broadcast {
 
         class MessageInfo: Life_RscStructuredText {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 100103;
+            idc = IDC_NEWSSTATION_MESSAGEINFO;
             text = "";
             x = 0.1;
             y = 0.43;
@@ -86,7 +86,7 @@ class life_news_broadcast {
         };
 
         class ConfirmButtonKey: Life_RscButtonMenu {
-            idc = 100104;
+            idc = IDC_NEWSSTATION_CONFIRMBUTTONKEY;
             text = "$STR_News_Broadcast";
             x = (6.25 / 40) + (4.2 / 40) + (1 / 250 / (safezoneW / safezoneH));
             y = 0.51 + (1 / 50);

@@ -1,5 +1,5 @@
 class Life_Vehicle_Shop_v2_3D {
-    idd = 2300;
+    idd = IDD_VEHICLESHOP3D;
     name = "life_vehicle_shop";
     movingEnable = 0;
     enableSimulation = 1;
@@ -26,7 +26,7 @@ class Life_Vehicle_Shop_v2_3D {
         };
 
         class Title: Life_RscTitle {
-            idc = 2301;
+            idc = IDC_VEHICLESHOP3D_TITLE;
             text = "";
             x = 0.0204687 * safezoneW + safezoneX;
             y = 0.027 * safezoneH + safezoneY;
@@ -45,7 +45,7 @@ class Life_Vehicle_Shop_v2_3D {
         };
 
         class VehicleInfoHeader: Life_RscText {
-            idc = 2330;
+            idc = IDC_VEHICLESHOP3D_VEHICLEINFOHEADER;
             text = "$STR_GUI_VehInfo";
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
             x = 0.809375 * safezoneW + safezoneX;
@@ -75,7 +75,7 @@ class Life_Vehicle_Shop_v2_3D {
         };
 
         class BuyCar: Life_RscButtonMenu {
-            idc = 2309;
+            idc = IDC_VEHICLESHOP3D_BUYCAR;
             text = "$STR_Global_Buy";
             onButtonClick = "[true] spawn life_fnc_vehicleShopBuy;";
             x = 0.0204687 * safezoneW + safezoneX;
@@ -87,7 +87,7 @@ class Life_Vehicle_Shop_v2_3D {
 
     class controls {
         class VehicleList: Life_RscListBox {
-            idc = 2302;
+            idc = IDC_VEHICLESHOP3D_VEHICLELIST;
             text = "";
             sizeEx = 0.04;
             colorBackground[] = {0.1,0.1,0.1,0.9};
@@ -99,7 +99,7 @@ class Life_Vehicle_Shop_v2_3D {
         };
 
         class ColorList: Life_RscCombo {
-            idc = 2304;
+            idc = IDC_VEHICLESHOP3D_COLORLIST;
             onLBSelChanged = "call life_fnc_vehicleColor3DRefresh;";
             x = 0.0204687 * safezoneW + safezoneX;
             y = 0.6034 * safezoneH + safezoneY;
@@ -108,7 +108,7 @@ class Life_Vehicle_Shop_v2_3D {
         };
 
         class vehicleInfomationList: Life_RscStructuredText {
-            idc = 2303;
+            idc = IDC_VEHICLESHOP3D_VEHICLEINFOLIST;
             text = "";
             sizeEx = 0.035;
             x = 0.819688 * safezoneW + safezoneX;

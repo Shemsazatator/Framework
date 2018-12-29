@@ -1,12 +1,12 @@
 class life_progress {
     name = "life_progress";
-    idd = 38200;
-    fadein=0;
+    idd = IDD_PROGRESSBAR;
+    fadein = 0;
     duration = 99999999999;
-    fadeout=0;
+    fadeout = 0;
     movingEnable = 0;
-    onLoad="uiNamespace setVariable ['life_progress',_this select 0]";
-    objects[]={};
+    onLoad = "uiNamespace setVariable ['life_progress',_this select 0]";
+    objects[] = {};
 
     class controlsBackground {
         class background: Life_RscText {
@@ -18,7 +18,7 @@ class life_progress {
             h = 0.05;
         };
         class ProgressBar: Life_RscProgress {
-            idc = 38201;
+            idc = IDC_PROGRESSBAR_BAR;
             x = 0.38140 * safezoneW + safezoneX;
             y = 0.06 * safezoneH + safezoneY;
             w = 0.65;
@@ -26,7 +26,7 @@ class life_progress {
         };
 
         class ProgressText: Life_RscText {
-            idc = 38202;
+            idc = IDC_PROGRESSBAR_TEXT;
             text = "Servicing Chopper (50%)...";
             x = 0.386 * safezoneW + safezoneX;
             y = 0.0635 * safezoneH + safezoneY;
@@ -38,7 +38,7 @@ class life_progress {
 
 class life_timer {
     name = "life_timer";
-    idd = 38300;
+    idd = IDD_TIMER;
     fadeIn = 1;
     duration = 99999999999;
     fadeout = 1;
@@ -58,7 +58,7 @@ class life_timer {
 
         class TimerText: Life_RscText {
             colorBackground[] = {0,0,0,0};
-            idc = 38301;
+            idc = IDC_TIMER_TEXT;
             text = "";
             x = 0.0204688 * safezoneW + safezoneX;
             y = 0.2778 * safezoneH + safezoneY;

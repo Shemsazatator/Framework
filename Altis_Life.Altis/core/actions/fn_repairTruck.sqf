@@ -20,8 +20,8 @@ if ((_veh isKindOf "Car") || (_veh isKindOf "Ship") || (_veh isKindOf "Air")) th
         disableSerialization;
         "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
-        _progress = _ui displayCtrl 38201;
-        _pgText = _ui displayCtrl 38202;
+        _progress = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+        _pgText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
         _pgText ctrlSetText format ["%2 (1%1)...","%",_upp];
         _progress progressSetPosition 0.01;
         _cP = 0.01;

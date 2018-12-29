@@ -1,5 +1,5 @@
 class TrunkMenu {
-    idd = 3500;
+    idd = IDD_TRUNKMENU;
     name = "TrunkMenu";
     movingEnable = 0;
     enableSimulation = 1;
@@ -25,7 +25,7 @@ class TrunkMenu {
 
         class RscTitleText: Life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 3501;
+            idc = IDC_TRUNKMENU_TITLE;
             text = "";
             x = 0.1;
             y = 0.2;
@@ -34,7 +34,7 @@ class TrunkMenu {
         };
 
         class VehicleWeight : RscTitleText {
-            idc = 3504;
+            idc = IDC_TRUNKMENU_VEHICLEWEIGHT;
             style = 1;
             text = "";
         };
@@ -64,7 +64,7 @@ class TrunkMenu {
 
     class Controls {
         class TrunkGear: Life_RscListBox {
-            idc = 3502;
+            idc = IDC_TRUNKMENU_TRUNKGEAR;
             text = "";
             sizeEx = 0.030;
             x = 0.11;
@@ -74,10 +74,9 @@ class TrunkMenu {
         };
 
         class PlayerGear: Life_RscListBox {
-            idc = 3503;
+            idc = IDC_TRUNKMENU_PLAYERGEAR;
             text = "";
             sizeEx = 0.030;
-
             x = 0.49;
             y = 0.29;
             w = 0.3;
@@ -85,7 +84,7 @@ class TrunkMenu {
         };
 
         class TrunkEdit: Life_RscEdit {
-            idc = 3505;
+            idc = IDC_TRUNKMENU_TRUNKEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.11;
@@ -95,7 +94,7 @@ class TrunkMenu {
         };
 
         class PlayerEdit: Life_RscEdit {
-            idc = 3506;
+            idc = IDC_TRUNKMENU_PLAYEREDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.49;

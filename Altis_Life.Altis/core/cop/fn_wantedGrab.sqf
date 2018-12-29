@@ -8,8 +8,8 @@
 */
 private ["_tab","_criminal"];
 disableSerialization;
-_tab = CONTROL(2400,2402);
-_criminal = CONTROL_DATA(2401);
+_tab = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_WANTEDDETAILS);
+_criminal = CONTROL_DATA(IDC_WANTEDMENU_WANTEDLIST);
 _criminal = call compile format ["%1", _criminal];
 if (isNil "_criminal") exitWith {};
 

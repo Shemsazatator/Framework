@@ -55,7 +55,7 @@ _sellPrice = _purchasePrice * _sellMultiplier;
 if (!(_sellPrice isEqualType 0) || _sellPrice < 1) then {_sellPrice = 500;};
 if (!(_retrievePrice isEqualType 0) || _retrievePrice < 1) then {_retrievePrice = 500;};
 
-(CONTROL(2800,2803)) ctrlSetStructuredText parseText format [
+(CONTROL(IDD_IMPOUNDMENU,IDC_IMPOUNDMENU_VEHICLEINFOLIST)) ctrlSetStructuredText parseText format [
     (localize "STR_Shop_Veh_UI_RetrievalP")+ " <t color='#8cff9b'>$%1</t><br/>
     " +(localize "STR_Shop_Veh_UI_SellP")+ " <t color='#8cff9b'>$%2</t><br/>
     " +(localize "STR_Shop_Veh_UI_Color")+ " %8<br/>
@@ -75,5 +75,5 @@ if (_trunkSpace isEqualTo -1) then {"None"} else {_trunkSpace},
 _vehicleColor
 ];
 
-ctrlShow [2803,true];
-ctrlShow [2830,true];
+ctrlShow [IDC_IMPOUNDMENU_VEHICLEINFOLIST,true];
+ctrlShow [IDC_IMPOUNDMENU_VEHICLEINFOHEADER,true];

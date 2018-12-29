@@ -9,12 +9,12 @@
 
 params [["_mode",true,[true]]];
 
-if ((lbCurSel 2302) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
+if ((lbCurSel IDC_VEHICLESHOP_VEHICLELIST) isEqualTo -1) exitWith {hint localize "STR_Shop_Veh_DidntPick";closeDialog 0;};
 if ((time - life_action_delay) < 0.2) exitWith {hint localize "STR_NOTF_ActionDelay";};
 life_action_delay = time;
 
-private _className = lbData[2302,(lbCurSel 2302)];
-private _vIndex = lbValue[2302,(lbCurSel 2302)];
+private _className = CONTROL_DATA(IDC_VEHICLESHOP_VEHICLELIST);
+private _vIndex = CONTROL_VALUE(IDC_VEHICLESHOP_VEHICLELIST);
 private _vehicleList = M_CONFIG(getArray,"CarShops",(life_veh_shop select 0),"vehicles");
 private _shopSide = M_CONFIG(getText,"CarShops",(life_veh_shop select 0),"side");
 
@@ -55,7 +55,7 @@ private _conditions = M_CONFIG(getText,"LifeCfgVehicles",_className,"conditions"
 
 if !([_conditions] call life_fnc_levelCheck) exitWith {hint localize "STR_Shop_Veh_NoLicense";};
 
-private _colorIndex = lbValue[2304,(lbCurSel 2304)];
+private _colorIndex = CONTROL_VALUE(IDC_VEHICLESHOP_COLORLIST);
 
 if (_purchasePrice < 0) exitWith {closeDialog 0;}; //Bad price entry
 if (CASH < _purchasePrice) exitWith {hint format [localize "STR_Shop_Veh_NotEnough",[_purchasePrice - CASH] call life_fnc_numberText];closeDialog 0;};

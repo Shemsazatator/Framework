@@ -1,0 +1,282 @@
+// admin_menu.hpp
+#define IDD_ADMINMENU                       2900
+#define IDC_ADMINMENU_PLAYERLIST				    2902
+#define IDC_ADMINMENU_PLAYERLISTINFO		    2903
+#define IDC_ADMINMENU_COMPENSATE				    2904
+#define IDC_ADMINMENU_SPECTATE					    2905
+#define IDC_ADMINMENU_TELEPORT					    2906
+#define IDC_ADMINMENU_TPHERE					      2907
+#define IDC_ADMINMENU_GODMODE					      2908
+#define IDC_ADMINMENU_FREEZE	     			    2909
+#define IDC_ADMINMENU_MARKERS					      2910
+#define IDC_ADMINMENU_DEBUGCON					    2911
+
+// bank.hpp
+#define IDD_BANKMENU                        2700
+#define IDC_BANKMENU_CASHTITLE              2701
+#define IDC_BANKMENU_MONEYEDIT              2702
+#define IDC_BANKMENU_PLAYERLIST             2703
+#define IDC_BANKMENU_GANGWITHDRAW           2705
+#define IDC_BANKMENU_GANGDEPOSIT            2706
+
+// cell_phone.hpp
+#define IDD_CELLPHONEMENU                   3000
+#define IDC_CELLPHONEMENU_TITLE             3001
+#define IDC_CELLPHONEMENU_TEXTTOSEND        3002
+#define IDC_CELLPHONEMENU_TEXTEDIT          3003
+#define IDC_CELLPHONEMENU_TEXTMSG           3015
+#define IDC_CELLPHONEMENU_PLAYERLIST        3004
+#define IDC_CELLPHONEMENU_TEXTCOP           3016
+#define IDC_CELLPHONEMENU_TEXTADMIN         3017
+#define IDC_CELLPHONEMENU_ADMINMSG          3020
+#define IDC_CELLPHONEMENU_ADMINMSGALL       3021
+#define IDC_CELLPHONEMENU_EMSREQUEST        3022
+
+// chop_shop.hpp
+#define IDD_CHOPSHOPMENU                    39400
+#define IDC_CHOPSHOPMENU_PRICEINFO          39401
+#define IDC_CHOPSHOPMENU_VEHICLELIST        39402
+
+// clothing.hpp
+#define IDD_CLOTHINGMENU                    3100
+#define IDC_CLOTHINGMENU_TITLE              3103
+#define IDC_CLOTHINGMENU_CLOTHINGLIST       3101
+#define IDC_CLOTHINGMENU_PRICETAG           3102
+#define IDC_CLOTHINGMENU_TOTALPRICE         3106
+#define IDC_CLOTHINGMENU_FILTERLIST         3105
+#define IDC_CLOTHINGMENU_VIEWANGLE          3107
+
+// compensate.hpp
+#define IDD_COMPENSATE                      9920
+#define IDC_COMPENSATE_INFOMSG              9921
+#define IDC_COMPENSATE_ADMINCOMPENSTEX      9922
+
+// craft.hpp
+#define IDD_CRAFTMENU                       666
+#define IDC_CRAFTMENU_TITLE                 667
+#define IDC_CRAFTMENU_CRAFTLISTHEADER       668
+#define IDC_CRAFTMENU_CRAFTLIST             669
+#define IDC_CRAFTMENU_MATERIALLISTHEADER    670
+#define IDC_CRAFTMENU_MATERIEALLIST         671
+#define IDC_CRAFTMENU_MATS                  672
+#define IDC_CRAFTMENU_FILTERLIST            673
+#define IDC_CRAFTMENU_BUTTONCRAFT           674
+
+// deathScreen.hpp
+#define IDD_DEATHSCREEN                     7300
+#define IDC_DEATHSCREEN_MEDICSONLINE        7304
+#define IDC_DEATHSCREEN_MEDICSNEARBY        7305
+#define IDC_DEATHSCREEN_RESPAWNBTN          7302
+#define IDC_DEATHSCREEN_MEDICBTN            7303
+#define IDC_DEATHSCREEN_RESPAWNTIME         7301
+
+// federalReserve.hpp
+#define IDD_FEDERALRESERVE                  3500
+#define IDC_FEDERALRESERVE_TITLETEXT        3501
+#define IDC_FEDERALRESERVE_VEHICLEWEIGHT    3504
+#define IDC_FEDERALRESERVE_TRUNKGEAR        3502
+#define IDC_FEDERALRESERVE_TRUNKEDIT        3505
+
+// FuelStat.hpp
+#define IDD_FUELSTAT                        20300
+#define IDC_FUELSTAT_TITLE                  20301
+#define IDC_FUELSTAT_VEHICLEINFOHEADER      20330
+#define IDC_FUELSTAT_FUELPRICE              20322
+#define IDC_FUELSTAT_LITERFUEL              20324
+#define IDC_FUELSTAT_TOTALFUEL              20323
+#define IDC_FUELSTAT_REFUELCAR              20309
+#define IDC_FUELSTAT_VEHICLELIST            20302
+#define IDC_FUELSTAT_FUELTRANK              20901
+#define IDC_FUELSTAT_VEHICLEINFORMATIONLIST 20303
+
+// gang.hpp
+#define IDD_GANGMENU                        2620
+#define IDC_GANGMENU_TITLE                  2629
+#define IDC_GANGMENU_GANGMEMBERLIST         2621
+#define IDC_GANGMENU_GANGLOCK               2622
+#define IDC_GANGMENU_GANGKICK               2624
+#define IDC_GANGMENU_GANGLEADER             2625
+#define IDC_GANGMENU_INVITEMEMBER           2630
+#define IDC_GANGMENU_DISABLEGANG            2631
+#define IDC_GANGMENU_COLORLIST              2632
+#define IDC_GANGMENU_GANGBANK               601
+
+#define IDD_CREATEGANGMENU                  2520
+#define IDC_CREATEGANGMENU_INFOMSG          2523
+#define IDC_CREATEGANGMENU_CREATEGANGTEXT   2522
+
+// hud_stats.hpp
+#define IDC_HUDSTATS_PROGRESSNOTOPREST      2204
+#define IDC_HUDSTATS_PROGRESSFOOD           2200
+#define IDC_HUDSTATS_PROGRESSHEALTH         2201
+#define IDC_HUDSTATS_PROGRESSWATER          2202
+#define IDC_HUDSTATS_PROGRESSEXPERIENCE     2203
+#define IDC_HUDSTATS_TEXTNOTOPREST          1204
+#define IDC_HUDSTATS_TEXTFOOD               1200
+#define IDC_HUDSTATS_TEXTHEALTH             1201
+#define IDC_HUDSTATS_TEXTWATER              1202
+#define IDC_HUDSTATS_TEXTEXPERIENCE         1203
+
+// impound.hpp
+#define IDD_IMPOUNDMENU                     2800
+#define IDC_IMPOUNDMENU_TITLE               2801
+#define IDC_IMPOUNDMENU_VEHICLEINFOHEADER   2830
+#define IDC_IMPOUNDMENU_VEHICLELIST         2802
+#define IDC_IMPOUNDMENU_VEHICLEINFOLIST     2803
+#define IDC_IMPOUNDMENU_MAINBACKGROUNDHIDER 2810
+#define IDC_IMPOUNDMENU_MAINHIDETEXT        2811
+
+// key_chain.hpp
+#define IDD_KEYCHAINMENU                    2700
+#define IDC_KEYCHAINMENU_KEYCHAINLIST       2701
+#define IDC_KEYCHAINMENU_NEARPLAYERS        2702
+#define IDC_KEYCHAINMENU_GIVEKEY            2703
+
+// newsStation.hpp
+#define IDD_NEWSSTATION                     100100
+#define IDC_NEWSSTATION_MSGHEADEREDIT       100101
+#define IDC_NEWSSTATION_MSGCONTENTEDIT      100102
+#define IDC_NEWSSTATION_MESSAGEINFO         100103
+#define IDC_NEWSSTATION_CONFIRMBUTTONKEY    100104
+
+// pinteraction.hpp
+#define IDD_PINTERACTION                    37400
+#define IDC_PINTERACTION_TITLE              37401
+#define IDC_PINTERACTION_BUTTON1            37450
+#define IDC_PINTERACTION_BUTTON2            37451
+#define IDC_PINTERACTION_BUTTON3            37452
+#define IDC_PINTERACTION_BUTTON4            37453
+#define IDC_PINTERACTION_BUTTON5            37454
+#define IDC_PINTERACTION_BUTTON6            37455
+#define IDC_PINTERACTION_BUTTON7            37456
+#define IDC_PINTERACTION_BUTTON8            37457
+
+#define IDD_VINTERACTION                    37400
+#define IDC_VINTERACTION_TITLE              37401
+#define IDC_VINTERACTION_BUTTON1            37450
+#define IDC_VINTERACTION_BUTTON2            37451
+#define IDC_VINTERACTION_BUTTON3            37452
+#define IDC_VINTERACTION_BUTTON4            37453
+#define IDC_VINTERACTION_BUTTON5            37454
+#define IDC_VINTERACTION_BUTTON6            37455
+
+// player_inv.hpp
+#define IDD_PLAYERMENU                      2001
+#define IDC_PLAYERMENU_MONEYSTATUSINFO      2015
+#define IDC_PLAYERMENU_PLAYERSNAME          2009
+#define IDC_PLAYERMENU_ITEMLIST             2005
+#define IDC_PLAYERMENU_MONEYEDIT            2018
+#define IDC_PLAYERMENU_NEARPLAYERS          2022
+#define IDC_PLAYERMENU_MONEYDROP            2001
+#define IDC_PLAYERMENU_ITEMEDIT             2010
+#define IDC_PLAYERMENU_INEARPLAYERS         2023
+#define IDC_PLAYERMENU_DROPBUTTON           2002
+#define IDC_PLAYERMENU_BUTTONMYGANG         2011
+#define IDC_PLAYERMENU_LICENCE              2014
+#define IDC_PLAYERMENU_GANGLIST             2012
+#define IDC_PLAYERMENU_BUTTONKEY            2013
+#define IDC_PLAYERMENU_BUTTONCELL           2014
+#define IDC_PLAYERMENU_BUTTONADMINMENU      2021
+#define IDC_PLAYERMENU_BUTTONCRAFT          2025
+
+// Progress.hpp
+#define IDD_PROGRESSBAR                     38200
+#define IDC_PROGRESSBAR_BAR                 38201
+#define IDC_PROGRESSBAR_TEXT                38202
+
+#define IDD_TIMER                           38300
+#define IDC_TIMER_TEXT                      38301
+
+// setting.hpp
+#define IDD_SETTINGMENU                     2900
+#define IDC_SETTINGMENU_VDONFOOTSLIDER      2901
+#define IDC_SETTINGMENU_VDONFOOTVALUE       2902
+#define IDC_SETTINGMENU_VDCARSLIDER         2911
+#define IDC_SETTINGMENU_VDCARSVALUE         2912
+#define IDC_SETTINGMENU_VDAIRSLIDER         2921
+#define IDC_SETTINGMENU_VDAIRVALUE          2922
+#define IDC_SETTINGMENU_PLAYERTAGSONOFF     2970
+#define IDC_SETTINGMENU_SIDECHATONOFF       2971
+#define IDC_SETTINGMENU_REVEALONOFF         2972
+#define IDC_SETTINGMENU_BROADCASTONOFF      2973
+
+// shop_items.hpp
+#define IDD_SHOPSMENU                       2400
+#define IDC_SHOPSMENU_ITEMLIST              2401
+#define IDC_SHOPSMENU_PITEMLIST             2402
+#define IDC_SHOPSMENU_TITLE                 2403
+#define IDC_SHOPSMENU_PLAYERSNAME           601
+#define IDC_SHOPSMENU_BUYEDIT               2404
+#define IDC_SHOPSMENU_SELLEDIT              2405
+
+// shops.hpp
+#define IDD_WEAPONSHOP                      38400
+#define IDC_WEAPONSHOP_TITLE                38401
+#define IDC_WEAPONSHOP_ITEMINFO             38404
+#define IDC_WEAPONSHOP_FILTERLIST           38402
+#define IDC_WEAPONSHOP_ITEMLIST             38403
+#define IDC_WEAPONSHOP_BUTTONBUYSELL        38405
+#define IDC_WEAPONSHOP_BUTTONMAGS           38406
+#define IDC_WEAPONSHOP_BUTTONACCS           38407
+
+// spawnSelection.hpp
+#define IDD_SPAWNMENU                       38500
+#define IDC_SPAWNMENU_TITLE                 38501
+#define IDC_SPAWNMENU_MAPVIEW               38502
+#define IDC_SPAWNMENU_SPAWNPOINTLIST        38510
+
+// ticket.hpp
+#define IDD_TICKETGIVEMENU                  2650
+#define IDC_TICKETGIVEMENU_TITLE            2651
+#define IDC_TICKETGIVEMENU_MONEYEDIT        2652
+
+#define IDD_TICKETPAYMENU                   2600
+#define IDC_TICKETPAYMENU_INFOMSG           2601
+
+// trunk.hpp
+#define IDD_TRUNKMENU                       3500
+#define IDC_TRUNKMENU_TITLE                 3501
+#define IDC_TRUNKMENU_VEHICLEWEIGHT         3504
+#define IDC_TRUNKMENU_TRUNKGEAR             3502
+#define IDC_TRUNKMENU_PLAYERGEAR            3503
+#define IDC_TRUNKMENU_TRUNKEDIT             3505
+#define IDC_TRUNKMENU_PLAYEREDIT            3506
+
+// veh_shop.hpp
+#define IDD_VEHSHOP                         2300
+#define IDC_VEHSHOP_TITLE                   2301
+#define IDC_VEHSHOP_VEHICLELIST             2302
+#define IDC_VEHSHOP_COLORLIST               2303
+
+// vehicleShop.hpp
+#define IDD_VEHICLESHOP                     2300
+#define IDC_VEHICLESHOP_TITLE               2301
+#define IDC_VEHICLESHOP_VEHICLEINFOHEADER   2330
+#define IDC_VEHICLESHOP_BUYCAR              2309
+#define IDC_VEHICLESHOP_VEHICLELIST         2302
+#define IDC_VEHICLESHOP_COLORLIST           2304
+#define IDC_VEHICLESHOP_VEHICLEINFOLIST     2303
+
+
+// vehicleShop3D.hpp
+#define IDD_VEHICLESHOP3D                   2300
+#define IDC_VEHICLESHOP3D_TITLE             2301
+#define IDC_VEHICLESHOP3D_VEHICLEINFOHEADER 2330
+#define IDC_VEHICLESHOP3D_BUYCAR            2309
+#define IDC_VEHICLESHOP3D_VEHICLELIST       2302
+#define IDC_VEHICLESHOP3D_COLORLIST         2304
+#define IDC_VEHICLESHOP3D_VEHICLEINFOLIST   2303
+
+// wanted_list.hpp
+#define IDD_WANTEDMENU                      2400
+#define IDC_WANTEDMENU_WANTEDCONNECTION     2404
+#define IDC_WANTEDMENU_WANTEDLIST           2401
+#define IDC_WANTEDMENU_PLAYERLIST           2406
+#define IDC_WANTEDMENU_WANTEDDETAILS        2402
+#define IDC_WANTEDMENU_BOUNTYPRICE          2403
+#define IDC_WANTEDMENU_WANTEDADDL           2407
+#define IDC_WANTEDMENU_PARDONBUTTON         2405
+#define IDC_WANTEDMENU_BUTTONWANTEDADD      9800
+#define IDC_WANTEDMENU_WANTEDTEXT           1000
+#define IDC_WANTEDMENU_CITIZENSTEXT         1001
+#define IDC_WANTEDMENU_CRIMESTEXT           1002

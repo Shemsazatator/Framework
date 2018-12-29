@@ -8,7 +8,7 @@
 */
 disableSerialization;
 
-private _list = CONTROL(2700,2701);
+private _list = CONTROL(IDD_KEYCHAINMENU,IDC_KEYCHAINMENU_KEYCHAINLIST);
 private _sel = lbCurSel _list;
 
 if (_sel isEqualTo -1) exitWith {

@@ -1,5 +1,5 @@
 class shops_menu {
-    idd = 2400;
+    idd = IDD_SHOPSMENU;
     name= "shops_menu";
     movingEnable = 0;
     enableSimulation = 1;
@@ -48,7 +48,7 @@ class shops_menu {
 
     class controls {
         class itemList: Life_RscListBox {
-            idc = 2401;
+            idc = IDC_SHOPSMENU_ITEMLIST;
             text = "";
             sizeEx = 0.030;
             x = 0.12;
@@ -58,7 +58,7 @@ class shops_menu {
         };
 
         class pItemlist: Life_RscListBox {
-            idc = 2402;
+            idc = IDC_SHOPSMENU_PITEMLIST;
             text = "";
             sizeEx = 0.030;
             x = 0.53;
@@ -69,7 +69,7 @@ class shops_menu {
 
         class Title: Life_RscTitle {
             colorBackground[] = {0, 0, 0, 0};
-            idc = 2403;
+            idc = IDC_SHOPSMENU_TITLE;
             text = "";
             x = 0.1;
             y = 0.2;
@@ -78,13 +78,13 @@ class shops_menu {
         };
 
         class PlayersName: Title {
-            idc = 601;
+            idc = IDC_SHOPSMENU_PLAYERSNAME;
             style = 1;
             text = "";
         };
 
         class buyEdit: Life_RscEdit {
-            idc = 2404;
+            idc = IDC_SHOPSMENU_BUYEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.12;
@@ -94,7 +94,7 @@ class shops_menu {
         };
 
         class sellEdit: Life_RscEdit {
-            idc = 2405;
+            idc = IDC_SHOPSMENU_SELLEDIT;
             text = "1";
             sizeEx = 0.030;
             x = 0.53;

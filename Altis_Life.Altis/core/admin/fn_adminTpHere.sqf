@@ -8,7 +8,7 @@
 */
 if (FETCH_CONST(life_adminlevel) < 4) exitWith {closeDialog 0;};
 
-private _target = CONTROL_DATA(2902);
+private _target = CONTROL_DATA(IDC_ADMINMENU_PLAYERLIST);
 _target = call compile format ["%1", _target];
 if (isNil "_target" || isNull _target) exitWith {};
 if (_target == player) exitWith {hint localize "STR_ANOTF_Error";};

@@ -42,9 +42,9 @@ switch (_selection) do {
     };
 };
 
-if (isNull (findDisplay 3100)) exitWith {};
+if (isNull (findDisplay IDD_CLOTHINGMENU)) exitWith {};
 
-private _list = CONTROL(3100,3101);
+private _list = CONTROL(IDD_CLOTHINGMENU,IDC_CLOTHINGMENU_CLOTHINGLIST);
 lbClear _list;
 
 private _configArray = switch (_selection) do {
@@ -87,7 +87,7 @@ private "_details";
             _list lbSetPicture [(lbSize _list)-1,_pic];
         };
     };
-    
+
     true
 
 } count _configArray;

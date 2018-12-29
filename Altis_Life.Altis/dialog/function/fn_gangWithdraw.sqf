@@ -6,8 +6,7 @@
     Description:
     Withdraws money from the gang bank.
 */
-private ["_value"];
-_value = parseNumber(ctrlText 2702);
+private _value = parseNumber(ctrlText IDC_BANKMENU_MONEYEDIT);
 _gFund = GANG_FUNDS;
 group player setVariable ["gbank_in_use_by",player,true];
 

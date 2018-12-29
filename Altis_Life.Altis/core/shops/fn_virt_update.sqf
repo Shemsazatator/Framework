@@ -10,15 +10,15 @@ private ["_item_list","_gear_list","_shopItems","_name","_price"];
 disableSerialization;
 
 //Setup control vars.
-_item_list = CONTROL(2400,2401);
-_gear_list = CONTROL(2400,2402);
+_item_list = CONTROL(IDD_SHOPSMENU,IDC_SHOPSMENU_ITEMLIST);
+_gear_list = CONTROL(IDD_SHOPSMENU,IDC_SHOPSMENU_PITEMLIST);
 
 //Purge list
 lbClear _item_list;
 lbClear _gear_list;
 
 if (!isClass(missionConfigFile >> "VirtualShops" >> life_shop_type)) exitWith {closeDialog 0; hint localize "STR_NOTF_ConfigDoesNotExist";}; //Make sure the entry exists..
-ctrlSetText[2403,localize (M_CONFIG(getText,"VirtualShops",life_shop_type,"name"))];
+ctrlSetText[IDC_SHOPSMENU_TITLE,localize (M_CONFIG(getText,"VirtualShops",life_shop_type,"name"))];
 _shopItems = M_CONFIG(getArray,"VirtualShops",life_shop_type,"items");
 
 {

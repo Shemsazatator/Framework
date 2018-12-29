@@ -1,5 +1,5 @@
 class life_admin_menu {
-    idd = 2900;
+    idd = IDD_ADMINMENU;
     name= "life_admin_menu";
     movingEnable = 0;
     enableSimulation = 1;
@@ -48,7 +48,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2403: Life_RscButtonMenu {
-            idc = 2904;
+            idc = IDC_ADMINMENU_COMPENSATE;
             text = "$STR_Admin_Compensate";
             onButtonClick = "createDialog ""Life_Admin_Compensate"";";
             x = 0.469062 * safezoneW + safezoneX;
@@ -58,7 +58,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2404: Life_RscButtonMenu {
-            idc = 2905;
+            idc = IDC_ADMINMENU_SPECTATE;
             text = "$STR_Admin_Spectate";
             onButtonClick = "[] call life_fnc_adminSpectate;";
             x = 0.54125 * safezoneW + safezoneX;
@@ -68,7 +68,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2405: Life_RscButtonMenu {
-            idc = 2906;
+            idc = IDC_ADMINMENU_TELEPORT;
             text = "$STR_Admin_Teleport";
             onButtonClick = "[] call life_fnc_adminTeleport; hint 'Select where you would like to teleport';";
             x = 0.613437 * safezoneW + safezoneX;
@@ -78,7 +78,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2401: Life_RscButtonMenu {
-            idc = 2907;
+            idc = IDC_ADMINMENU_TPHERE;
             text = "$STR_Admin_TpHere";
             onButtonClick = "[] call life_fnc_adminTpHere;";
             x = 0.324687 * safezoneW + safezoneX;
@@ -88,7 +88,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2406: Life_RscButtonMenu {
-            idc = 2908;
+            idc = IDC_ADMINMENU_GODMODE;
             text = "$STR_Admin_God";
             onButtonClick = "[] call life_fnc_adminGodMode;";
             x = 0.396875 * safezoneW + safezoneX;
@@ -98,7 +98,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2407: Life_RscButtonMenu {
-            idc = 2909;
+            idc = IDC_ADMINMENU_FREEZE;
             text = "$STR_Admin_Freeze";
             onButtonClick = "[] call life_fnc_adminFreeze;";
             x = 0.469062 * safezoneW + safezoneX;
@@ -108,7 +108,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2408: Life_RscButtonMenu {
-            idc = 2910;
+            idc = IDC_ADMINMENU_MARKERS;
             text = "$STR_Admin_Markers";
             onButtonClick = "[] spawn life_fnc_adminMarkers;closeDialog 0;";
             x = 0.54125 * safezoneW + safezoneX;
@@ -118,7 +118,7 @@ class life_admin_menu {
         };
 
         class RscButtonMenu_2409: Life_RscButtonMenu {
-            idc = 2911;
+            idc = IDC_ADMINMENU_DEBUGCON;
             text = "$STR_Admin_Debug";
             onButtonClick = "[] call life_fnc_adminDebugCon;";
             x = 0.613437 * safezoneW + safezoneX;
@@ -128,7 +128,7 @@ class life_admin_menu {
         };
 
         class PlayerList_Admin: Life_RscListBox {
-            idc = 2902;
+            idc = IDC_ADMINMENU_PLAYERLIST;
             text = "";
             sizeEx = 0.035;
             onLBSelChanged = "[_this] spawn life_fnc_adminQuery";
@@ -139,7 +139,7 @@ class life_admin_menu {
         };
 
         class PlayerBInfo: Life_RscStructuredText {
-            idc = 2903;
+            idc = IDC_ADMINMENU_PLAYERLISTINFO;
             text = "";
             x = 0.489687 * safezoneW + safezoneX;
             y = 0.335 * safezoneH + safezoneY;

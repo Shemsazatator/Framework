@@ -7,15 +7,15 @@
     Opens the cellphone menu?
 */
 disableSerialization;
-waitUntil {!isNull findDisplay 3000};
-private _units = CONTROL(3000,3004);
+waitUntil {!isNull findDisplay IDD_CELLPHONEMENU};
+private _units = CONTROL(IDD_CELLPHONEMENU,IDC_CELLPHONEMENU_PLAYERLIST);
 
-ctrlSetText [3003, ""];
+ctrlSetText [IDC_CELLPHONEMENU_TEXTEDIT, ""];
 lbClear _units;
 
 if (FETCH_CONST(life_adminlevel) < 1) then {
-    ctrlShow[3020,false];
-    ctrlShow[3021,false];
+    ctrlShow[IDC_CELLPHONEMENU_ADMINMSG,false];
+    ctrlShow[IDC_CELLPHONEMENU_ADMINMSGALL,false];
 };
 {
     if (alive _x && !(_x isEqualTo player)) then {
@@ -30,4 +30,4 @@ if (FETCH_CONST(life_adminlevel) < 1) then {
     };
 } forEach playableUnits;
 
-lbSetCurSel [3004,0];
+lbSetCurSel [IDC_CELLPHONEMENU_PLAYERLIST,0];

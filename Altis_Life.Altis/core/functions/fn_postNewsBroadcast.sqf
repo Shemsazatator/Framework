@@ -8,8 +8,8 @@
 */
 private ["_broadcastHeader","_broadcastMessage","_length","_badCharacter","_characterByte","_allowed","_allowedLength"];
 disableSerialization;
-_broadcastHeader = ctrlText (CONTROL(100100,100101));
-_broadcastMessage = ctrlText (CONTROL(100100,100102));
+_broadcastHeader = ctrlText (CONTROL(IDD_NEWSSTATION,IDC_NEWSSTATION_MSGHEADEREDIT));
+_broadcastMessage = ctrlText (CONTROL(IDD_NEWSSTATION,IDC_NEWSSTATION_MSGCONTENTEDIT));
 _length = count (toArray (_broadcastHeader));
 _characterByte = toArray (_broadcastHeader);
 _allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ");

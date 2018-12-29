@@ -7,12 +7,12 @@
     Sell a virtual item to the store / shop
 */
 private ["_type","_index","_price","_amount","_name"];
-if ((lbCurSel 2402) isEqualTo -1) exitWith {};
-_type = lbData[2402,(lbCurSel 2402)];
+if ((lbCurSel IDC_SHOPSMENU_PITEMLIST) isEqualTo -1) exitWith {};
+_type = CONTROL_DATA(IDC_SHOPSMENU_PITEMLIST);
 _price = M_CONFIG(getNumber,"VirtualItems",_type,"sellPrice");
 if (_price isEqualTo -1) exitWith {};
 
-_amount = ctrlText 2405;
+_amount = ctrlText IDC_SHOPSMENU_SELLEDIT;
 if (!([_amount] call TON_fnc_isnumber)) exitWith {hint localize "STR_Shop_Virt_NoNum";};
 _amount = parseNumber (_amount);
 if (_amount > (ITEM_VALUE(_type))) exitWith {hint localize "STR_Shop_Virt_NotEnough"};

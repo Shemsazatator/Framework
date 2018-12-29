@@ -8,9 +8,10 @@
 */
 disableSerialization;
 private ["_price","_item","_itemInfo","_bad"];
-if ((lbCurSel 38403) isEqualTo -1) exitWith {hint localize "STR_Shop_Weapon_NoSelect"};
-_price = lbValue[38403,(lbCurSel 38403)]; if (isNil "_price") then {_price = 0;};
-_item = lbData[38403,(lbCurSel 38403)];
+if ((lbCurSel IDC_WEAPONSHOP_ITEMLIST) isEqualTo -1) exitWith {hint localize "STR_Shop_Weapon_NoSelect"};
+_price = CONTROL_VALUE(IDC_WEAPONSHOP_ITEMLIST);
+if (isNil "_price") then {_price = 0;};
+_item = CONTROL_DATA(IDC_WEAPONSHOP_ITEMLIST);
 _itemInfo = [_item] call life_fnc_fetchCfgDetails;
 
 _bad = "";

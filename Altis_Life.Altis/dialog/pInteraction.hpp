@@ -3,7 +3,7 @@
 #define BGW 0.46
 
 class pInteraction_Menu {
-    idd = 37400;
+    idd = IDD_PINTERACTION;
     movingEnable = 0;
     enableSimulation = 1;
 
@@ -26,9 +26,9 @@ class pInteraction_Menu {
             h = 0.6 - (22 / 250) + 0.05;
         };
 
-        class Title: life_RscTitle    {
+        class Title: life_RscTitle {
             colorBackground[] = {0,0,0,0};
-            idc = 37401;
+            idc = IDC_PINTERACTION_TITLE;
             text = "$STR_pInAct_Title";
             x = BGX;
             y = BGY;
@@ -50,7 +50,7 @@ class pInteraction_Menu {
         };
 
         class ButtonOne: Life_RscButtonMenu {
-            idc = 37450;
+            idc = IDC_PINTERACTION_BUTTON1;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -61,7 +61,7 @@ class pInteraction_Menu {
         };
 
         class ButtonTwo: Life_RscButtonMenu {
-            idc = 37451;
+            idc = IDC_PINTERACTION_BUTTON2;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -72,7 +72,7 @@ class pInteraction_Menu {
         };
 
         class ButtonThree: Life_RscButtonMenu {
-            idc = 37452;
+            idc = IDC_PINTERACTION_BUTTON3;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -83,7 +83,7 @@ class pInteraction_Menu {
         };
 
         class ButtonFour: Life_RscButtonMenu {
-            idc = 37453;
+            idc = IDC_PINTERACTION_BUTTON4;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -94,7 +94,7 @@ class pInteraction_Menu {
         };
 
         class ButtonFive: Life_RscButtonMenu {
-            idc = 37454;
+            idc = IDC_PINTERACTION_BUTTON5;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -105,7 +105,7 @@ class pInteraction_Menu {
         };
 
         class ButtonSix: Life_RscButtonMenu {
-            idc = 37455;
+            idc = IDC_PINTERACTION_BUTTON6;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -116,7 +116,7 @@ class pInteraction_Menu {
         };
 
         class ButtonSeven: Life_RscButtonMenu {
-            idc = 37456;
+            idc = IDC_PINTERACTION_BUTTON7;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -127,7 +127,7 @@ class pInteraction_Menu {
         };
 
         class ButtonEight: Life_RscButtonMenu {
-            idc = 37457;
+            idc = IDC_PINTERACTION_BUTTON8;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -140,7 +140,7 @@ class pInteraction_Menu {
 };
 
 class vInteraction_Menu {
-    idd = 37400;
+    idd = IDD_VINTERACTION;
     movingEnable = 0;
     enableSimulation = 1;
 
@@ -165,7 +165,7 @@ class vInteraction_Menu {
 
         class Title: life_RscTitle {
             colorBackground[] = {0,0,0,0};
-            idc = 37401;
+            idc = IDC_VINTERACTION_TITLE;
             text = "$STR_vInAct_Title";
             x = BGX;
             y = BGY;
@@ -187,7 +187,7 @@ class vInteraction_Menu {
         };
 
         class ButtonOne: Life_RscButtonMenu {
-            idc = 37450;
+            idc = IDC_VINTERACTION_BUTTON1;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -198,7 +198,7 @@ class vInteraction_Menu {
         };
 
         class ButtonTwo: Life_RscButtonMenu {
-            idc = 37451;
+            idc = IDC_VINTERACTION_BUTTON2;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -209,7 +209,7 @@ class vInteraction_Menu {
         };
 
         class ButtonThree: Life_RscButtonMenu {
-            idc = 37452;
+            idc = IDC_VINTERACTION_BUTTON3;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -220,7 +220,7 @@ class vInteraction_Menu {
         };
 
         class ButtonFour: Life_RscButtonMenu {
-            idc = 37453;
+            idc = IDC_VINTERACTION_BUTTON4;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -231,7 +231,7 @@ class vInteraction_Menu {
         };
 
         class ButtonFive: Life_RscButtonMenu {
-            idc = 37454;
+            idc = IDC_VINTERACTION_BUTTON5;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;
@@ -242,7 +242,7 @@ class vInteraction_Menu {
         };
 
         class ButtonSix: Life_RscButtonMenu {
-            idc = 37455;
+            idc = IDC_VINTERACTION_BUTTON6;
             colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
             text = "";
             sizeEx = 0.025;

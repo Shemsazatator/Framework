@@ -8,6 +8,6 @@
 */
 disableSerialization;
 private _ret = _this select 0;
-private _text = CONTROL(2900,2903);
+private _text = CONTROL(IDD_ADMINMENU,IDC_ADMINMENU_PLAYERLISTINFO);
 
 _text ctrlSetStructuredText parseText format ["ID: %1",_ret];

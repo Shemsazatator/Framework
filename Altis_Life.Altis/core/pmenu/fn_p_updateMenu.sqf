@@ -10,16 +10,16 @@ private ["_inv","_lic","_licenses","_near","_near_units","_mstatus","_shrt","_si
 disableSerialization;
 
 if (FETCH_CONST(life_adminlevel) < 1) then {
-    ctrlShow[2021,false];
+    ctrlShow[IDC_PLAYERMENU_BUTTONADMINMENU,false];
 };
 
 _side = switch playerSide do {case west:{"cop"}; case east:{"civ"}; case independent:{"med"}; case civilian:{"civ"};};
 
-_inv = CONTROL(2001,2005);
-_lic = CONTROL(2001,2014);
-_near = CONTROL(2001,2022);
-_near_i = CONTROL(2001,2023);
-_mstatus = CONTROL(2001,2015);
+_inv = CONTROL(IDD_PLAYERMENU,IDC_PLAYERMENU_ITEMLIST);
+_lic = CONTROL(IDD_PLAYERMENU,IDC_PLAYERMENU_LICENCE);
+_near = CONTROL(IDD_PLAYERMENU,IDC_PLAYERMENU_NEARPLAYERS);
+_near_i = CONTROL(IDD_PLAYERMENU,IDC_PLAYERMENU_INEARPLAYERS);
+_mstatus = CONTROL(IDD_PLAYERMENU,IDC_PLAYERMENU_MONEYSTATUSINFO);
 _struct = "";
 lbClear _inv;
 lbClear _near;
@@ -38,7 +38,7 @@ _near_units = [];
 } forEach _near_units;
 
 _mstatus ctrlSetStructuredText parseText format ["<img size='1.3' image='icons\ico_bank.paa'/> <t size='0.8px'>$%1</t><br/><img size='1.2' image='icons\ico_money.paa'/> <t size='0.8'>$%2</t>",[BANK] call life_fnc_numberText,[CASH] call life_fnc_numberText];
-ctrlSetText[2009,format ["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
+ctrlSetText[IDC_PLAYERMENU_PLAYERSNAME,format ["Weight: %1 / %2", life_carryWeight, life_maxWeight]];
 
 {
     if (ITEM_VALUE(configName _x) > 0) then {

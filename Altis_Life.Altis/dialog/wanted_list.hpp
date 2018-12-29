@@ -1,5 +1,5 @@
 class life_wanted_menu {
-    idd = 2400;
+    idd = IDD_WANTEDMENU;
     name= "life_wanted_menu";
     movingEnable = false;
     enableSimulation = true;
@@ -37,13 +37,13 @@ class life_wanted_menu {
         };
 
         class WantedConnection: Title {
-            idc = 2404;
+            idc = IDC_WANTEDMENU_WANTEDCONNECTION;
             style = 1;
             text = "";
         };
 
         class WantedList: Life_RscListBox {
-            idc = 2401;
+            idc = IDC_WANTEDMENU_WANTEDLIST;
             text = "";
             sizeEx = 0.035;
             onLBSelChanged = "[] spawn life_fnc_wantedGrab";
@@ -54,7 +54,7 @@ class life_wanted_menu {
         };
 
         class PlayerList: Life_RscListBox {
-            idc = 2406;
+            idc = IDC_WANTEDMENU_PLAYERLIST;
             text = "";
             sizeEx = 0.035;
             //colorBackground[] = {0,0,0,0};
@@ -66,7 +66,7 @@ class life_wanted_menu {
         };
 
         class WantedDetails: Life_RscListBox {
-            idc = 2402;
+            idc = IDC_WANTEDMENU_WANTEDDETAILS;
             text = "";
             sizeEx = 0.035;
             colorBackground[] = {0, 0, 0, 0};
@@ -77,7 +77,7 @@ class life_wanted_menu {
         };
 
         class BountyPrice: Life_RscText    {
-            idc = 2403;
+            idc = IDC_WANTEDMENU_BOUNTYPRICE;
             text = "";
             x = 0.12;
             y = 0.30;
@@ -86,7 +86,7 @@ class life_wanted_menu {
         };
 
         class WantedAddL: Life_RscCombo    {
-            idc = 2407;
+            idc = IDC_WANTEDMENU_WANTEDADDL;
             x = 0.542;
             y = 0.28;
             w = (8 / 52);
@@ -104,7 +104,7 @@ class life_wanted_menu {
         };
 
         class PardonButtonKey: Life_RscButtonMenu {
-            idc = 2405;
+            idc = IDC_WANTEDMENU_PARDONBUTTON;
             text = "$STR_Wanted_Pardon";
             onButtonClick = "[] call life_fnc_pardon; closeDialog 0;";
             x = 0.1 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
@@ -114,7 +114,7 @@ class life_wanted_menu {
         };
 
         class ButtonWantedAdd: Life_RscButtonMenu {
-            idc = 9800;
+            idc = IDC_WANTEDMENU_BUTTONWANTEDADD;
             //shortcuts[] = {0x00050000 + 2};
             text = "$STR_Wanted_Add";
             onButtonClick = "[] call life_fnc_wantedAddP;";
@@ -125,7 +125,7 @@ class life_wanted_menu {
         };
 
         class wantedText: Life_RscText {
-            idc = 1000;
+            idc = IDC_WANTEDMENU_WANTEDTEXT;
             text = "$STR_Wanted_People";
             x = 0.12;
             y = 0.11;
@@ -134,7 +134,7 @@ class life_wanted_menu {
         };
 
         class citizensText: Life_RscText {
-            idc = 1001;
+            idc = IDC_WANTEDMENU_CITIZENSTEXT;
             text = "$STR_Wanted_Citizens";
             x = 0.34;
             y = 0.11;
@@ -143,7 +143,7 @@ class life_wanted_menu {
         };
 
         class crimesText: Life_RscText {
-            idc = 1002;
+            idc = IDC_WANTEDMENU_CRIMESTEXT;
             text = "$STR_Wanted_Crimes";
             x = 0.542;
             y = 0.245;

@@ -47,14 +47,14 @@ life_deathCamera camSetFOV .5;
 life_deathCamera camSetFocus [50,0];
 life_deathCamera camCommit 0;
 
-(findDisplay 7300) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {true}"]; //Block the ESC menu
+(findDisplay IDD_DEATHSCREEN) displaySetEventHandler ["KeyDown","if ((_this select 1) isEqualTo 1) then {true}"]; //Block the ESC menu
 
 //Create a thread for something?
 _unit spawn {
     private ["_maxTime","_RespawnBtn","_Timer"];
     disableSerialization;
-    _RespawnBtn = CONTROL(7300,7302);
-    _Timer = CONTROL(7300,7301);
+    _RespawnBtn = CONTROL(IDD_DEATHSCREEN,IDC_DEATHSCREEN_RESPAWNBTN);
+    _Timer = CONTROL(IDD_DEATHSCREEN,IDC_DEATHSCREEN_RESPAWNTIME);
     if (LIFE_SETTINGS(getNumber,"respawn_timer") < 5) then {
         _maxTime = time + 5;
     } else {
@@ -70,7 +70,7 @@ _unit spawn {
 _unit spawn {
     private ["_requestBtn","_requestTime"];
     disableSerialization;
-    _requestBtn = CONTROL(7300,7303);
+    _requestBtn = CONTROL(IDD_DEATHSCREEN,IDC_DEATHSCREEN_MEDICBTN);
     _requestBtn ctrlEnable false;
     _requestTime = time + 5;
     waitUntil {round(_requestTime - time) <= 0 || isNull _this};

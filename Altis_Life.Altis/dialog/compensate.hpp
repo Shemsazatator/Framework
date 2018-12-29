@@ -1,5 +1,5 @@
 class Life_Admin_Compensate {
-    idd = 9920;
+    idd = IDD_COMPENSATE;
     name= "life_admin_compensate_give";
     movingEnable = 0;
     enableSimulation = 1;
@@ -27,7 +27,7 @@ class Life_Admin_Compensate {
 
     class controls {
         class InfoMsg: Life_RscStructuredText {
-            idc = 9921;
+            idc = IDC_COMPENSATE_INFOMSG;
             sizeEx = 0.020;
             text = "";
             x = 0.1;
@@ -68,7 +68,7 @@ class Life_Admin_Compensate {
         };
 
         class AdminCompensTex: Life_RscEdit {
-            idc = 9922;
+            idc = IDC_COMPENSATE_ADMINCOMPENSTEX;
             text = "";
             x = 0.04 + (6.25 / 40) + (1 / 250 / (safezoneW / safezoneH));
             y = 0.35;

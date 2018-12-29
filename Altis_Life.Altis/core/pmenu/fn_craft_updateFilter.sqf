@@ -8,10 +8,10 @@
 
 disableSerialization;
 private["_list","_filter","_inv","_mats","_filterBox","_item","_itemFilter"];
-_inv = CONTROL(666,669); //find the listbox of items can be created
-_mats = CONTROL(666,672);
-_filterBox = CONTROL(666,673);
-_itemFilter = CONTROL_DATA(673);
+_inv = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_CRAFTLIST); //find the listbox of items can be created
+_mats = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_MATS);
+_filterBox = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_FILTERLIST);
+_itemFilter = CONTROL_DATA(IDC_CRAFTMENU_FILTERLIST);
 
 lbClear _inv;
 _struct = "";
@@ -31,7 +31,7 @@ _config = [_itemFilter] call life_fnc_craftConfig;
 } foreach (_config);
 
 _inv lbSetCurSel 0;
-_item = CONTROL_DATA(669);
+_item = CONTROL_DATA(IDC_CRAFTMENU_CRAFTLIST);
 _config = [_itemFilter] call life_fnc_craftConfig;
 
 {

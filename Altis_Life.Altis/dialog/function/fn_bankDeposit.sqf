@@ -7,7 +7,7 @@
     Figure it out.
 */
 private ["_value"];
-_value = parseNumber(ctrlText 2702);
+_value = parseNumber(ctrlText IDC_BANKMENU_MONEYEDIT);
 
 //Series of stupid checks
 if (_value > 999999) exitWith {hint localize "STR_ATM_GreaterThan";};

@@ -42,8 +42,8 @@ disableSerialization;
 private _title = localize "STR_GNOTF_Capturing";
 "progressBar" cutRsc ["life_progress","PLAIN"];
 private _ui = uiNamespace getVariable "life_progress";
-private _progressBar = _ui displayCtrl 38201;
-private _titleText = _ui displayCtrl 38202;
+private _progressBar = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+private _titleText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
 _titleText ctrlSetText format ["%2 (1%1)...","%",_title];
 _progressBar progressSetPosition 0.01;
 private _cP = 0.01;
@@ -58,8 +58,8 @@ for "_i" from 0 to 1 step 0 do {
     if (isNull _ui) then {
         "progressBar" cutRsc ["life_progress","PLAIN"];
         _ui = uiNamespace getVariable "life_progress";
-        _progressBar = _ui displayCtrl 38201;
-        _titleText = _ui displayCtrl 38202;
+        _progressBar = _ui displayCtrl IDC_PROGRESSBAR_BAR;
+        _titleText = _ui displayCtrl IDC_PROGRESSBAR_TEXT;
     };
     _cP = _cP + _cpRate;
     _progressBar progressSetPosition _cP;

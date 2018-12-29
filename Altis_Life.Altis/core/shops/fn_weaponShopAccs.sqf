@@ -9,7 +9,7 @@
 disableSerialization;
 
 if ((uiNamespace getVariable ["Weapon_Accessories", 0]) isEqualTo 0) then {
-    private _weapon = lbData [38403, lbCurSel (38403)];
+    private _weapon = CONTROL_DATA(IDC_WEAPONSHOP_ITEMLIST);
     private _compatibleItems = _weapon call BIS_fnc_compatibleItems; //Fetch all compatible Items for the weapons.
     uiNamespace setVariable ["Accessories_Array", _compatibleItems];
     uiNamespace setVariable ["Weapon_Accessories", 1];

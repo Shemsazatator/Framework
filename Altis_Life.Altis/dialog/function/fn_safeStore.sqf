@@ -8,8 +8,8 @@
 */
 private ["_ctrl","_num"];
 disableSerialization;
-_ctrl = CONTROL_DATA(3503);
-_num = ctrlText 3506;
+_ctrl = CONTROL_DATA(IDC_TRUNKMENU_PLAYERGEAR);
+_num = ctrlText IDC_TRUNKMENU_PLAYEREDIT;
 
 //Error checks
 if (!([_num] call TON_fnc_isnumber)) exitWith {hint localize "STR_MISC_WrongNumFormat";};

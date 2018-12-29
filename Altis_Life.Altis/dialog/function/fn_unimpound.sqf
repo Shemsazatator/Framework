@@ -10,11 +10,11 @@
 */
 private ["_vehicle","_vehicleLife","_vid","_pid","_unit","_price","_price","_storageFee","_purchasePrice"];
 disableSerialization;
-if ((lbCurSel 2802) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = CONTROL_DATA(2802);
+if ((lbCurSel IDC_IMPOUNDMENU_VEHICLELIST) isEqualTo -1) exitWith {hint localize "STR_Global_NoSelection"};
+_vehicle = CONTROL_DATA(IDC_IMPOUNDMENU_VEHICLELIST);
 _vehicle = (call compile format ["%1",_vehicle]) select 0;
 _vehicleLife = _vehicle;
-_vid = CONTROL_VALUE(2802);
+_vid = CONTROL_VALUE(IDC_IMPOUNDMENU_VEHICLELIST);
 _pid = getPlayerUID player;
 _unit = player;
 _spawntext = localize "STR_Garage_spawn_Success";

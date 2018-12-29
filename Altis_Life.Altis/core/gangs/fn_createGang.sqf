@@ -9,7 +9,7 @@
 private ["_gangName","_length","_badChar","_chrByte","_allowed"];
 disableSerialization;
 
-_gangName = ctrlText (CONTROL(2520,2522));
+_gangName = ctrlText (CONTROL(IDD_CREATEGANGMENU,IDC_CREATEGANGMENU_CREATEGANGTEXT));
 _length = count (toArray(_gangName));
 _chrByte = toArray (_gangName);
 _allowed = toArray("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ ");

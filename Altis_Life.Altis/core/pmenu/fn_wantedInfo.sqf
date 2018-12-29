@@ -9,7 +9,7 @@
 disableSerialization;
 
 private _data = param [0,[],[[]]];
-private _list = CONTROL(2400,2402);
+private _list = CONTROL(IDD_WANTEDMENU,IDC_WANTEDMENU_WANTEDDETAILS);
 private _mylist = [];
 
 if (isNil "_data") exitWith {hint localize "STR_Cop_wantedList_FailedToFetch";};
@@ -28,4 +28,4 @@ private _crimes = _data select 0;
     };
 } forEach _crimes;
 
-ctrlSetText[2403,format [localize "STR_Wanted_Bounty",[(_data select 1)] call life_fnc_numberText]];
+ctrlSetText[IDC_WANTEDMENU_BOUNTYPRICE,format [localize "STR_Wanted_Bounty",[(_data select 1)] call life_fnc_numberText]];

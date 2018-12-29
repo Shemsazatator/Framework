@@ -9,8 +9,8 @@
 private ["_unit","_unitID","_members","_action","_index"];
 disableSerialization;
 
-if ((lbCurSel 2621) isEqualTo -1) exitWith {hint localize "STR_GNOTF_TransferSelect"};
-_unit = call compile format ["%1",CONTROL_DATA(2621)];
+if ((lbCurSel IDC_GANGMENU_GANGMEMBERLIST) isEqualTo -1) exitWith {hint localize "STR_GNOTF_TransferSelect"};
+_unit = call compile format ["%1",CONTROL_DATA(IDC_GANGMENU_GANGMEMBERLIST)];
 
 if (isNull _unit) exitWith {}; //Bad unit?
 if (_unit == player) exitWith {hint localize "STR_GNOTF_TransferSelf"};

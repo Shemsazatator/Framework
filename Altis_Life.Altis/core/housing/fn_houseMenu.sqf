@@ -6,35 +6,24 @@
     Description:
     Building interaction menu
 */
-#define Btn1 37450
-#define Btn2 37451
-#define Btn3 37452
-#define Btn4 37453
-#define Btn5 37454
-#define Btn6 37455
-#define Btn7 37456
-#define Btn8 37457
-#define Title 37401
-
-private ["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8"];
 disableSerialization;
-_curTarget = param [0,objNull,[objNull]];
+private _curTarget = param [0,objNull,[objNull]];
 if (isNull _curTarget) exitWith {}; //Bad target
 _houseCfg = [(typeOf _curTarget)] call life_fnc_houseConfig;
-if (count _houseCfg isEqualTo 0 && playerSide in [east,civilian]) exitWith {};
+if (count _houseCfg isEqualTo 0 and playerSide in [east,civilian]) exitWith {};
 
 if (!dialog) then {
     createDialog "pInteraction_Menu";
 };
 
-_Btn1 = CONTROL(37400,Btn1);
-_Btn2 = CONTROL(37400,Btn2);
-_Btn3 = CONTROL(37400,Btn3);
-_Btn4 = CONTROL(37400,Btn4);
-_Btn5 = CONTROL(37400,Btn5);
-_Btn6 = CONTROL(37400,Btn6);
-_Btn7 = CONTROL(37400,Btn7);
-_Btn8 = CONTROL(37400,Btn8);
+private _Btn1 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON1);
+private _Btn2 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON2);
+private _Btn3 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON3);
+private _Btn4 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON4);
+private _Btn5 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON5);
+private _Btn6 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON6);
+private _Btn7 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON7);
+private _Btn8 = CONTROL(IDD_PINTERACTION,IDC_PINTERACTION_BUTTON8);
 {_x ctrlShow false;} forEach [_Btn1,_Btn2,_Btn3,_Btn4,_Btn5,_Btn6,_Btn7,_Btn8];
 
 life_pInact_curTarget = _curTarget;
@@ -51,7 +40,7 @@ if (_curTarget isKindOf "House_F" && playerSide isEqualTo west) exitWith {
     private _tanoaArray = [11074.2,11501.5,0.00137329];
     private _pos = [[["Altis", _altisArray], ["Tanoa", _tanoaArray]]] call TON_fnc_terrainSort;
 
-    if ((nearestObject [_pos,"Land_Dome_Big_F"]) isEqualTo _curTarget || (nearestObject [_pos,_vaultHouse]) isEqualTo _curTarget) then {
+    if ((nearestObject [_pos,"Land_Dome_Big_F"]) isEqualTo _curTarget or (nearestObject [_pos,_vaultHouse]) isEqualTo _curTarget) then {
 
         _Btn1 ctrlSetText localize "STR_pInAct_Repair";
         _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_repairDoor; closeDialog 0;";
@@ -94,7 +83,7 @@ if (!(_curTarget in life_vehicles) || isNil {_curTarget getVariable "house_owner
         "STR_pInAct_BuyGarage",
         "STR_pInAct_BuyHouse"
     ] select _isHouse;
-    
+
     _Btn1 ctrlSetText localize _buildingPurchaseString;
     _Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_buyHouse; closeDialog 0";
     _Btn1 ctrlShow true;
