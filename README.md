@@ -45,6 +45,11 @@ This Github is not currently associated with any forums.
   - Make directly drink or eat if the player is thirsty or hungry and there is food in the pinv
   - When the player die, no spawn menu but he respawns on the hospital of his side
   - Put a wall limit to separate them
+  
+# Need to be tested: 
+  - Gang separation from https://github.com/Shemsazatator/Framework/commit/ae23321b2ffea297a19a971b592a964477b52f86
+  - Player nametag
+  - All menus with centralization of IDCs
 
 # License: 
 Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
