@@ -23,6 +23,29 @@ This Github is not currently associated with any forums.
   - New interface
   - Many more. 
 
+# TO DO list:
+
+  - Separate spawns for easts and civilians on Tanoa
+  - Separate gangs' sides for easts and civilians
+  - Put taxes on the bank amount
+  - Make exitWith in spawnmenu if there is only one spawn
+  - Lock slots (if the last connection of a player was on east he will can't become civilian) Note : BIS_endMission
+  - Call the firstViewCombat's file when an ennemi of other side is near (<= 100 m)
+  - Make marijuana legal for independant to make money
+  - Think about a governor system
+  - If is the first spawn, make the player desire to keep playing (animations, video etc)
+  - Check rebel posts and fix limit for the sides (rebel post for east and for civilian)
+  - Make dynamic map and show points only for the side
+  - Make IA army on drug fields
+  - Make the time of the process depending the amount to process
+  - Add control of experience and level in the admin panel
+  - Put a limit to notoriety and prestige (file necessary as experience's one)
+  - End craft system
+  - Increase paycheck depending the prestige or notoriety
+  - Make directly drink or eat if the player is thirsty or hungry and there is food in the pinv
+  - When the player die, no spawn menu but he respawns on the hospital of his side
+  - Put a wall limit to separate them
+
 # License: 
 Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
 
