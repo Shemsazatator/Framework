@@ -12415,4 +12415,14 @@
   			<Portuguese>You already have an uniform ! Put it on the ground before crafting a new.</Portuguese>
   		</Key>
 	</Package>
+  <Package name="Level">
+      <Key ID="STR_LEVEL_Upgrade">
+        <Original>Congratulations ! You are now level %1.</Original>
+   			<English>Congratulations ! You are now level %1.</English>
+   			<German>Glückwunsch ! Sie haben jetzt Stufe %1.</German>
+  			<French>Félicitations ! Vous etes desormais niveau %1.</French>
+  			<Italian>Complimenti! Ora sei al livello %1.</Italian>
+  			<Portuguese>Parabéns! Você está agora no nível %1.</Portuguese>
+      </Key>
+  </Package>
 </Project>

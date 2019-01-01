@@ -30,6 +30,7 @@ if (life_experience >= life_level * LIFE_SETTINGS(getNumber,"experience_upgrade_
   life_level = life_level + 1;
   life_skillPoints = life_skillPoints + 1;
   playMusic "EventTrack03_F_Curator";
+  systemChat [localize "STR_LEVEL_Upgrade", life_level];
 };
 
 //--- Sync only level and experience data on the database
