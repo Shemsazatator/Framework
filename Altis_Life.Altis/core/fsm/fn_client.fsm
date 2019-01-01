@@ -77,7 +77,7 @@ class FSM
                                          "		life_atmbank = life_atmbank + ((call life_paycheck) * (call life_notoriety));" \n
                                          "      systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_notoriety))] call life_fnc_numberText];" \n
                                          "	};" \n
-                                         "	case independant: {" \n
+                                         "	case independent: {" \n
                                          "		life_atmbank = life_atmbank + ((call life_paycheck) * (call life_prestige));" \n
                                          "      systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_prestige))] call life_fnc_numberText];" \n
                                          "	};" \n
