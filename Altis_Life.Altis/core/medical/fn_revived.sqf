@@ -17,6 +17,8 @@ closeDialog 0;
 life_deathCamera cameraEffect ["TERMINATE","BACK"];
 camDestroy life_deathCamera;
 
+playMusic "";
+
 //Take fee for services.
 if (BANK > _reviveCost) then {
     BANK = BANK - _reviveCost;

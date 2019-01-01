@@ -36,6 +36,9 @@ if (dialog) then {
     closeDialog 0;
 };
 
+//Play death music
+playMusic "SkyNet";
+
 //Setup our camera view
 life_deathCamera  = "CAMERA" camCreate (getPosATL _unit);
 showCinemaBorder true;

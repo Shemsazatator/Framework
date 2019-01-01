@@ -6,22 +6,22 @@ This Github is not currently associated with any forums.
 
 # Features:
 
-  - Police, Civ (west and east) and Medic roles 
+  - Police, Civ (west and east) and Medic roles
   - Banking System
-  - Virtual Item system 
-  - Vitem shops, vehicle shops, weapon shops, clothing stores etc. 
-  - Housing System 
+  - Virtual Item system
+  - Vitem shops, vehicle shops, weapon shops, clothing stores etc.
+  - Housing System
   - Persistent wanted system
   - Experience and Level system
   - Prestigious and Notoriety
-  - Many more. 
+  - Many more.
 
 # Coming soon:
 
   - Skill tree
   - Craft system
   - New interface
-  - Many more. 
+  - Many more.
 
 # TO DO list:
 
@@ -47,19 +47,20 @@ This Github is not currently associated with any forums.
   - Put a wall limit to separate them
   - Test duration of music from addExperience file and deathscreen
   - Check paycheck
-  
-# Need to be tested: 
+  - Check music on player dead
+
+# Need to be tested:
   - Gang separation from https://github.com/Shemsazatator/Framework/commit/ae23321b2ffea297a19a971b592a964477b52f86
   - Player nametag
   - All menus with centralization of IDCs
 
-# License: 
+# License:
 Altis Life RPG by AsYetUntitled is licensed under a [Creative Commons Attribution-NonCommercial-NoDerivs 4.0 International License] (http://creativecommons.org/licenses/by-nc-nd/4.0/deed.en_US)
 
 # Links:
   - Discord: https://discord.gg/ajGUDSH
   - Forums: TBD
-  - Wiki: https://github.com/AsYetUntitled/Framework/wiki 
+  - Wiki: https://github.com/AsYetUntitled/Framework/wiki
   - Releases (Stable Builds): https://github.com/AsYetUntitled/Framework/releases
 
 <p align="center">
