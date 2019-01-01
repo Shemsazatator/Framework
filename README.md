@@ -46,6 +46,7 @@ This Github is not currently associated with any forums.
   - When the player die, no spawn menu but he respawns on the hospital of his side
   - Put a wall limit to separate them
   - Test duration of music from addExperience file and deathscreen
+  - Check paycheck
   
 # Need to be tested: 
   - Gang separation from https://github.com/Shemsazatator/Framework/commit/ae23321b2ffea297a19a971b592a964477b52f86
