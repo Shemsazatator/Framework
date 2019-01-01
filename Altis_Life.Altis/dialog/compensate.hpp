@@ -3,7 +3,7 @@ class Life_Admin_Compensate {
     name= "life_admin_compensate_give";
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "[] spawn {waitUntil {!isNull (findDisplay 9920)}; ((findDisplay 9920) displayCtrl 9921) ctrlSetText localize ""STR_Admin_Amount""};";
+    onLoad = "[] spawn {waitUntil {!isNull (findDisplay IDD_COMPENSATE)}; ((findDisplay IDD_COMPENSATE) displayCtrl IDC_COMPENSATE_INFOMSG) ctrlSetText localize ""STR_Admin_Amount""};";
 
     class controlsBackground {
         class Life_RscTitleBackground: Life_RscText {
