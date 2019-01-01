@@ -47,6 +47,7 @@ This Github is not currently associated with any forums.
   - Put a wall limit to separate them
   - Check paycheck
   - Check music on player dead
+  - Fix spyglass and BEFilter
 
 # Need to be tested:
   - Gang separation from https://github.com/Shemsazatator/Framework/commit/ae23321b2ffea297a19a971b592a964477b52f86
