@@ -45,7 +45,6 @@ This Github is not currently associated with any forums.
   - Make directly drink or eat if the player is thirsty or hungry and there is food in the pinv
   - When the player die, no spawn menu but he respawns on the hospital of his side
   - Put a wall limit to separate them
-  - Test duration of music from addExperience file and deathscreen
   - Check paycheck
   - Check music on player dead
 
