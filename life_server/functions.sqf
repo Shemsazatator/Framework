@@ -14,7 +14,7 @@ compileFinal "
         ""_item"",
         [""_stack"",[],[[]]]
     ];
-    
+
     _stack findIf {_item in _x};
 ";
 
@@ -123,12 +123,12 @@ publicVariable "TON_fnc_clientGangLeft";
 TON_fnc_cell_emsrequest =
 compileFinal "
 private [""_msg"",""_to""];
-    ctrlShow[3022,false];
-    _msg = ctrlText 3003;
+    ctrlShow[IDC_CELLPHONEMENU_EMSREQUEST,false];
+    _msg = ctrlText IDC_CELLPHONEMENU_TEXTEDIT;
     _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3022,true];};
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[IDC_CELLPHONEMENU_EMSREQUEST,true];};
     _to = ""EMS Units"";
-    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3022,true];};
+    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[IDC_CELLPHONEMENU_EMSREQUEST,true];};
 
     [_msg,name player,5,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",independent];
     [] call life_fnc_cellphone;
@@ -139,56 +139,56 @@ private [""_msg"",""_to""];
 TON_fnc_cell_textmsg =
 compileFinal "
     private [""_msg"",""_to""];
-    ctrlShow[3015,false];
-    _msg = ctrlText 3003;
+    ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,false];
+    _msg = ctrlText IDC_CELLPHONEMENU_TEXTEDIT;
 
     _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3015,true];};
-    if (lbCurSel 3004 isEqualTo -1) exitWith {hint localize ""STR_CELLMSG_SelectPerson""; ctrlShow[3015,true];};
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,true];};
+    if (lbCurSel 3004 isEqualTo -1) exitWith {hint localize ""STR_CELLMSG_SelectPerson""; ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,true];};
 
-    _to = call compile format [""%1"",(lbData[3004,(lbCurSel 3004)])];
-    if (isNull _to) exitWith {ctrlShow[3015,true];};
-    if (isNil ""_to"") exitWith {ctrlShow[3015,true];};
-    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3015,true];};
+    _to = call compile format [""%1"",CONTROL_DATA(IDC_CELLPHONEMENU_PLAYERLIST)];
+    if (isNull _to) exitWith {ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,true];};
+    if (isNil ""_to"") exitWith {ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,true];};
+    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,true];};
 
     [_msg,name player,0] remoteExecCall [""TON_fnc_clientMessage"",_to];
     [] call life_fnc_cellphone;
     hint format [localize ""STR_CELLMSG_ToPerson"",name _to,_msg];
-    ctrlShow[3015,true];
+    ctrlShow[IDC_CELLPHONEMENU_TEXTMSG,true];
 ";
 //To All Cops
 TON_fnc_cell_textcop =
 compileFinal "
     private [""_msg"",""_to""];
-    ctrlShow[3016,false];
-    _msg = ctrlText 3003;
+    ctrlShow[IDC_CELLPHONEMENU_TEXTCOP,false];
+    _msg = ctrlText IDC_CELLPHONEMENU_TEXTEDIT;
     _to = ""The Police"";
 
-    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3016,true];};
+    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[IDC_CELLPHONEMENU_TEXTCOP,true];};
     _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3016,true];};
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[IDC_CELLPHONEMENU_TEXTCOP,true];};
 
     [_msg,name player,1,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
     hint format [localize ""STR_CELLMSG_ToPerson"",_to,_msg];
-    ctrlShow[3016,true];
+    ctrlShow[IDC_CELLPHONEMENU_TEXTCOP,true];
 ";
 //To All Admins
 TON_fnc_cell_textadmin =
 compileFinal "
     private [""_msg"",""_to"",""_from""];
-    ctrlShow[3017,false];
-    _msg = ctrlText 3003;
+    ctrlShow[IDC_CELLPHONEMENU_TEXTADMIN,false];
+    _msg = ctrlText IDC_CELLPHONEMENU_TEXTEDIT;
     _to = ""The Admins"";
 
-    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3017,true];};
+    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[IDC_CELLPHONEMENU_TEXTADMIN,true];};
     _length = count (toArray(_msg));
-    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[3017,true];};
+    if (_length > 400) exitWith {hint localize ""STR_CELLMSG_LIMITEXCEEDED"";ctrlShow[IDC_CELLPHONEMENU_TEXTADMIN,true];};
 
     [_msg,name player,2,mapGridPosition player,player] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
     hint format [localize ""STR_CELLMSG_ToPerson"",_to,_msg];
-    ctrlShow[3017,true];
+    ctrlShow[IDC_CELLPHONEMENU_TEXTADMIN,true];
 ";
 //Admin To One Person
 TON_fnc_cell_adminmsg =
@@ -196,17 +196,17 @@ compileFinal "
     if (isServer) exitWith {};
     if ((call life_adminlevel) < 1) exitWith {hint localize ""STR_CELLMSG_NoAdmin"";};
     private [""_msg"",""_to""];
-    ctrlShow[3020,false];
-    _msg = ctrlText 3003;
-    _to = call compile format [""%1"",(lbData[3004,(lbCurSel 3004)])];
-    if (isNull _to) exitWith {ctrlShow[3020,true];};
-    if (isNil ""_to"") exitWith {ctrlShow[3020,true];};
-    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3020,true];};
+    ctrlShow[IDC_CELLPHONEMENU_ADMINMSG,false];
+    _msg = ctrlText IDC_CELLPHONEMENU_TEXTEDIT;
+    _to = call compile format [""%1"",CONTROL_DATA(IDC_CELLPHONEMENU_PLAYERLIST)];
+    if (isNull _to) exitWith {ctrlShow[IDC_CELLPHONEMENU_ADMINMSG,true];};
+    if (isNil ""_to"") exitWith {ctrlShow[IDC_CELLPHONEMENU_ADMINMSG,true];};
+    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[IDC_CELLPHONEMENU_ADMINMSG,true];};
 
     [_msg,name player,3] remoteExecCall [""TON_fnc_clientMessage"",_to];
     [] call life_fnc_cellphone;
     hint format [localize ""STR_CELLMSG_AdminToPerson"",name _to,_msg];
-    ctrlShow[3020,true];
+    ctrlShow[IDC_CELLPHONEMENU_ADMINMSG,true];
 ";
 
 TON_fnc_cell_adminmsgall =
@@ -214,14 +214,14 @@ compileFinal "
     if (isServer) exitWith {};
     if ((call life_adminlevel) < 1) exitWith {hint localize ""STR_CELLMSG_NoAdmin"";};
     private [""_msg"",""_from""];
-    ctrlShow[3021,false];
-    _msg = ctrlText 3003;
-    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[3021,true];};
+    ctrlShow[IDC_CELLPHONEMENU_ADMINMSGALL,false];
+    _msg = ctrlText IDC_CELLPHONEMENU_TEXTEDIT;
+    if (_msg isEqualTo """") exitWith {hint localize ""STR_CELLMSG_EnterMSG"";ctrlShow[IDC_CELLPHONEMENU_ADMINMSGALL,true];};
 
     [_msg,name player,4] remoteExecCall [""TON_fnc_clientMessage"",-2];
     [] call life_fnc_cellphone;
     hint format [localize ""STR_CELLMSG_AdminToAll"",_msg];
-    ctrlShow[3021,true];
+    ctrlShow[IDC_CELLPHONEMENU_ADMINMSGALL,true];
 ";
 
 publicVariable "TON_fnc_cell_textmsg";
