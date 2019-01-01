@@ -58,4 +58,4 @@
 
 
 //Dialog Macros
-#include "dialog\defineIdDialog.inc"
+#include "dialog\defineResinclDesign.inc"
