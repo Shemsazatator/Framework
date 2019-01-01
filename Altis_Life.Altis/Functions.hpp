@@ -223,6 +223,7 @@ class Life_Client_Core {
         class stripDownPlayer;
         class teleport;
         class whereAmI;
+        class addExperience;
         class addPrestige;
         class addNotoriety;
     };
@@ -379,11 +380,6 @@ class Life_Client_Core {
         class vehStoreItem;
         class vehTakeItem;
         class vInteractionMenu;
-    };
-
-    class Experience {
-        file = "core\experience";
-        class addExperience;
     };
 
     class Fsm {
