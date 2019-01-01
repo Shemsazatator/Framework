@@ -20,19 +20,19 @@ LIFEctrl(IDC_HUDSTATS_TEXTEXPERIENCE) ctrlSetText format ["%1 / %2", [life_exper
 
 switch playerSide do {
     case west: {
-      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_prestige / 2);
-      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Prestige x%1", [1 +life_prestige] call life_fnc_numberText];
+      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_prestige / LIFE_SETTINGS(getNumber,"prestige_max"));
+      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Prestige x%1", [life_prestige] call life_fnc_numberText];
     };
     case east: {
-      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_notoriety / 2);
-      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Notoriety x%1", [1 + life_notoriety] call life_fnc_numberText];
+      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_notoriety / LIFE_SETTINGS(getNumber,"notoriety_max"));
+      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Notoriety x%1", [life_notoriety] call life_fnc_numberText];
     };
     case independent: {
-      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_prestige / 2);
-      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Prestige x%1", [1 + life_prestige] call life_fnc_numberText];
+      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_prestige / LIFE_SETTINGS(getNumber,"prestige_max"));
+      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Prestige x%1", [life_prestige] call life_fnc_numberText];
     };
     case civilian: {
-      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_notoriety / 2);
-      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Notoriety x%1", [1 + life_notoriety] call life_fnc_numberText];
+      LIFEctrl(IDC_HUDSTATS_PROGRESSNOTOPREST) progressSetPosition (life_notoriety / LIFE_SETTINGS(getNumber,"notoriety_max"));
+      LIFEctrl(IDC_HUDSTATS_TEXTNOTOPREST) ctrlSetText format ["Notoriety x%1", [life_notoriety] call life_fnc_numberText];
     };
 };

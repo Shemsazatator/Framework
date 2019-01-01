@@ -125,6 +125,10 @@ class Life_Settings {
     skills_upgrade_level = 1; //Give to the player x skills points to spend in skills tree
     max_level = 50; //Put a limit of the level
 
+    /* Prestige and Notoriety */
+    prestige_max = 3;
+    notoriety_max = 3;
+
     /* Player Job System Configurations */
     delivery_points[] = { "dp_1", "dp_2", "dp_3", "dp_4", "dp_5", "dp_6", "dp_7", "dp_8", "dp_9", "dp_10", "dp_11", "dp_12", "dp_13", "dp_14", "dp_15", "dp_15", "dp_16", "dp_17", "dp_18", "dp_19", "dp_20", "dp_21", "dp_22", "dp_23", "dp_24", "dp_25" };
     fuelTank_winMultiplier = 1; //Win Multiplier in FuelTank Missions. Increase for greater payout. Default = 1

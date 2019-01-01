@@ -16,5 +16,5 @@ if (_val == _total) then {
 };
 
 BANK = BANK + _val;
-life_prestige = life_prestige + 0.5;
+[0.5] call life_fnc_addPrestige;
 [1] call SOCK_fnc_updatePartial;

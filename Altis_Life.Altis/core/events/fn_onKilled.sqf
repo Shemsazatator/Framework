@@ -132,11 +132,6 @@ if (side _killer isEqualTo west && !(playerSide isEqualTo west)) then {
     };
 };
 
-//Add notoriety to civilians
-if({side _killer isEqualTo east and playerSide isEqualTo civilian} or {side _killer isEqualTo civilian and playerSide isEqualTo east}) then {
-  life_notoriety = life_notoriety + 0.5;
-};
-
 if (!isNull _killer && {!(_killer isEqualTo _unit)}) then {
     life_removeWanted = true;
 };
