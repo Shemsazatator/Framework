@@ -5,6 +5,8 @@
 
     Description:
     Add experience and control if the player has enough experience to add a level.
+
+    TO DO : Test duration of the Music and try fadeMusic command
 */
 params [
   ["_experience", 0, [0]]
@@ -27,6 +29,7 @@ if (life_experience >= life_level * LIFE_SETTINGS(getNumber,"experience_upgrade_
 	life_experience = life_experience - (life_level * LIFE_SETTINGS(getNumber,"experience_upgrade_level"));
   life_level = life_level + 1;
   life_skillPoints = life_skillPoints + 1;
+  playMusic "EventTrack03_F_Curator";
 };
 
 //--- Sync only level and experience data on the database
