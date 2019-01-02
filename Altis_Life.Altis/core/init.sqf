@@ -10,6 +10,7 @@
 private ["_handle","_timeStamp","_extDB_notLoaded"];
 life_firstSpawn = true;
 life_session_completed = false;
+player allowDamage false;
 0 cutText[localize "STR_Init_ClientSetup","BLACK FADED"];
 0 cutFadeOut 9999999;
 _timeStamp = diag_tickTime;
@@ -128,6 +129,8 @@ switch playerSide do {
     };
     waitUntil {scriptDone _handle};
 };
+
+player allowDamage true;
 
 player setVariable ["restrained",false,true];
 player setVariable ["Escorting",false,true];
