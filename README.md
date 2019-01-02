@@ -39,14 +39,12 @@ This Github is not currently associated with any forums.
   - Make IA army on drug fields
   - Make the time of the process depending the amount to process
   - Add control of experience and level in the admin panel
-  - Put a limit to notoriety and prestige (file necessary as experience's one)
   - End craft system
   - Increase paycheck depending the prestige or notoriety
   - Make directly drink or eat if the player is thirsty or hungry and there is food in the pinv
   - When the player die, no spawn menu but he respawns on the hospital of his side
   - Put a wall limit to separate them
   - Check paycheck
-  - Check music on player dead
   - Fix spyglass and BEFilter
 
 # Need to be tested:
