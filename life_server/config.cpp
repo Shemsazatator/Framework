@@ -15,17 +15,17 @@ class CfgFunctions {
         class MySQL
         {
             file = "\life_server\Functions\MySQL";
-            class numberSafe {};
-            class mresArray {};
-            class queryRequest{};
-            class asyncCall{};
-            class insertRequest{};
-            class updateRequest{};
-            class mresToArray {};
-            class insertVehicle {};
-            class bool {};
-            class mresString {};
-            class updatePartial {};
+            class numberSafe;
+            class mresArray;
+            class queryRequest;
+            class asyncCall;
+            class insertRequest;
+            class updateRequest;
+            class mresToArray;
+            class insertVehicle;
+            class bool;
+            class mresString;
+            class updatePartial;
         };
     };
 
@@ -33,18 +33,18 @@ class CfgFunctions {
         tag = "life";
         class Wanted_Sys {
             file = "\life_server\Functions\WantedSystem";
-            class wantedFetch {};
-            class wantedPerson {};
-            class wantedBounty {};
-            class wantedRemove {};
-            class wantedAdd {};
-            class wantedCrimes {};
-            class wantedProfUpdate {};
+            class wantedFetch;
+            class wantedPerson;
+            class wantedBounty;
+            class wantedRemove;
+            class wantedAdd;
+            class wantedCrimes;
+            class wantedProfUpdate;
         };
 
         class Jail_Sys {
             file = "\life_server\Functions\Jail";
-            class jailSys {};
+            class jailSys;
         };
 
         class Client_Code {
@@ -56,61 +56,61 @@ class CfgFunctions {
         tag = "TON";
         class Systems {
             file = "\life_server\Functions\Systems";
-            class managesc {};
-            class cleanup {};
-            class huntingZone {};
-            class getID {};
-            class vehicleCreate {};
-            class spawnVehicle {};
-            class getVehicles {};
-            class vehicleStore {};
-            class vehicleDelete {};
-            class spikeStrip {};
-            class transferOwnership {};
-            class federalUpdate {};
-            class chopShopSell {};
-            class clientDisconnect {};
-            class entityRespawned {};
-            class cleanupRequest {};
-            class keyManagement {};
-            class vehicleUpdate {};
-            class recupkeyforHC {};
-            class handleBlastingCharge {};
-            class terrainSort {};
+            class managesc;
+            class cleanup;
+            class huntingZone;
+            class getID;
+            class vehicleCreate;
+            class spawnVehicle;
+            class getVehicles;
+            class vehicleStore;
+            class vehicleDelete;
+            class spikeStrip;
+            class transferOwnership;
+            class federalUpdate;
+            class chopShopSell;
+            class clientDisconnect;
+            class entityRespawned;
+            class cleanupRequest;
+            class keyManagement;
+            class vehicleUpdate;
+            class recupkeyforHC;
+            class handleBlastingCharge;
+            class terrainSort;
         };
 
         class Housing {
             file = "\life_server\Functions\Housing";
-            class addHouse {};
-            class addContainer {};
-            class deleteDBContainer {};
-            class fetchPlayerHouses {};
-            class initHouses {};
-            class sellHouse {};
-            class sellHouseContainer {};
-            class updateHouseContainers {};
-            class updateHouseTrunk {};
-            class houseCleanup {};
-            class houseGarage {};
+            class addHouse;
+            class addContainer;
+            class deleteDBContainer;
+            class fetchPlayerHouses;
+            class initHouses;
+            class sellHouse;
+            class sellHouseContainer;
+            class updateHouseContainers;
+            class updateHouseTrunk;
+            class houseCleanup;
+            class houseGarage;
         };
 
         class Gangs {
             file = "\life_server\Functions\Gangs";
-            class insertGang {};
-            class queryPlayerGang {};
-            class removeGang {};
-            class updateGang {};
+            class insertGang;
+            class queryPlayerGang;
+            class removeGang;
+            class updateGang;
         };
 
         class Actions {
             file = "\life_server\Functions\Actions";
-            class pickupAction {};
+            class pickupAction;
         };
 
         class PlayTime {
             file = "\life_server\Functions\PlayTime";
-            class setPlayTime {};
-            class getPlayTime {};
+            class setPlayTime;
+            class getPlayTime;
         };
     };
 };
