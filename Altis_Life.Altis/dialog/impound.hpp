@@ -3,7 +3,7 @@ class Life_impound_menu {
     name="life_vehicle_shop";
     movingEnable = 0;
     enableSimulation = 1;
-    onLoad = "ctrlShow [2330,false];";
+    onLoad = "ctrlShow [IDC_VEHICLESHOP_VEHICLEINFOHEADER,false];";
 
     class controlsBackground {
         class Life_RscTitleBackground: Life_RscText    {

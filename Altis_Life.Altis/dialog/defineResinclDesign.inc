@@ -257,7 +257,6 @@
 #define IDC_VEHICLESHOP_COLORLIST           2304
 #define IDC_VEHICLESHOP_VEHICLEINFOLIST     2303
 
-
 // vehicleShop3D.hpp
 #define IDD_VEHICLESHOP3D                   2300
 #define IDC_VEHICLESHOP3D_TITLE             2301
