@@ -68,22 +68,27 @@ class FSM
                                          "		if (player distance (getMarkerPos ""fed_reserve"") < 120) then {" \n
                                          "        systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_prestige)) + 1500] call life_fnc_numberText];" \n
                                          "        life_atmbank = life_atmbank + ((call life_paycheck) * (call life_prestige)) + 1500;" \n
+                                         "        [10] call life_fnc_addExperience;" \n
                                          "    } else {" \n
                                          "        life_atmbank = life_atmbank + ((call life_paycheck) * (call life_prestige));" \n
+                                         "        [7] call life_fnc_addExperience;" \n
                                          "        systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_prestige))] call life_fnc_numberText];" \n
                                          "    };" \n
                                          "	};" \n
                                          "	case east: {" \n
                                          "		life_atmbank = life_atmbank + ((call life_paycheck) * (call life_notoriety));" \n
-                                         "      systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_notoriety))] call life_fnc_numberText];" \n
+                                         "    [5] call life_fnc_addExperience;" \n
+                                         "    systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_notoriety))] call life_fnc_numberText];" \n
                                          "	};" \n
                                          "	case independent: {" \n
                                          "		life_atmbank = life_atmbank + ((call life_paycheck) * (call life_prestige));" \n
-                                         "      systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_prestige))] call life_fnc_numberText];" \n
+                                         "    [10] call life_fnc_addExperience;" \n
+                                         "    systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_prestige))] call life_fnc_numberText];" \n
                                          "	};" \n
                                          "	case civilian: {" \n
                                          "		life_atmbank = life_atmbank + ((call life_paycheck) * (call life_notoriety));" \n
-                                         "      systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_notoriety))] call life_fnc_numberText];" \n
+                                         "    [5] call life_fnc_addExperience;" \n
+                                         "    systemChat format [localize ""STR_FSM_ReceivedPay"",[((call life_paycheck) * (call life_notoriety))] call life_fnc_numberText];" \n
                                          "	};" \n
                                          "};" \n
                                          "" \n
