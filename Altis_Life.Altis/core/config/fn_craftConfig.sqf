@@ -5,12 +5,12 @@
 
 	Description:
 	Master configuration file for the crafting menu.
-
 */
-private["_craft","_return"];
+
 private _craft = param [0,"",[""]];
+private _return = [];
+
 if(_craft isEqualTo "") exitWith {closeDialog 0}; //Bad shop type passed.
-_return = [];
 
 _craftConfig = missionConfigFile >> "CfgCraft" >> _craft;
 

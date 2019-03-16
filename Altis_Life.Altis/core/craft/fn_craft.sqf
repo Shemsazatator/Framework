@@ -1,9 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
 	File: fn_craft.sqf
-	Description: Crafting System
-	Created by EdgeKiller
-    Coder: EdgeKiller
+  Author: EdgeKiller
 */
 private["_inv","_itemInfo","_filter"]; //Declare all private variables
 if (!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.

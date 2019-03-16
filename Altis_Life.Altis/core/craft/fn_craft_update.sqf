@@ -1,14 +1,13 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_craft_update.sqf
-	Description: Crafting System
-	Created by EdgeKiller
-    Coder: EdgeKiller
+	File: fn_craft.sqf
+  Author: EdgeKiller
 */
-private["_inv","_mats","_item","_struct","_str","_invSize","_matsNeed","_matsNum","_config","_itemFilter"]; //Declare all private variables
-disableSerialization; //Disable Serialization
 
-_inv = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_CRAFTLIST); //find the listbox of items can be created
+private["_inv","_mats","_item","_struct","_str","_invSize","_matsNeed","_matsNum","_config","_itemFilter"]; //Declare all private variables
+disableSerialization;
+
+_inv = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_CRAFTLIST);
 _mats = CONTROL(IDD_CRAFTMENU,IDC_CRAFTMENU_MATS);
 _struct = "";
 if((lbCurSel IDC_CRAFTMENU_CRAFTLIST) isEqualTo -1) exitWith {hint localize "STR_ISTR_SelectItemFirst";};

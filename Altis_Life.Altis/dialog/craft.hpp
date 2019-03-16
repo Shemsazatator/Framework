@@ -9,6 +9,7 @@ class Life_craft {
 	name= "life_craft";
 	movingEnable = false;
 	enableSimulation = true;
+	onLoad = "[] spawn life_fnc_craftMenu;";
 
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
@@ -48,8 +49,10 @@ class Life_craft {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_PM_CraftStats";
 			sizeEx = 0.04;
-			x = 0.105; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.105;
+			y = 0.26;
+			w = 0.275;
+			h = 0.04;
 		};
 
 		//Craft list
@@ -57,10 +60,11 @@ class Life_craft {
 		{
 			idc = IDC_CRAFTMENU_CRAFTLIST;
 			sizeEx = 0.030;
-			onLBSelChanged = "[] spawn life_fnc_craft_update";
+			onLBSelChanged = "_this call life_fnc_craftLBChange;";
 			x = 0.105;
 			y = 0.31;
-			w = 0.275; h = 0.44;
+			w = 0.275;
+			h = 0.44;
 		};
 
 		//Materials list header
@@ -70,8 +74,10 @@ class Life_craft {
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			text = "$STR_PM_CraftMaterials";
 			sizeEx = 0.04;
-			x = 0.395; y = 0.26;
-			w = 0.275; h = 0.04;
+			x = 0.395;
+			y = 0.26;
+			w = 0.275;
+			h = 0.04;
 		};
 
 		//Materials list
@@ -92,7 +98,8 @@ class Life_craft {
 					text = "";
 					x = 0;
 					y = 0;
-					w = 0.27; h = 0.44;
+					w = 0.27;
+					h = 0.44;
 				};
 			};
 		};

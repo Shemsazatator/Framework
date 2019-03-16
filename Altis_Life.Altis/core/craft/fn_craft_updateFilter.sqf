@@ -1,9 +1,7 @@
 #include "..\..\script_macros.hpp"
 /*
-	File: fn_craft_updateFilter.sqf
-	Description: Crafting System
-	Created by EdgeKiller
-    Coder: EdgeKiller
+	File: fn_craft.sqf
+  Author: EdgeKiller
 */
 
 disableSerialization;
